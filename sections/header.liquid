@@ -135,10 +135,10 @@
     <div class="--header_desktop_lower flex items-center justify-center mx-auto border-gray-500 border-b-[0.5px]">
       
       <!-- NAVIGATION MENU -->
-      <nav x-data="{ open: false }" class="hidden md:flex space-x-10">
+      <nav  class="hidden md:flex space-x-10">
         {% for link in linklists.main-menu.links %}
           {% if link.links !=blank %}
-            <div class="relative">
+            <div class="relative" x-data="{ open: false }">
               
              <button 
                @mouseenter="open = true"
@@ -149,13 +149,13 @@
               {{ link.title }}
               </button>
 
-               <!-- STEP 1: Place the div under the button tag -->
+               <!-- Dropdown Content -->
 
               <div x-show="open" 
               @mouseenter="open = true" 
               @mouseleave="open = false" 
               @click.away="open = false" 
-              class="absolute z-10 transform px-2 w-screen sm:px-0 lg:ml-0 md:-translate-x-[913px] border-gray-500 border-t-[0.5px]" 
+              class="absolute z-10 transform px-2 w-screen sm:px-0 lg:ml-0 md:-translate-x-[875px] border-gray-500 border-t-[0.5px]" 
               x-cloak>
               
               <div class="shadow-lg  ring-black ring-opacity-5 overflow-hidden bg-black">
