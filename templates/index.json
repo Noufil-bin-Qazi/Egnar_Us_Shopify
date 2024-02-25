@@ -1,24 +1,63 @@
 {
-    "sections": {
-       "featured-collection": {
-           "type": "featured-collection",
-           "settings": {
-            "featured-collection": "all"
-           }
-       },
-       "hero": {
-        "type": "hero"
-       },
-       "three-cards": {
-        "type": "three-cards"
-       },
-       "slide": {
-        "type": "slide"
-       },
-       "card": {
-        "type": "card"
-       }
-
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading_hero": "Winter Drop 2",
+        "subheading_hero": "RELEASING THIS SUNDAY DOWNLOAD",
+        "button1_href": "#",
+        "firstbtntext": "BUTTON Text 1",
+        "button2_href": "#",
+        "secondbtntext": "BUTTON Text 2"
+      }
     },
-    "order": ["hero","featured-collection","three-cards","slide","card"]
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "chosen_collection": "best-sellers"
+      }
+    },
+    "three-cards": {
+      "type": "three-cards",
+      "settings": {
+        "card1_heading": "Tops",
+        "card2_heading": "Bottoms",
+        "card3_heading": "Accessories",
+        "card1button_href": "#",
+        "card1btntext": "Shop",
+        "card2button_href": "#",
+        "card2btntext": "Shop",
+        "card3button_href": "#",
+        "card3btntext": "Shop"
+      }
+    },
+    "slide": {
+      "type": "slide",
+      "settings": {
+        "slide_text": "RELEASING THIS SUNDAY DOWNLOAD",
+        "slidebutton_href": "#",
+        "slidebtntext": "BUTTON Text 1"
+      }
+    },
+    "card": {
+      "type": "card",
+      "settings": {
+        "card1_heading": "Mindset newsletter",
+        "card2_heading": "ASRV Second Flight",
+        "card1_subheading": "Mindset newsletter",
+        "card2_subheading": "ASRV Second Flight",
+        "card1button_href": "#",
+        "card1btntext": "BUTTON Text 1",
+        "card2button_href": "#",
+        "card2btntext": "Button Text 2"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured-collection",
+    "three-cards",
+    "slide",
+    "card"
+  ]
 }
