@@ -35,6 +35,12 @@
         "card3btntext": "View Collection"
       }
     },
+    "featured_collection_pjFRcf": {
+      "type": "featured-collection",
+      "settings": {
+        "chosen_collection": "best-seller"
+      }
+    },
     "slide": {
       "type": "slide",
       "settings": {
@@ -61,6 +67,7 @@
     "hero",
     "featured-collection",
     "three-cards",
+    "featured_collection_pjFRcf",
     "slide",
     "card"
   ]
