@@ -1,0 +1,115 @@
+<!-- CARD SECTION two card Banners,two hero headings,subheadings,two hero button -->
+
+<section class="h-fit flex flex-col md:flex-row">
+  
+  {% if section.settings.card_image1 != blank %}
+    {% assign card_image1_url = section.settings.card_image1 | img_url: 'master' %}
+  {% else %}
+    {% assign card_image1_url = 'https://asrv.com/cdn/shop/files/zach_mindset_1500x.png' %}
+  {% endif %}
+
+
+
+  <div class="md:w-1/2 w-full bg-cover bg-center pt-80 pb-10" style="background-image: url('{{ card_image1_url }}');">
+    <h1 class="font-body text-white font-medium uppercase text-center text-shadow text-3xl mb-2 md:mx-20">{{ section.settings.card1_heading }}</h1> <!-- Set h1 font size to 30px -->
+    <h3 class="font-body text-white font-thin text-shadow text-center text-base mb-4 md:mx-20">{{ section.settings.card1_subheading }}</h3>
+  
+    <div class="SectionHeader__ButtonWrapper">
+     <div class="ButtonGroup flex flex-col justify-center md:flex-row">
+      <a href="{{ section.settings.card1button_href }}" class="bg-white flex-shrink-0 hover:bg-gray-200 font-body font-light text-center text-xs text-black uppercase mb-3 py-4 px-7 mx-16">{{ section.settings.card1btntext }}</a>
+      
+     </div>
+    </div>
+
+   
+  </div>
+  
+  {% if section.settings.card_image2 != blank %}
+    {% assign card_image2_url = section.settings.card_image2 |  img_url: 'master'  %}
+  {% else %}
+    {% assign card_image2_url = 'https://asrv.com/cdn/shop/files/mike-secondflight_1500x.jpg' %}  
+    
+  {% endif %}
+  <div class="md:w-1/2 w-full bg-cover bg-center pt-80 pb-10" style="background-image: url('{{ card_image2_url }}');">
+    <h1 class="font-body text-white font-medium uppercase text-center text-shadow text-3xl mb-2 md:mx-20">{{ section.settings.card2_heading }}</h1> <!-- Set h1 font size to 30px -->
+    <h3 class="font-body text-white font-thin text-shadow text-center text-base mb-4 md:mx-20">{{ section.settings.card2_subheading }}</h3>
+ 
+    <div class="SectionHeader__ButtonWrapper">
+     <div class="ButtonGroup flex flex-col justify-center md:flex-row">
+     <a href="{{ section.settings.card2button_href }}" class="bg-white flex-shrink-0 hover:bg-gray-200 font-body font-light text-center text-xs text-black uppercase mb-3 py-4 px-7 mx-16">{{ section.settings.card2btntext }}</a>
+     
+    </div>
+  </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Card Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "card_image1",
+      "label": "Select Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_image2",
+      "label": "Select Background Image"
+    },
+    {
+       "type": "text",
+       "label": "Card 1 Heading",
+       "id": "card1_heading",
+       "default": "Mindset newsletter"
+
+    },
+    {
+       "type": "text",
+       "label": "Card 2 Heading",
+       "id": "card2_heading",
+       "default": "ASRV Second Flight"
+
+    },
+    {
+       "type": "text",
+       "label": "Card 1 Subheading",
+       "id": "card1_subheading",
+       "default": "Mindset newsletter"
+
+    },
+    {
+       "type": "text",
+       "label": "Card 2 Subheading",
+       "id": "card2_subheading",
+       "default": "ASRV Second Flight"
+
+    },
+    {
+      "type": "text",
+      "label": "Card 1 Button Link",
+      "id": "card1button_href",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "label": "Card 1 Button Text",
+      "id": "card1btntext",
+      "default": "BUTTON Text 1"
+    },
+    {
+      "type": "text",
+      "label": "Card 2 Button Link",
+      "id": "card2button_href",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "label": "Card 2 Button Text",
+      "id": "card2btntext",
+      "default": "Button Text 2"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,191 @@
+
+<div class="relative h-80 max-h-80 w-full --collectionimage">
+  {% if section.settings.background_image %}
+    <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image | img_url: 'master' }}" alt="Background Image">
+  {% endif %}
+  
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="text-white text-center collheader">
+      <h1 class="text-4xl md:text-5xl uppercase tracking-wider fade-up-enter-active">
+        {% assign wordbold = collection.title | split: ' ' %}
+        {% assign firstword = wordbold | first %}
+        <span class="font-normal font-body">{{ firstword }}</span>
+        {% for word in wordbold offset: 1  %}
+            <span class="font-body font-extralight">{{ word }}</span>
+        {% endfor %}
+      
+      </h1>
+      <!-- Add other content as needed -->
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-row  --collectiontoolbar">
+  <div class="w-[115px] flex flex-row justify-center border-r-0 border-[1px] --collectiontogglebuttons">
+    
+    
+    <button id="toggleTwoColumns" class="mx-1 opacity-20 transition-opacity duration-300 ease-in-out" data-mobile-count="1" data-desktop-count="2">{% render 'grid-two' %}</button>
+    <button id="toggleFourColumns" class="mx-1 hidden md:block transition-opacity duration-300 ease-in-out" data-mobile-count="2" data-desktop-count="4">{% render 'grid-four' %}</button>
+    <button id="toggleOneColumns" class="mx-1 opacity-20 md:hidden transition-opacity duration-300 ease-in-out" data-mobile-count="1" data-desktop-count="1">{% render 'grid-one' %}</button>
+  </div>
+
+  <div class="w-full border-[1px] py-5 px-5"><h1 class="text-[13px] text-gray-700 tracking-widest uppercase font-body font-extralight">{{ collection.title }}</h1></div>
+  
+  <!-- Add this code where you want the form to appear -->
+
+  <div class="w-[115px] flex flex-row justify-center items-center border-l-0 border-[1px] --collectionsortform">
+     <!-- Add this code to handle sorting based on the URL parameter -->
+    {% assign sort_option = request.query_string | split: '=' | last %}
+    {% case sort_option %}
+    {% when 'best-selling' %}
+        {% assign sorted_products = collection.products | sort: 'orders' | reverse %}
+    {% when 'title-ascending' %}
+        {% assign sorted_products = collection.products | sort: 'title' %}
+    {% when 'price-ascending' %}
+        {% assign sorted_products = collection.products | sort: 'price' %}
+    {% when 'price-descending' %}
+        {% assign sorted_products = collection.products |  sort: 'price' | reverse %}
+    {% else %}
+        {% assign sorted_products = collection.products %}
+    {% endcase %}
+    <!-- Add this code where you want the form to appear -->
+      <div x-data="{ isOpen: false, selectedSort: '{{ sort_option | default: "manual" }}' }">
+        <label @click="isOpen = !isOpen" class="cursor-pointer text-[13px] items-center flex gap-1 flex-row text-gray-700 font-body font-extralight" id="sort-label">Sort {% render 'arrow-down' %}</label>
+        <div x-show="isOpen" @click.away="isOpen = false" class="relative">
+            <div x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute z-50 right-[-17px] py-5 mt-6 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                    <div @click="updateSort('manual')" class="block px-12 py-3 text-right text-[13px] text-gray-700 font-body font-extralight cursor-pointer" role="menuitem" tabindex="-1" id="options-menu-0">Featured</div>
+                    <div @click="updateSort('best-selling')" class="block px-12 py-3 text-right text-[13px] text-gray-700 font-body font-extralight cursor-pointer" role="menuitem" tabindex="-1" id="options-menu-1">Best Selling</div>
+                    <div @click="updateSort('title-ascending')" class="block px-12 py-3 text-right text-[13px] justify-end text-gray-700 font-body font-extralight cursor-pointer" role="menuitem" tabindex="-1" id="options-menu-2">Alphabetically, A-Z</div>
+                    <div @click="updateSort('price-ascending')" class="block px-12 py-3 text-right text-[13px] justify-end text-gray-700 font-body font-extralight cursor-pointer" role="menuitem" tabindex="-1" id="options-menu-3">Price, low to high</div>
+                    <div @click="updateSort('price-descending')" class="block px-12 py-3 text-right text-[13px] justify-end text-gray-700 font-body font-extralight cursor-pointer" role="menuitem" tabindex="-1" id="options-menu-4">Price, high to low</div>
+                    <!-- Add more options based on your needs -->
+                </div>
+            </div>
+        </div>
+        <input x-model="selectedSort" name="sort_by" id="sort-by" type="hidden">
+      </div>
+      <script>
+      function updateSort(sortValue) {
+        window.location.href = `?sort_by=${sortValue}`;
+       }
+      </script>
+  </div>
+ 
+
+
+</div>
+
+</div>
+
+<div class="px-4 py-8 --collectonproducts">
+    {% paginate collection.products by section.settings.number_of_products_per_page %}
+        
+         <div class="max-w-8xl mx-auto">
+          <div class="grid grid-cols-{{ currentColumns }} gap-4" id="collectionGrid">
+                
+                {% for product in sorted_products %}
+                    
+                    {% render 'product-card', product: product %}
+                    
+                    {% else %}
+                        <p>There are no products</p>
+                {% endfor %}
+            </div>
+         </div>
+
+        
+    {% endpaginate %}
+
+</div>
+
+
+<style>
+   @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .collheader h1 {
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+
+  
+  
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOMContentLoaded event fired');
+    const toggleOneColumnsBtn = document.getElementById('toggleOneColumns');
+    const toggleTwoColumnsBtn = document.getElementById('toggleTwoColumns');
+    const toggleFourColumnsBtn = document.getElementById('toggleFourColumns');
+    const gridContainer = document.getElementById('collectionGrid');
+    let currentColumns = 4; // Set default columns from Liquid
+
+    function updateGridColumns(columns, activeButton) {
+        gridContainer.style.gridTemplateColumns = `repeat(${columns}, minmax(0, 1fr))`;
+        currentColumns = columns;
+
+        // Handle opacity classes for active button
+        [toggleOneColumnsBtn, toggleTwoColumnsBtn, toggleFourColumnsBtn].forEach(btn => {
+            btn.classList.add('opacity-20');
+        });
+        activeButton.classList.remove('opacity-20');
+    }
+
+    if (window.innerWidth <= 768) { // Adjust the breakpoint as needed
+        console.log('resized');
+        updateGridColumns(2, toggleTwoColumnsBtn);
+
+        // Optionally, you can call updateGridColumns to apply the changes immediately
+        // updateGridColumns(currentColumns, toggleTwoColumnsBtn);
+    } else {
+        updateGridColumns(4, toggleFourColumnsBtn); // Set default columns to 4 for desktop
+    }
+
+    toggleOneColumnsBtn.addEventListener('click', function () {
+        console.log('Toggle One Clicked');
+        updateGridColumns(1, toggleOneColumnsBtn);
+    });
+
+    toggleTwoColumnsBtn.addEventListener('click', function () {
+        console.log('Toggle Two Clicked');
+        updateGridColumns(2, toggleTwoColumnsBtn);
+    });
+
+    if (toggleFourColumnsBtn) {
+        toggleFourColumnsBtn.addEventListener('click', function () {
+            updateGridColumns(4, toggleFourColumnsBtn);
+        });
+    }
+});
+
+</script>
+
+
+
+{% schema %}
+{
+    "name": "Template Collections",
+    "settings": [
+        {
+            "type": "number",
+            "id": "number_of_products_per_page",
+            "default": 6,
+            "label": "Number of products per page"
+        },
+        {
+           "type": "image_picker",
+           "id": "background_image",
+           "label": "Select Background Image"
+        }
+        ]
+}
+{% endschema %}

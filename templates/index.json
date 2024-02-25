@@ -1,0 +1,24 @@
+{
+    "sections": {
+       "featured-collection": {
+           "type": "featured-collection",
+           "settings": {
+            "featured-collection": "all"
+           }
+       },
+       "hero": {
+        "type": "hero"
+       },
+       "three-cards": {
+        "type": "three-cards"
+       },
+       "slide": {
+        "type": "slide"
+       },
+       "card": {
+        "type": "card"
+       }
+
+    },
+    "order": ["hero","featured-collection","three-cards","slide","card"]
+}

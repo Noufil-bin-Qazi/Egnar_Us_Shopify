@@ -1,0 +1,442 @@
+<!-- Include Flickity CSS -->
+{{ 'node_modules/flickity/css/flickity.css' | asset_url | stylesheet_tag }}
+
+<!-- Include Flickity JavaScript -->
+{{ 'node_modules/flickity/dist/flickity.pkgd.min.js' | asset_url | script_tag }}
+
+
+{% assign selected_variant = product.selected_or_first_available_variant %}
+<style>
+  body
+  {overflow-x: hidden;}  
+  /* Add your custom styles as needed */
+  .thumbnail-item {
+    text-align: center;
+    cursor: pointer;
+  }
+  .product--information { height: fit-content; }
+  
+  .panel {
+  padding: 0 2px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-bottom: solid 1px #f1f1f1;
+  }
+  h5.accordion-tab:after {
+  content: "\002B";
+  line-height: 13px;
+  font-size: 35px;
+  font-weight: 100;
+  float: right;
+  color: #4A5568;
+  margin-right: 20px;
+  transition: transform 0.5s;
+  transform-origin: 50% 60%;
+  }
+  .active:after {
+  transform: rotate(-225deg);
+  }
+
+</style>
+
+<div class="w-fit mt-5 mx-auto md:mx-10 md:overflow-x-hidden 2xl:mx-28 lg:mx-10 xl:mx-15 lg:pt-10">
+ <div class="flex flex-col lg:flex-row">
+
+    <!-- Productslideshow Carousel -->
+    <div class="w-full md:w-[740px] lg:w-[481px] xl:w-[740px] 2xl:w-[940px] flex flex-col md:flex-row">
+        <!-- Thumbnail Carousel -->
+        <div class="hidden xl:block w-[90px]">
+        
+        <div id="thumbnailCarousel" class="flex flex-col">
+            {% unless product.images.size > 0 %}
+            <!-- Placeholder images for Thumbnail Carousel -->
+            {% for i in (1..2) %}
+                <div class="thumbnail-item {% if i == 1 %}border border-gray-500{% endif %} items-center cursor-pointer w-[70px] h-[70px] overflow-hidden m-2.5" data-index="{{ forloop.index }}">{{ 'product-' | append: i | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}</div>
+            {% endfor %}
+            {% else %}
+            {% for image in product.images %}
+              {% assign index = forloop.index %}
+             <div class="thumbnail-item items-center {% if index == 1 %}border border-gray-500{% endif %} cursor-pointer w-[70px] h-[70px] overflow-hidden m-2.5" data-index="{{ index }}"><img src="{{ image.src | img_url: '100x100' }}" alt="{{ image.alt }}" class="w-full h-full object-cover"></div>
+            {% endfor %}
+            {% endunless %}
+        </div>
+        </div>
+
+        <!-- Flickity Main Carousel -->
+        <div class="w-full lg:w-[480px] xl:w-[601px] 2xl:w-[850px] px-5">
+        
+        <div id="mainCarousel" class="carousel">
+            {% unless product.images.size > 0 %}
+            <!-- Placeholder images for Main Carousel -->
+            {% for i in (1..2) %}
+                <div class="carousel-cell w-full">{{ 'product-' | append: i | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}</div>
+            {% endfor %}
+            {% else %}
+            {% for image in product.images %}
+                <div class="carousel-cell w-full 2xl:h-[810px]"><img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt }}" class="w-full h-full 2xl:w-[810px] object-cover"></div>
+            {% endfor %}
+            {% endunless %}
+        </div>
+        </div>
+    </div>
+    
+
+    
+    <!-- Product Details -->
+    <div class="product--information w-fit px-12 flex flex-col">
+        {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
+            <input type="hidden" name="id" value="{{ selected_variant.id }}">
+
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'vendor' %}
+                        <div class="my-3">
+                            <span class="text-xs text-gray-500">{{ product.vendor }}</span>
+                        </div>
+                    {% when 'title' %}
+                        <div class="my-3">
+                            <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
+                        </div>
+                    {% when 'price' %}
+                        <div class="my-3" id="price-{{ section.id }}">
+                            <span class="text-base text-gray-500 line-through">{{ selected_variant.compare_at_price | money }}</span>
+                            <span class="text-sm text-gray-400">{{ selected_variant.price | money }}</span>
+
+                            {% if selected_variant.price < selected_variant.compare_at_price %}
+                                <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
+                            {% endif %}
+                        </div>
+                    {% when 'variant_selector' %}
+                        <div class="my-3">
+                            {% unless product.has_only_default_variant %}
+                                <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
+                                    {% for option in product.options_with_values %}
+                                        <label class="text-[13px] font-body font-extralight" for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+
+                                        <div class="my-2">
+                                            <select 
+                                                name="options[{{ option.name | escape }}]" 
+                                                id="Option-{{ section.id }}-{{ forloop.index0 }}" 
+                                                class="w-full border py-3 px-3"
+                                            >
+                                                {% for value in option.values %}
+                                                    <option
+                                                        value="{{ value | escape }}"
+                                                        {% if option.selected_value == value %}
+                                                            selected="selected"
+                                                        {% endif %}
+                                                    >
+                                                        {{ value }}
+                                                    </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+
+                                        <script type="application/json">
+                                            {{ product.variants | json }}
+                                        </script>
+
+                                    {% endfor %}
+                                </variant-selector>
+                            {% endunless %}
+                        </div>
+
+                    {% when 'quantity' %}
+                        <div class="my-3">
+                            <label for="Quantity-{{ section.id }}">Quantity</label>
+
+                            <div class="my-2">
+                                <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-3 py-3">
+                            </div>
+                        </div>
+                
+
+                    {% when 'checkout_buttons' %}
+                        <div class="my-3">
+                            <button type="submit" name="add" class="w-full px-6 py-4 bg-gray-800 text-white text-xs uppercase font-body font-normal tracking-widest hover:bg-gray-900 rounded-sm my-2 transition-colors"
+                                {% if selected_variant.available == false %}
+                                    disabled
+                                {% endif %}
+                            >
+                                {% if selected_variant.available == false %}
+                                    Sold out
+                                {% else %}
+                                    Add to cart
+                                {% endif %}
+                            </button>
+                        </div>
+
+                    {% when 'description' %}
+                        <div class="">
+                            <div class="accordion-div">
+                              <h5 class="accordion-tab font-body font-extralight uppercase text-gray-700 py-5">Description</h5>
+                              <div class="panel">
+                                <div class="panel_description">
+                                <h6 class="py-5 font-body text-xs font-extralight text-gray-700 leading-6">{{ product.description }}</h6>
+                                </div>
+                              </div>
+                              <h5 class="accordion-tab font-body font-extralight uppercase text-gray-700 py-5">Shipping</h5>
+                              <div class="panel">
+                                <div class="panel_description">
+                                <h6 class="py-5 font-body text-xs font-extralight text-gray-700 leading-6">We can ship to virtually any address in the world. Note that there are restrictions on some products, and some products cannot be shipped to international destinations.
+
+                                When you place an order, we will estimate shipping and delivery dates for you based on the availability of your items and the shipping options you choose. Depending on the shipping provider you choose, shipping date estimates may appear on the shipping quotes page.
+                                
+                                Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.</h6>
+                                </div>
+                              </div>
+              
+                            </div>
+                        </div>
+                             
+                       
+                    {% else %}
+                        
+                {% endcase %}
+            {% endfor %}
+        {% endform %}
+    </div>
+    
+
+
+ </div>
+    
+    <!-- Related Products -->
+     <div class="w-full py-12 product--related">
+        
+     <div class="product-recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related">
+  {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+    {% if recommendations.intent == 'related' %}
+      <h2 class="text-2xl uppercase font-body font-thin text-center mb-9 md:mb-16">You may also like</h2>
+    {% elsif recommendations.intent == 'complementary' %}
+      <h2>Pair it with</h2>
+    {% endif %}
+
+    <ul class="product--related flex flex-col md:flex-row">
+      {%- for product in recommendations.products -%}
+        <li class="product w-full md:w-1/4 carousel-cell">
+          {% render 'product-card' product: product %}
+        </li>
+      {%- endfor -%}
+    </ul> 
+  {%- endif -%}
+</div>
+
+
+          
+          
+            
+     </div>
+
+     
+</div>
+
+
+
+<script>
+    //javascriptsidevariants
+    class VariantSelector extends HTMLElement {
+        constructor() {
+            super();
+            this.addEventListener("change", this.onVariantChange);
+        }
+
+        onVariantChange() {
+            this.getSelectedOptions();
+            this.getSelectedVariant();
+
+            if(this.currentVariant) {
+                this.updateURL();
+                this.updateFormID();
+                this.updatePrice();
+            }
+        }
+
+        getSelectedOptions() {
+            this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
+            console.log(this.options);
+        }
+
+        getVariantJSON() {
+            this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+            return this.variantData;
+        }
+
+        getSelectedVariant() {
+            this.currentVariant = this.getVariantJSON().find(
+                (variant) => {
+                    const findings = !variant.options.map(
+                        (option, index) => {
+                            return this.options[index] === option;
+                        }
+                    ).includes(false);
+
+                    if(findings) return variant;
+                }
+            );
+
+            console.log(this.currentVariant);
+        }
+
+        updateURL() {
+            if(!this.currentVariant) return;
+            window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+        }
+
+        updateFormID() {
+            const form_input = document.querySelector("#product-form").querySelector('input[name="id"]');
+            form_input.value = this.currentVariant.id;
+        }
+
+        updatePrice() {
+            fetch(`${this.dataset.url}?variant=${this.currentVariant.id}&section_id=${this.dataset.section}`)
+            .then((response) => response.text())
+            .then((responseText) => {
+                const id = `price-${this.dataset.section}`;
+                const html = new DOMParser().parseFromString(responseText, 'text/html');
+
+                const oldPrice = document.getElementById(id);
+                const newPrice = html.getElementById(id);
+
+                if(oldPrice && newPrice) oldPrice.innerHTML = newPrice.innerHTML;
+            });
+        }
+    }
+
+    customElements.define("variant-selector", VariantSelector);
+</script>
+
+<script>
+//accordiontabs
+var acc = document.getElementsByClassName("accordion-tab");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+acc[i].addEventListener("click", function() {
+this.classList.remove("active");
+var panel = this.nextElementSibling;
+if (panel.style.maxHeight){
+  panel.style.maxHeight = null;
+} else {
+  let active = document.querySelectorAll(".accordion-div .accordion-tab.active");
+  for(let j = 0; j < active.length; j++){
+    active[j].classList.remove("active");
+    active[j].nextElementSibling.style.maxHeight = null;
+  }
+  this.classList.toggle("active");
+  panel.style.maxHeight = panel.scrollHeight + "px";
+}
+});
+}
+
+</script>
+
+
+<script>
+  // Initialize Flickity main carousel
+  var mainCarousel = new Flickity('#mainCarousel', {
+    // Flickity options
+    cellSelector: '.carousel-cell',
+    contain: true,
+    pageDots: false,
+    prevNextButtons: false,
+    wrapAround: true
+  });
+
+  // Initialize Thumbnail Carousel
+  var thumbnailCarousel = document.getElementById('thumbnailCarousel');
+  thumbnailCarousel.addEventListener('click', function (event) {
+     // Find the closest ancestor element with the class 'thumbnail-item'
+    var target = event.target.closest('.thumbnail-item');
+    // Check if a 'thumbnail-item' element is found
+    if (target) {
+        // Remove border from all thumbnails
+        var thumbnails = thumbnailCarousel.getElementsByClassName('thumbnail-item');
+        for (var i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].classList.remove('border', 'border-gray-500'); // Adjust the border color as needed
+        }
+       // Get the value of the 'data-index' attribute from the clicked 'thumbnail-item'
+       var index = target.getAttribute('data-index') - 1; // Subtract 1 as Liquid uses 1-based index
+       // Select the corresponding index in the Main Carousel (mainCarousel)
+       mainCarousel.select(index);
+       // Add border to the clicked thumbnail
+       target.classList.add('border', 'border-gray-500');
+    }
+  });
+
+  
+</script>
+
+<script>
+    const handleIntersection = (entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+
+    observer.unobserve(productRecommendationsSection);
+
+    const url = productRecommendationsSection.dataset.url;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+        const html = document.createElement('div');
+        html.innerHTML = text;
+        const recommendations = html.querySelector('.product-recommendations');
+
+        if (recommendations && recommendations.innerHTML.trim().length) {
+          productRecommendationsSection.innerHTML = recommendations.innerHTML;
+        }
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  };
+
+  const productRecommendationsSection = document.querySelector('.product-recommendations');
+  const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+
+  observer.observe(productRecommendationsSection);
+</script>
+
+{% schema %}
+    {
+        "name": "Product",
+        "blocks": [
+            {
+                "type": "vendor",
+                "name": "Vendor",
+                "limit": 1
+            },
+            {
+                "type": "title",
+                "name": "Title",
+                "limit": 1
+            },
+            {
+                "type": "price",
+                "name": "Price",
+                "limit": 1
+            },
+            {
+                "type": "variant_selector",
+                "name": "Variant Selector",
+                "limit": 1
+            },
+            {
+                "type": "quantity",
+                "name": "Quantity",
+                "limit": 1
+            },
+            {
+                "type": "description",
+                "name": "Description",
+                "limit": 1
+            },
+            {
+                "type": "checkout_buttons",
+                "name": "Checkout Buttons",
+                "limit": 1
+            }
+        ]
+    }
+    {% endschema %}

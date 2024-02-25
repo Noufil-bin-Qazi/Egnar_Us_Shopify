@@ -1,0 +1,143 @@
+<!-- CARD SECTION two card Banners,two hero headings,subheadings,two hero button -->
+
+<section class="h-fit pt-2.5 flex flex-col md:flex-row">
+    <!--Card one --> 
+    {% if section.settings.card_image1 != blank %}
+        {% assign card_image1_url = section.settings.card_image1 | img_url: 'master' %}
+      {% else %}
+        {% assign card_image1_url = 'https://asrv.com/cdn/shop/files/zach_mindset_1500x.png' %}
+    {% endif %}
+    <div class="md:w-1/3 w-full bg-cover bg-center md:pt-[533px] pb-10" style="background-image: url('{{ card_image1_url }}');">
+  
+    <h1 class="font-body text-white font-extralight uppercase text-center text-shadow text-3xl mb-6 md:mx-20">{{ section.settings.card1_heading }}</h1> <!-- Set h1 font size to 30px -->
+    
+  
+    <div class="SectionHeader__ButtonWrapper">
+     <div class="ButtonGroup flex flex-col justify-center md:flex-row">
+      <a href="{{ section.settings.card1button_href }}" class="bg-white flex-shrink-0 hover:bg-gray-200 font-body font-light text-center text-xs text-black tracking-[.2rem] uppercase mb-3 py-4 px-7 mx-16">{{ section.settings.card1btntext }}</a>
+      
+     </div>
+    </div>
+
+   
+  </div>
+
+  <!--Card two --> 
+  {% if section.settings.card_image2 != blank %}
+    {% assign card_image2_url = section.settings.card_image2 |  img_url: 'master'  %}
+  {% else %}
+    {% assign card_image2_url = 'https://asrv.com/cdn/shop/files/mike-secondflight_1500x.jpg' %}  
+    
+  {% endif %}
+  <div class="md:w-1/3 md:ml-2.5 w-full bg-cover bg-center pt-[533px] pb-10" style="background-image: url('{{ card_image2_url }}');">
+    <h1 class="font-body text-white font-extralight uppercase text-center text-shadow text-3xl mb-6 md:mx-20">{{ section.settings.card2_heading }}</h1> <!-- Set h1 font size to 30px -->
+    
+ 
+    <div class="SectionHeader__ButtonWrapper">
+     <div class="ButtonGroup flex flex-col justify-center md:flex-row">
+     <a href="{{ section.settings.card2button_href }}" class="bg-white flex-shrink-0 hover:bg-gray-200 font-body font-light text-center text-xs text-black tracking-[.2rem] uppercase mb-3 py-4 px-7 mx-16">{{ section.settings.card2btntext }}</a>
+     
+    </div>
+  </div>
+  </div>
+  
+  <!--Card three --> 
+  {% if section.settings.card_image3 != blank %}
+    {% assign card_image3_url = section.settings.card_image3 |  img_url: 'master'  %}
+  {% else %}
+    {% assign card_image3_url = 'https://asrv.com/cdn/shop/files/mike-secondflight_1500x.jpg' %}  
+    
+  {% endif %}
+  <div class="md:w-1/3 md:ml-2.5 w-full bg-cover bg-center pt-[533px] pb-10" style="background-image: url('{{ card_image3_url }}');">
+  <h1 class="font-body text-white font-extralight uppercase text-center text-shadow text-3xl mb-6 md:mx-20">{{ section.settings.card3_heading }}</h1> <!-- Set h1 font size to 30px -->
+  
+
+  <div class="SectionHeader__ButtonWrapper">
+   <div class="ButtonGroup flex flex-col justify-center md:flex-row">
+   <a href="{{ section.settings.card2button_href }}" class="bg-white flex-shrink-0 hover:bg-gray-200 font-body font-light text-center text-xs text-black tracking-[.2rem] uppercase mb-3 py-4 px-7 mx-16">{{ section.settings.card3btntext }}</a>
+   
+  </div>
+  </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Three Cards",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "card_image1",
+      "label": "Select Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_image2",
+      "label": "Select Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_image3",
+      "label": "Select Background Image"
+    },
+    {
+       "type": "text",
+       "label": "Card 1 Heading",
+       "id": "card1_heading",
+       "default": "Tops"
+
+    },
+    {
+       "type": "text",
+       "label": "Card 2 Heading",
+       "id": "card2_heading",
+       "default": "Bottoms"
+
+    },
+    {
+       "type": "text",
+       "label": "Card 3 Heading",
+       "id": "card3_heading",
+       "default": "Accessories"
+
+    },
+    {
+      "type": "text",
+      "label": "Card 1 Button Link",
+      "id": "card1button_href",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "label": "Card 1 Button Text",
+      "id": "card1btntext",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "label": "Card 2 Button Link",
+      "id": "card2button_href",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "label": "Card 2 Button Text",
+      "id": "card2btntext",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "label": "Card 3 Button Link",
+      "id": "card3button_href",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "label": "Card 3 Button Text",
+      "id": "card3btntext",
+      "default": "Shop"
+    }
+  ]
+}
+{% endschema %}

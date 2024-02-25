@@ -1,0 +1,114 @@
+<!-- Include Flickity CSS -->
+{{ 'node_modules/flickity/css/flickity.css' | asset_url | stylesheet_tag }}
+
+<!-- Include Flickity JavaScript -->
+{{ 'node_modules/flickity/dist/flickity.pkgd.min.js' | asset_url | script_tag }}
+
+<style>
+    
+    .flickity-prev-next-button.next {
+        right: -30px !important;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .flickity-prev-next-button.previous {
+  left: -30px !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.flickity-prev-next-button .arrow {
+  fill: none !important;
+  
+}
+
+.flickity-prev-next-button.next{
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 5l7 7-7 7'></path></svg>") no-repeat center center;
+    background-size: 24px !important;
+   
+}
+.flickity-prev-next-button.previous {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 19l-7-7 7-7'></path></svg>") no-repeat center center;
+  background-size: 24px !important;
+}
+</style>
+<section class="py-20">
+    
+    
+        
+        {% assign collection_handle = section.settings.chosen_collection %}
+        
+        {% if collection_handle %}
+                {% assign collection = collections[collection_handle] %}
+                {% if collection %}
+                        {% comment %}
+                            debugging: <p>Collection ID: {{ collection.id }}</p>
+                            <p>Collection Title: {{ collection.title }}</p>
+                            <p>Number of Products: {{ collection.products.size }}</p>
+                        {% endcomment %} 
+                      <h1 class="text-2xl uppercase font-body font-thin text-center mb-9 md:mb-16">{{ collection.title }}</h1>
+                        {% if collection.products.size > 0 %}
+                            <div class="main-carousel mb-5 md:mx-20">
+                            {% for product in collection.products %}
+                                <div class="carousel-cell h-fit md:w-1/4 pb-10">
+                                {% render 'product-card', product: product %}
+                                </div>
+                            {% endfor %} 
+                            </div>
+                        
+                        {% else %}
+                        <p>No products found in the selected collection.</p>
+                        {% endif %}
+                        
+                {% else %}
+                    <p>Collection not found.</p>
+                {% endif %}
+        {% else %}
+        <p>Collection handle not set.</p>
+        {% endif %}
+    
+  
+    
+
+    <div class="flex justify-center items-center">
+      <a href="{{ collection.url }}" class="bg-black hover:bg-gray-800 font-body font-light text-center text-xs text-white uppercase mb-3 py-4 px-14">View All</a>
+    </div>
+    
+</section>
+
+
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    var carousels = document.querySelectorAll('.main-carousel');
+
+    carousels.forEach(function (elem) {
+        new Flickity(elem, {
+            // Flickity options go here
+            cellAlign: 'left',
+            pageDots: false,
+            contain: true
+        });
+    });
+});
+  
+  
+</script>
+
+{% schema %}
+    {
+      "name": "Featured Collection",
+      "settings": [
+        {
+        "type": "collection",
+        "label": "Choose Collection",
+        "id": "chosen_collection",
+        "info": "Select the collection to display in the slider.",
+        "default": "test-collection"
+        }
+      ],
+      "presets": [
+        {
+            "name": "Featured Collection"
+        }
+      ]
+      
+    }
+{% endschema %}

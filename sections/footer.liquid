@@ -1,0 +1,110 @@
+<!-- footer.liquid -->
+<style>
+  .icon-white { 
+    color: #ffffff !important;
+    }
+</style>
+<footer class="pt-16 bg-black">
+  <div class="px-14 md:px-20 flex flex-col md:flex-row mx-auto py-8 gap-4">
+
+    <!-- Column 1 -->
+    <div class="w-full md:w-56 px-10 mb-10">
+      {% if section.settings.footer_menu_1 %}
+        {% assign menu1 = linklists[section.settings.footer_menu_1] %}
+        <h3 class="text-sm uppercase font-body text-white font-normal mb-4 text-center md:text-left">{{ menu1.title }}</h3>
+        <ul>
+          {% for link in menu1.links %}
+            <li class="text-center md:text-left"><a class="text-sm text-gray-300 hover:opacity-60 uppercase text-center md:text-left font-body font-extralight" href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <!-- Column 2 -->
+    <div class="w-full md:w-56 px-10 mb-10">
+      {% if section.settings.footer_menu_2 %}
+        {% assign menu2 = linklists[section.settings.footer_menu_2] %}
+        <h3 class="text-sm text-center text-white md:text-left uppercase font-body font-normal mb-4">{{ menu2.title }}</h3>
+        <ul>
+          {% for link in menu2.links %}
+            <li class="text-center md:text-left"><a class="text-sm text-gray-300 hover:opacity-60 uppercase text-center md:text-left font-body font-extralight" href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <!-- Column 3 -->
+    <div class="w-full md:w-96 px-10">
+      <!-- Additional content for Column 3 -->
+      <div class="subscribe-form flex flex-col items-left">
+      <h3 class="text-sm text-white uppercase font-body font-normal text-center md:text-left mb-4">Subscribe</h3>
+      <p class="text-sm text-gray-300 font-body font-extralight text-center md:text-left mb-4">Sign up for 15% off your first purchase.</p>
+      <form action="/subscribe" method="post" class="flex flex-col md:flex-row items-center gap-5 md:gap-1">
+      <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full md:w-1/2 font-body font-extralight text-sm border p-2.5 focus:outline-none">
+      <button type="submit" class="w-full md:w-1/2 font-body font-light text-sm uppercase tracking-widest bg-white bg-opacity-10 text-white p-3 rounded-[1px] hover:bg-gray-800 focus:outline-none">Subscribe</button>
+      </form>
+      </div>
+    </div>
+
+    <!-- Column 4 -->
+    
+      <!-- Additional content for Column 4 -->
+    <div class="w-full md:w-96 px-10">
+      <h3 class="text-sm text-center md:text-left font-body text-white font-normal uppercase mb-4">Connect</h3>
+      <!-- Add your social icons with links -->
+      <div class="flex justify-center md:justify-start gap-8 mb-5">
+        <a href="#"><i class="icon-white">{% render 'facebook' %}</i></a>
+        <a href="#"><i class="icon-white">{% render 'twitter' %}</i></a>
+        <a href="#"><i class="icon-white">{% render 'instagram' %}</i></a>
+        <a href="#"><i class="icon-white">{% render 'youtube' %}</i></a>
+        <a href="#"><i class="icon-white">{% render 'tiktok' %}</i></a>
+        <a href="#"><i class="icon-white">{% render 'linkedin' %}</i></a>
+      </div>
+      <!-- Add a "Download the App" button -->
+      <button class="w-full md:w-56 bg-white bg-opacity-10 text-white text-sm font-body font-light uppercase tracking-widest py-3 px-5  hover:bg-gray-800 focus:outline-none">Download the App</button>
+    </div>
+    
+
+    <!-- Column 5 -->
+    <div class="w-full md:w-56 px-10 flex items-center md:mb-10 md:ml-10">
+      <!-- Additional content for Column 5 -->
+      <img class="mt-12" width="120" height="33" src="{{ section.settings.footer_img |  img_url }}" alt="">
+    </div>
+
+  </div>
+
+  <div class="--copyright w-full text-center py-5">
+    <a href="" class="font-body font-extralight text-sm text-gray-500">COPYRIGHT © 2024 · (ASRV)</a>
+  </div>
+
+</footer>
+
+
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "label": "Footer Menu 1",
+      "id": "footer_menu_1"
+    },
+    {
+      "type": "link_list",
+      "label": "Footer Menu 2",
+      "id": "footer_menu_2"
+    },
+    {
+        "type": "image_picker",
+        "label": "select image",
+        "id": "footer_img"
+    }
+    
+  ],
+  "presets": [
+    
+  ]
+}
+{% endschema %}
+
