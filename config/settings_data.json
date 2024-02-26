@@ -32,22 +32,10 @@
         "settings": {
         }
       },
-      "15418052891816840908": {
-        "type": "shopify:\/\/apps\/expo-extra-product-options\/blocks\/expo-embed\/07e9c3c4-4d7c-4540-8004-198ebcc5815d",
+      "316487575649303945": {
+        "type": "shopify:\/\/apps\/easify-product-options\/blocks\/app-embed-block\/d2288b18-c1ba-42f5-b3b3-26c75c8820bf",
         "disabled": false,
         "settings": {
-          "swatch_width": 40,
-          "swatch_height": 40,
-          "swatch_selected_border_width": 1,
-          "swatch_selected_border_color": "#000000",
-          "swatch_zoom_size": 200,
-          "button_bg_color": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
-          "button_border_color": "#000000",
-          "button_selected_bg_color": "linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 100%)",
-          "button_selected_text_color": "#ffffff",
-          "button_selected_border_color": "#000000",
-          "hide_extra_cost": false,
-          "extra_subtotal_text_color": "#000000"
         }
       }
     }
