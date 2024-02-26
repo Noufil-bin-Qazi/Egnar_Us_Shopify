@@ -140,13 +140,13 @@
         "feature_text_mt": 4,
         "feature_icon_size": 42,
         "feature_icon_size_mobile": 42,
-        "feature_bg": "#FFFFFF",
+        "feature_bg": "#ffffff",
         "feature_border_color": "#000000",
         "feature_shadow_color": "#000000",
         "feature_heading_color": "#000000",
         "feature_text_color": "#000000",
         "feature_icon_color": "#000000",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "background_gradient": "",
         "border_color": "#000000",
         "margin_top": 0,
@@ -163,17 +163,6 @@
     },
     "17089235137f41fd77": {
       "type": "apps",
-      "blocks": {
-        "centous_testimony_reviews_app_block_hn4gQk": {
-          "type": "shopify:\/\/apps\/centous-testimony-reviews\/blocks\/app-block\/a52dc9ba-1b3e-4187-a5db-b20e529cc4c6",
-          "settings": {
-            "cta-embedded-code": "4631001"
-          }
-        }
-      },
-      "block_order": [
-        "centous_testimony_reviews_app_block_hn4gQk"
-      ],
       "settings": {
       }
     },
@@ -195,6 +184,60 @@
       ],
       "settings": {
       }
+    },
+    "1708924935026ad9e2": {
+      "type": "apps",
+      "blocks": {
+        "testimonials_slider_carousel_cards_widget_block_9jfPqG": {
+          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/carousel-cards-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
+          "settings": {
+            "themeId": "light",
+            "autoscroll": true,
+            "configNumber": "3"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_slider_carousel_cards_widget_block_9jfPqG"
+      ],
+      "settings": {
+      }
+    },
+    "170892495319d70363": {
+      "type": "apps",
+      "blocks": {
+        "testimonials_slider_grid_widget_block_Vw9xrJ": {
+          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/grid-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
+          "settings": {
+            "themeId": "light",
+            "configNumber": "3"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_slider_grid_widget_block_Vw9xrJ"
+      ],
+      "settings": {
+      }
+    },
+    "1708925001e340783c": {
+      "type": "apps",
+      "blocks": {
+        "testimonials_slider_slider_widget_block_WRQqpm": {
+          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/slider-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
+          "settings": {
+            "themeId": "light",
+            "autoscroll": true,
+            "showAvatar": true,
+            "configNumber": "3"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_slider_slider_widget_block_WRQqpm"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -207,6 +250,9 @@
     "video_section",
     "ss_feature_1_RTi4CH",
     "17089235137f41fd77",
-    "170892140891ba678c"
+    "170892140891ba678c",
+    "1708924935026ad9e2",
+    "170892495319d70363",
+    "1708925001e340783c"
   ]
 }
