@@ -3,11 +3,12 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "heading_hero": "Winter Drop 2",
-        "subheading_hero": "RELEASING THIS SUNDAY DOWNLOAD",
+        "background_image": "shopify:\/\/shop_images\/Wide_2000x1000_fe850b3d-a82a-487f-81c6-50f069c15bfe.png",
+        "heading_hero": "summer drop 1.0",
+        "subheading_hero": "",
         "button1_href": "#",
-        "firstbtntext": "BUTTON Text 1",
-        "button2_href": "#",
+        "firstbtntext": "Shop Collection",
+        "button2_href": "",
         "secondbtntext": "BUTTON Text 2"
       }
     },
@@ -20,15 +21,24 @@
     "three-cards": {
       "type": "three-cards",
       "settings": {
+        "card_image1": "shopify:\/\/shop_images\/collection-img-02.png",
+        "card_image2": "shopify:\/\/shop_images\/collection-img-03.png",
+        "card_image3": "shopify:\/\/shop_images\/Collection-img-1.png",
         "card1_heading": "Tops",
         "card2_heading": "Bottoms",
         "card3_heading": "Accessories",
         "card1button_href": "#",
-        "card1btntext": "Shop",
+        "card1btntext": "View Collection",
         "card2button_href": "#",
-        "card2btntext": "Shop",
+        "card2btntext": "View Collection",
         "card3button_href": "#",
-        "card3btntext": "Shop"
+        "card3btntext": "View Collection"
+      }
+    },
+    "featured_collection_pjFRcf": {
+      "type": "featured-collection",
+      "settings": {
+        "chosen_collection": "best-seller"
       }
     },
     "slide": {
@@ -67,6 +77,7 @@
     "hero",
     "featured-collection",
     "three-cards",
+    "featured_collection_pjFRcf",
     "slide",
     "card",
     "video_section"
