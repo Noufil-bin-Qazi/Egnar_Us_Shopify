@@ -28,6 +28,12 @@
     "blocks": {
       "8170924994765517213": {
         "type": "shopify:\/\/apps\/tepo-product-options\/blocks\/app-embed\/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "7916451724185839711": {
+        "type": "shopify:\/\/apps\/avis-product-options\/blocks\/avisplus-product-options\/e076618e-4c9c-447f-ad6d-4f1577799c29",
         "disabled": false,
         "settings": {
         }
