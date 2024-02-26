@@ -37,10 +37,10 @@
         "disabled": false,
         "settings": {
           "enable": false,
-          "alignment": "left",
+          "alignment": "center",
           "swatch_location": "After price",
           "switch_on_hover": true,
-          "preselect_variant": false
+          "preselect_variant": true
         }
       }
     }
