@@ -43,6 +43,7 @@
     },
     "slide": {
       "type": "slide",
+      "disabled": true,
       "settings": {
         "slide_text": "RELEASING THIS SUNDAY DOWNLOAD",
         "slidebutton_href": "#",
@@ -51,6 +52,7 @@
     },
     "card": {
       "type": "card",
+      "disabled": true,
       "settings": {
         "card1_heading": "Mindset newsletter",
         "card2_heading": "ASRV Second Flight",
