@@ -37,5 +37,10 @@
   "presets": {
     "Default": {
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".tcustomizer-field__heading{font-family: Prompt; font-size: small; font-weight: 200;}"
+    ]
   }
 }
