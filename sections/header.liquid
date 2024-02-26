@@ -155,13 +155,13 @@
               @mouseenter="open = true" 
               @mouseleave="open = false" 
               @click.away="open = false" 
-              class="absolute z-10 transform px-2 w-screen sm:px-0 lg:ml-0 md:-translate-x-[875px] border-gray-500 border-t-[0.5px]" 
+              class="absolute left-0 z-10 transform px-2 lg:w-[1120px] xl:w-[1980px] sm:px-0 lg:ml-0 lg:-translate-x-[625px] xl:-translate-x-[950px] border-gray-500 border-t-[0.5px]" 
               x-cloak>
               
-              <div class="shadow-lg  ring-black ring-opacity-5 overflow-hidden bg-black">
-                <div class="relative grid grid-cols-5 w-fit flex-col gap-20 py-2">
+              <div class="shadow-lg pl-24 xl:pr-32 ring-black ring-opacity-5 overflow-hidden bg-black">
+                <div class="relative grid grid-cols-5 w-fit xl:mr-44 flex-col lg:gap-10 xl:gap-20 py-2">
                   {% for childlink in link.links %}
-                   <div class="--Megamenuinner w-fit mx-10 my-5">
+                   <div class="--Megamenuinner w-fit lg:mx-7 xl:mx-10 my-5">
                       <a href="{{ childlink.url }}" class="w-full font-body uppercase font-normal text-white text-sm items-start">  
                          {{ childlink.title }}
                       </a>

@@ -5,7 +5,7 @@
 {{ 'node_modules/flickity/dist/flickity.pkgd.min.js' | asset_url | script_tag }}
 
 <style>
-    
+   
     .flickity-prev-next-button.next {
         right: -30px !important;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -29,6 +29,17 @@
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 19l-7-7 7-7'></path></svg>") no-repeat center center;
   background-size: 24px !important;
 }
+@media only screen and (max-width: 600px) {
+    .flickity-prev-next-button.next {
+        right: 5px !important;
+        background-size: 16px !important;
+    }
+    .flickity-prev-next-button.previous {
+  left: 5px !important;
+  background-size: 16px !important;
+  
+}
+  } 
 </style>
 <section class="py-20">
     
