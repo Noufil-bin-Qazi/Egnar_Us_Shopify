@@ -1,27 +1,74 @@
 {
-    "sections": {
-        "template": {
-            "type": "template-product",
-            "blocks": {
-                "vendor": { "type": "vendor" },
-                "title": { "type": "title" },
-                "price": { "type": "price" },
-                "variant_selector": { "type": "variant_selector" },
-                "quantity": { "type": "quantity" },
-                "checkout_buttons": { "type": "checkout_buttons" },
-                "description": { "type": "description" }
-                
-            },
-            "block_order": [
-                "vendor",
-                "title",
-                "price",
-                "variant_selector",
-                "quantity",
-                "checkout_buttons",
-                "description"
-            ]
+  "sections": {
+    "template": {
+      "type": "template-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+          }
+        },
+        "quantity": {
+          "type": "quantity",
+          "settings": {
+          }
+        },
+        "checkout_buttons": {
+          "type": "checkout_buttons",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
         }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_selector",
+        "quantity",
+        "checkout_buttons",
+        "description"
+      ],
+      "settings": {
+      }
     },
-    "order": ["template"]
+    "17089218146f36c19b": {
+      "type": "apps",
+      "blocks": {
+        "rivyo_product_reviews_wc_product_review_badge_dqjFUK": {
+          "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-product-review-badge\/f1860e84-309f-40ca-a2df-188435a622f3",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "rivyo_product_reviews_wc_product_review_badge_dqjFUK"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "template",
+    "17089218146f36c19b"
+  ]
 }
