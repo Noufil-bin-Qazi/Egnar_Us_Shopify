@@ -65,12 +65,8 @@
     "video_section": {
       "type": "video_section",
       "settings": {
-        "type": "url",
-      "id": "video_selected",
-      "label": "Video URL",
-      "info": "Enter the URL of the video to display in the section."
+        "video_selected": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7a8d917537ca485b9373f04fad1b1744.mp4"
       }
-
     }
   },
   "order": [
