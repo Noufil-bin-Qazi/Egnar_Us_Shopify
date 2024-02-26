@@ -51,6 +51,21 @@
       "settings": {
       }
     },
+    "170895019054dc777d": {
+      "type": "apps",
+      "blocks": {
+        "swatch_king_variants_options_product_swatch_block_y7imR8": {
+          "type": "shopify:\/\/apps\/swatch-king-variants-options\/blocks\/product-swatch-block\/0850b1e4-ba30-4a0d-a8f4-f9a939276d7d",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "swatch_king_variants_options_product_swatch_block_y7imR8"
+      ],
+      "settings": {
+      }
+    },
     "1708939365d21d87ac": {
       "type": "apps",
       "settings": {
@@ -79,6 +94,7 @@
   },
   "order": [
     "template",
+    "170895019054dc777d",
     "1708939365d21d87ac",
     "17089218146f36c19b",
     "1708921871374ebb86",
