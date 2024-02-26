@@ -53,33 +53,16 @@
     },
     "17089218146f36c19b": {
       "type": "apps",
-      "blocks": {
-        "rivyo_product_reviews_wc_product_review_badge_dqjFUK": {
-          "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-product-review-badge\/f1860e84-309f-40ca-a2df-188435a622f3",
-          "disabled": true,
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "rivyo_product_reviews_wc_product_review_badge_dqjFUK"
-      ],
       "settings": {
       }
     },
     "1708921871374ebb86": {
       "type": "apps",
-      "blocks": {
-        "rivyo_product_reviews_wc_review_section_dGjTzb": {
-          "type": "shopify:\/\/apps\/rivyo-product-reviews\/blocks\/wc-review-section\/f1860e84-309f-40ca-a2df-188435a622f3",
-          "disabled": true,
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "rivyo_product_reviews_wc_review_section_dGjTzb"
-      ],
+      "settings": {
+      }
+    },
+    "170893921726ff9430": {
+      "type": "apps",
       "settings": {
       }
     }
@@ -87,6 +70,7 @@
   "order": [
     "template",
     "17089218146f36c19b",
-    "1708921871374ebb86"
+    "1708921871374ebb86",
+    "170893921726ff9430"
   ]
 }
