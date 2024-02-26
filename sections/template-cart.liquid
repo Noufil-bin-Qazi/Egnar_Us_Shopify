@@ -23,18 +23,18 @@
                     </thead>
                     <tbody>
                         {% for item in cart.items %}
-                            <tr class="table-row">                         
+                            <tr class="table-row" data-mczr="{% if item.properties._mczr_designId %}item-{{ item.properties._mczr_designId }}{% else %}item-not-mczr{% endif %}">                         
                                 <td class="py-8 px-2 flex flex-row justify-start">
                                     <a href="{{ item.url }}">
-                                        {% if item.image %}
-                                            <img src="{{ item.image | img_url: 'master' }}" alt="{{ item.title | escape }}" class="w-32 h-32 object-cover">
+                                        {% if item.image or item.properties._mczr_designId %}
+                                            <img src="{{ item.image | img_url: 'master' }}" alt="{{ item.title | escape }}" class="w-32 h-32 object-cover" data-mczr="{% if item.properties._mczr_designId %}item_image-{{ item.properties._mczr_designId }}{% else %}item_image-not-mczr{% endif %}">
                                         {% else %}
                                             {{ 'product-1' | placeholder_svg_tag: 'w-32 h-32 object-cover' }}
                                         {% endif %}
                                         <div class="flex flex-col p-8">
-                                            <a href="{{ item.url }}" class="my-1 text-sm font-body font-extralight">{{ item.product.title | truncatewords: 9 }}</a>
-                                            <span class="text-xs font-body font-extralight text-gray-500 my-1">{{ item.variant.title }}</span>
-                                            <span class="text-xs font-body font-extralight">{{ item.line_price | money }}</span>
+                                            <a href="{{ item.url }}" class="my-1 text-sm font-body font-extralight" data-mczr="{% if item.properties._mczr_designId %}item_product_title-{{ item.properties._mczr_designId }}{% else %}item_product_title-not-mczr{% endif %}">{{ item.product.title | truncatewords: 9 }}</a>
+                                            <span class="text-xs font-body font-extralight text-gray-500 my-1" data-mczr="{% if item.properties._mczr_designId %}item_variant_title-{{ item.properties._mczr_designId }}{% else %}item_variant_title-not-mczr{% endif %}">{{ item.variant.title }}</span>
+                                            <span class="text-xs font-body font-extralight" data-mczr="{% if item.properties._mczr_designId %}item_final_line_price-{{ item.properties._mczr_designId }}{% else %}item_final_line_price-not-mczr{% endif %}">{{ item.line_price | money }}</span>
                                         </div>
                                         
                                     </a>
@@ -52,7 +52,7 @@
                                     </div>
                                     
                                 </td>
-                                <td class="thirdcolumn px-6 text-gray-500 text-sm font-body font-extralight">
+                                <td class="thirdcolumn px-6 text-gray-500 text-sm font-body font-extralight" data-mczr="{% if item.properties._mczr_designId %}item_final_line_price-{{ item.properties._mczr_designId }}{% else %}item_final_line_price-not-mczr{% endif %}">
                                    {{ item.line_price | money }} 
                                 </td>
                             </tr>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="w-full my-4 md:w-80">
-                        <h3 class="text-sm text-right text-gray-500 font-body font-extralight">Total: {{ cart.total_price | money }}</h3>
+                        <h3 class="text-sm text-right text-gray-500 font-body font-extralight" data-mczr="cart_total_price">Total: {{ cart.total_price | money }}</h3>
 
                         <div class="my-3">
                             <h3 class="mb-2 text-xs text-right text-gray-500 font-body font-extralight">Shipping & taxes calculated at checkout</h3>
@@ -115,3 +115,4 @@
     ]
 }
 {% endschema %}
+{% render "cart-script.mczr" %}
