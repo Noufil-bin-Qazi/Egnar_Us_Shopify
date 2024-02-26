@@ -40,7 +40,9 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".tcustomizer-field__heading{font-family: Prompt; font-size: small; font-weight: 200;}"
+      ".tcustomizer-field__heading {font-family: Prompt; font-size: small; font-weight: 200;}",
+      ".tcustomizer__image {border: 1px solid #e6e6e6;}",
+      ".tcustomizer__image--small{width: 76.5px; height: 76.5px;}"
     ]
   }
 }
