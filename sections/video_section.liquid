@@ -1,0 +1,23 @@
+{% assign video_link = section.settings.video_selected %}
+<video id="myVideo" class="w-screen h-screen object-cover" autoplay muted>
+  <source src="{{ video_link }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<script>
+
+
+</script>
+{% schema %}
+{
+  "name": "video_section",
+  "settings": [
+    
+    {
+      "type": "url",
+      "id": "video_selected",
+      "label": "Video URL",
+      "info": "Enter the URL of the video to display in the section."
+    }
+  ]
+}
+{% endschema %}

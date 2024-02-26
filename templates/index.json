@@ -51,6 +51,16 @@
         "card2button_href": "#",
         "card2btntext": "Button Text 2"
       }
+    },
+    "video_section": {
+      "type": "video_section",
+      "settings": {
+        "type": "url",
+      "id": "video_selected",
+      "label": "Video URL",
+      "info": "Enter the URL of the video to display in the section."
+      }
+
     }
   },
   "order": [
@@ -58,6 +68,7 @@
     "featured-collection",
     "three-cards",
     "slide",
-    "card"
+    "card",
+    "video_section"
   ]
 }
