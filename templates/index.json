@@ -70,6 +70,22 @@
         "video_selected": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7a8d917537ca485b9373f04fad1b1744.mp4"
       }
     },
+    "17089224275f1c4a05": {
+      "type": "apps",
+      "blocks": {
+        "centous_testimony_reviews_app_block_aMgTKQ": {
+          "type": "shopify:\/\/apps\/centous-testimony-reviews\/blocks\/app-block\/a52dc9ba-1b3e-4187-a5db-b20e529cc4c6",
+          "settings": {
+            "cta-embedded-code": ""
+          }
+        }
+      },
+      "block_order": [
+        "centous_testimony_reviews_app_block_aMgTKQ"
+      ],
+      "settings": {
+      }
+    },
     "170892140891ba678c": {
       "type": "apps",
       "blocks": {
@@ -98,6 +114,7 @@
     "slide",
     "card",
     "video_section",
+    "17089224275f1c4a05",
     "170892140891ba678c"
   ]
 }
