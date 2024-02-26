@@ -28,19 +28,8 @@
     "blocks": {
       "8170924994765517213": {
         "type": "shopify:\/\/apps\/tepo-product-options\/blocks\/app-embed\/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
-        "disabled": true,
-        "settings": {
-        }
-      },
-      "17920835415960095625": {
-        "type": "shopify:\/\/apps\/swatch-king-variants-options\/blocks\/variant-swatch-king\/0850b1e4-ba30-4a0d-a8f4-f9a939276d7d",
         "disabled": false,
         "settings": {
-          "enable": false,
-          "alignment": "center",
-          "swatch_location": "After price",
-          "switch_on_hover": true,
-          "preselect_variant": true
         }
       }
     }
