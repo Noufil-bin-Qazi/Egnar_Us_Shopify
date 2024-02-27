@@ -7,13 +7,14 @@
         "heading_hero": "summer drop 1.0",
         "subheading_hero": "",
         "button1_href": "#",
-        "firstbtntext": "Shop Collection",
-        "button2_href": "",
-        "secondbtntext": "BUTTON Text 2"
+        "firstbtntext": "Shop Collection"
       }
     },
     "featured-collection": {
       "type": "featured-collection",
+      "custom_css": [
+        "{background-color: #9b9b9b;}"
+      ],
       "settings": {
         "chosen_collection": "best-sellers"
       }
