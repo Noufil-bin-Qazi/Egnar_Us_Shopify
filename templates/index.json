@@ -186,24 +186,6 @@
       "settings": {
       }
     },
-    "1708924935026ad9e2": {
-      "type": "apps",
-      "blocks": {
-        "testimonials_slider_carousel_cards_widget_block_9jfPqG": {
-          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/carousel-cards-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
-          "settings": {
-            "themeId": "light",
-            "autoscroll": true,
-            "configNumber": "3"
-          }
-        }
-      },
-      "block_order": [
-        "testimonials_slider_carousel_cards_widget_block_9jfPqG"
-      ],
-      "settings": {
-      }
-    },
     "170892495319d70363": {
       "type": "apps",
       "blocks": {
@@ -238,7 +220,6 @@
     "ss_feature_1_RTi4CH",
     "17089235137f41fd77",
     "170892140891ba678c",
-    "1708924935026ad9e2",
     "170892495319d70363",
     "1708925001e340783c"
   ]
