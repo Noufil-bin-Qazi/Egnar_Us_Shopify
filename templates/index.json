@@ -119,9 +119,9 @@
       ],
       "settings": {
         "feature_row": 4,
-        "feature_row_mobile": 1,
-        "feature_gap": 20,
-        "feature_gap_mobile": 20,
+        "feature_row_mobile": 3,
+        "feature_gap": 0,
+        "feature_gap_mobile": 0,
         "feature_padding_vertical": 22,
         "feature_padding_horizontal": 30,
         "feature_radius": 8,
