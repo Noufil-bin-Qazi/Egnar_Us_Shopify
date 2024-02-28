@@ -2,6 +2,16 @@
   .icon-white {
   color: #ffffff;
 }
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 @keyframes fadeInRight {
     from {
       opacity: 0;
@@ -29,6 +39,9 @@
   }
   .hamicon a{
    animation: fadeInLeft 1.5s ease-in-out;
+  }
+  .logos a{
+    animation: fadeInDown 1.0s ease-in-out; 
   }
   
   [x-cloak] { display: none !important; }
@@ -115,7 +128,7 @@
       </div>
 
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex items-center justify-center lg:flex-1 truncate">
+      <div class="flex items-center justify-center lg:flex-1 truncate logos">
         {% assign header_image = section.settings.header_image %}
         {% if header_image != blank %}
         <a href="{{ shop.url }}"><img width="85" height="30" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
