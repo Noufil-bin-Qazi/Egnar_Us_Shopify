@@ -51,9 +51,6 @@
         "slidebtntext": "BUTTON Text 1"
       }
     },
-    "testimonials": {
-      "type": "testimonials"
-    },
     "card": {
       "type": "card",
       "disabled": true,
@@ -81,7 +78,7 @@
           "type": "image",
           "settings": {
             "feature_title": "Free Shipping",
-            "feature_text": "",
+            "feature_text": "Order today, receive tomorrow",
             "feature_url": "",
             "hide_image": false
           }
@@ -89,8 +86,8 @@
         "image_MHKFxp": {
           "type": "image",
           "settings": {
-            "feature_title": "Secure Payment Options",
-            "feature_text": "",
+            "feature_title": "Price-match guarantee",
+            "feature_text": "Safe money when ordering with us",
             "feature_url": "",
             "hide_image": false
           }
@@ -98,8 +95,8 @@
         "image_QXqWPd": {
           "type": "image",
           "settings": {
-            "feature_title": "Easy return & Exchange Policy",
-            "feature_text": "",
+            "feature_title": "Hassle-free exchange",
+            "feature_text": "Receive a slip for exchanges",
             "feature_url": "",
             "hide_image": false
           }
@@ -107,8 +104,8 @@
         "image_bpYafe": {
           "type": "image",
           "settings": {
-            "feature_title": "5.0 Reviews",
-            "feature_text": "",
+            "feature_title": "5.0 Google Reviews",
+            "feature_text": "Customer satisfaction #1 priority",
             "feature_url": "",
             "hide_image": false
           }
@@ -122,14 +119,14 @@
       ],
       "settings": {
         "feature_row": 4,
-        "feature_row_mobile": 3,
-        "feature_gap": 0,
-        "feature_gap_mobile": 0,
+        "feature_row_mobile": 1,
+        "feature_gap": 20,
+        "feature_gap_mobile": 20,
         "feature_padding_vertical": 22,
         "feature_padding_horizontal": 30,
         "feature_radius": 8,
         "feature_border_thickness": 0,
-        "feature_shadow": false,
+        "feature_shadow": true,
         "feature_heading_custom": true,
         "feature_heading_font": "prompt_n4",
         "feature_heading_size": 14,
@@ -152,33 +149,21 @@
         "feature_icon_color": "#000000",
         "background_color": "#ffffff",
         "background_gradient": "",
-        "border_color": "#e6e7eb",
+        "border_color": "#000000",
         "margin_top": 0,
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "padding_horizontal": 2,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_horizontal": 5,
         "padding_horizontal_mobile": 1.5,
         "full_width": true,
-        "content_width": 100,
-        "border_thickness": 1,
+        "content_width": 120,
+        "border_thickness": 0,
         "lazy": true
       }
     },
-    "170892495319d70363": {
+    "17089235137f41fd77": {
       "type": "apps",
-      "blocks": {
-        "testimonials_slider_grid_widget_block_Vw9xrJ": {
-          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/grid-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
-          "settings": {
-            "themeId": "light",
-            "configNumber": "3"
-          }
-        }
-      },
-      "block_order": [
-        "testimonials_slider_grid_widget_block_Vw9xrJ"
-      ],
       "settings": {
       }
     },
@@ -200,6 +185,28 @@
       ],
       "settings": {
       }
+    },
+    "170892495319d70363": {
+      "type": "apps",
+      "blocks": {
+        "testimonials_slider_grid_widget_block_Vw9xrJ": {
+          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/grid-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
+          "settings": {
+            "themeId": "light",
+            "configNumber": "4"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_slider_grid_widget_block_Vw9xrJ"
+      ],
+      "settings": {
+      }
+    },
+    "1708925001e340783c": {
+      "type": "apps",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -211,8 +218,9 @@
     "card",
     "video_section",
     "ss_feature_1_RTi4CH",
+    "17089235137f41fd77",
+    "170892140891ba678c",
     "170892495319d70363",
-    "1708925001e340783c",
-    "testimonials"
+    "1708925001e340783c"
   ]
 }
