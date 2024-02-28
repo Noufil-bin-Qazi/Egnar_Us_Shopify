@@ -162,8 +162,20 @@
         "lazy": true
       }
     },
-    "17089235137f41fd77": {
+    "170892495319d70363": {
       "type": "apps",
+      "blocks": {
+        "testimonials_slider_grid_widget_block_Vw9xrJ": {
+          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/grid-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
+          "settings": {
+            "themeId": "light",
+            "configNumber": "4"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_slider_grid_widget_block_Vw9xrJ"
+      ],
       "settings": {
       }
     },
@@ -185,28 +197,6 @@
       ],
       "settings": {
       }
-    },
-    "170892495319d70363": {
-      "type": "apps",
-      "blocks": {
-        "testimonials_slider_grid_widget_block_Vw9xrJ": {
-          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/grid-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
-          "settings": {
-            "themeId": "light",
-            "configNumber": "4"
-          }
-        }
-      },
-      "block_order": [
-        "testimonials_slider_grid_widget_block_Vw9xrJ"
-      ],
-      "settings": {
-      }
-    },
-    "1708925001e340783c": {
-      "type": "apps",
-      "settings": {
-      }
     }
   },
   "order": [
@@ -218,9 +208,7 @@
     "card",
     "video_section",
     "ss_feature_1_RTi4CH",
-    "17089235137f41fd77",
-    "170892140891ba678c",
     "170892495319d70363",
-    "1708925001e340783c"
+    "170892140891ba678c"
   ]
 }
