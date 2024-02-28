@@ -51,6 +51,9 @@
         "slidebtntext": "BUTTON Text 1"
       }
     },
+    "testimonials": {
+      "type": "testimonials"
+    },
     "card": {
       "type": "card",
       "disabled": true,
@@ -221,6 +224,7 @@
     "17089235137f41fd77",
     "170892140891ba678c",
     "170892495319d70363",
-    "1708925001e340783c"
+    "1708925001e340783c",
+    "testimonials"
   ]
 }
