@@ -77,8 +77,8 @@
         "image_aAgYUt": {
           "type": "image",
           "settings": {
-            "feature_title": "Free Shipping",
-            "feature_text": "Order today, receive tomorrow",
+            "feature_title": "Fast shipping",
+            "feature_text": "",
             "feature_url": "",
             "hide_image": false
           }
@@ -86,8 +86,8 @@
         "image_MHKFxp": {
           "type": "image",
           "settings": {
-            "feature_title": "Price-match guarantee",
-            "feature_text": "Safe money when ordering with us",
+            "feature_title": "Secure Payment Options",
+            "feature_text": "",
             "feature_url": "",
             "hide_image": false
           }
@@ -95,8 +95,8 @@
         "image_QXqWPd": {
           "type": "image",
           "settings": {
-            "feature_title": "Hassle-free exchange",
-            "feature_text": "Receive a slip for exchanges",
+            "feature_title": "Easy return & Exchange Policy",
+            "feature_text": "",
             "feature_url": "",
             "hide_image": false
           }
@@ -104,8 +104,8 @@
         "image_bpYafe": {
           "type": "image",
           "settings": {
-            "feature_title": "5.0 Google Reviews",
-            "feature_text": "Customer satisfaction #1 priority",
+            "feature_title": "5.0 Reviews",
+            "feature_text": "",
             "feature_url": "",
             "hide_image": false
           }
@@ -126,7 +126,7 @@
         "feature_padding_horizontal": 30,
         "feature_radius": 8,
         "feature_border_thickness": 0,
-        "feature_shadow": true,
+        "feature_shadow": false,
         "feature_heading_custom": true,
         "feature_heading_font": "prompt_n4",
         "feature_heading_size": 14,
@@ -182,6 +182,7 @@
             "title": "",
             "title_color": "",
             "alignment": "center",
+            "margin_top": 50,
             "html_area": ""
           }
         }
@@ -194,18 +195,6 @@
     },
     "170892495319d70363": {
       "type": "apps",
-      "blocks": {
-        "testimonials_slider_grid_widget_block_Vw9xrJ": {
-          "type": "shopify:\/\/apps\/testimonials-slider\/blocks\/grid-widget-block\/cd756d38-7c3d-4332-af00-4ff87263e921",
-          "settings": {
-            "themeId": "light",
-            "configNumber": "4"
-          }
-        }
-      },
-      "block_order": [
-        "testimonials_slider_grid_widget_block_Vw9xrJ"
-      ],
       "settings": {
       }
     },
