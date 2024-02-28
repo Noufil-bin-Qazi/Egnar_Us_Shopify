@@ -78,7 +78,7 @@
           "type": "image",
           "settings": {
             "feature_title": "Free Shipping",
-            "feature_text": "Order today, receive tomorrow",
+            "feature_text": "",
             "feature_url": "",
             "hide_image": false
           }
@@ -86,8 +86,8 @@
         "image_MHKFxp": {
           "type": "image",
           "settings": {
-            "feature_title": "Price-match guarantee",
-            "feature_text": "Safe money when ordering with us",
+            "feature_title": "Secure Payment Options",
+            "feature_text": "",
             "feature_url": "",
             "hide_image": false
           }
@@ -95,8 +95,8 @@
         "image_QXqWPd": {
           "type": "image",
           "settings": {
-            "feature_title": "Hassle-free exchange",
-            "feature_text": "Receive a slip for exchanges",
+            "feature_title": "Easy return & Exchange Policy",
+            "feature_text": "",
             "feature_url": "",
             "hide_image": false
           }
@@ -104,8 +104,8 @@
         "image_bpYafe": {
           "type": "image",
           "settings": {
-            "feature_title": "5.0 Google Reviews",
-            "feature_text": "Customer satisfaction #1 priority",
+            "feature_title": "5.0 Reviews",
+            "feature_text": "",
             "feature_url": "",
             "hide_image": false
           }
@@ -126,7 +126,7 @@
         "feature_padding_horizontal": 30,
         "feature_radius": 8,
         "feature_border_thickness": 0,
-        "feature_shadow": true,
+        "feature_shadow": false,
         "feature_heading_custom": true,
         "feature_heading_font": "prompt_n4",
         "feature_heading_size": 14,
@@ -149,7 +149,7 @@
         "feature_icon_color": "#000000",
         "background_color": "#ffffff",
         "background_gradient": "",
-        "border_color": "#000000",
+        "border_color": "#e6e7eb",
         "margin_top": 0,
         "margin_bottom": 0,
         "padding_top": 32,
@@ -157,8 +157,8 @@
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 1.5,
         "full_width": true,
-        "content_width": 120,
-        "border_thickness": 0,
+        "content_width": 100,
+        "border_thickness": 1,
         "lazy": true
       }
     },

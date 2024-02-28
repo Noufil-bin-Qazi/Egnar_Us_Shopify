@@ -7,10 +7,10 @@
           "header_image": "shopify:\/\/shop_images\/Egnar-logo.png",
           "facebook_link": "#",
           "twitter_link": "#",
-          "instagram_link": "#",
-          "youtube_link": "#",
-          "tiktok_link": "#",
-          "linkedin_link": "#"
+          "instagram_link": "",
+          "youtube_link": "",
+          "tiktok_link": "",
+          "linkedin_link": ""
         }
       },
       "footer": {
@@ -49,7 +49,7 @@
       ".tcustomizer-btn--active {border: 1px solid #565656; border-radius: 0; box-shadow: none;}",
       ".tcustomizer-hide-button {display: block !important;}",
       ".tcustomizer-overlap-button {display: none !important;}",
-      "#product-form label, input{font-size: 13px; font-weight: 200;}"
+      "#product-form label,input {font-size: 13px; font-weight: 200;}"
     ]
   }
 }
