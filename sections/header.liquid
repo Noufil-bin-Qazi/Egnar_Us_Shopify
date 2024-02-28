@@ -2,14 +2,110 @@
   .icon-white {
   color: #ffffff;
 }
+@keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+@keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }  
+
+  .navicon a {
+    animation: fadeInRight 1.5s ease-in-out;
+  }
+  .hamicon a{
+   animation: fadeInLeft 1.5s ease-in-out;
+  }
+  
   [x-cloak] { display: none !important; }
 </style>
 <div class="bg-black bottom-1 sticky top-0 z-50 shadow-md" id="header" x-data="{ isOpen: false }">
   <div class="mx-auto">
     <div class="--header_desktop_upper lg:px-12 flex items-center justify-between py-5 border-b-[0.5px] border-gray-500">
 
+    <!-- MOBILE MENU -->
+    <div x-data="{ MobMenuOpen: false }" class="md:hidden flex items-center hamicon" x-cloak>
+      <a href="#" @click="MobMenuOpen = true" class="px-5 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
+        {% render 'hamburger' %}
+      </a>
+      <!-- MOBILE MENU content -->
+      <div x-show="MobMenuOpen" @click.away="MobMenuOpen = false" class="fixed inset-0 overflow-hidden z-50" x-cloak>
+      <!-- Background overlay -->
+      <div class="absolute inset-0 bg-[#363636] opacity-70 transition-opacity ease-linear duration-50" x-show.transition.opacity.duration.50ms="MobMenuOpen"></div>
+      <!-- Mobile drawer -->
+      <div class="absolute inset-y-0 max-w-[350px] w-full bg-white shadow-lg h-full transform transition-transform duration-500 ease-in-out"
+           x-show.transition.duration.50ms="MobMenuOpen"
+           x-transition:enter="transition ease-out duration-500"
+           x-transition:enter-start="-translate-x-full"
+           x-transition:enter-end="translate-x-0"
+           x-transition:leave="transition ease-in duration-500"
+           x-transition:leave-start="translate-x-0"
+           x-transition:leave-end="-translate-x-full">
+          <!-- Drawer title and close button -->
+          <div class="--Drawertitle flex flex-row justify-between p-7 border-b sticky top-0">
+              <h2 class="text-xl uppercase text-center font-body font-extralight"> {{ shop.name }}</h2>
+              <div @click="MobMenuOpen = false" class="overflow-hidden focus:outline-none">{% render 'icon-close' %}</div>
+          </div>
+          <!-- Mobile Menu items -->
+          <div class="px-4" x-data="{ childopn : false}">
+             {% for link in linklists.main-menu.links %}
+              {% if link.links != blank %}
+                <div @click="childopn =! childopn" class="flex flex-row justify-between space-between items-center">
+                 <div class="items-start"><li class="block items-start p-3 font-body font-extralight text-sm uppercase text-black">{{ link.title }}</li></div>
+                 <div class="p-3 items-start">{% render 'plus' %}</div> 
+                </div>
+                 
+                <div x-show="childopn" x-cloak>
+                  {% for childlink in link.links %}
+                    {% if childlink.links != blank %}
+                      <div x-data="{ grndchldopn : false}">
+                      <div @click="grndchldopn =! grndchldopn" class="flex flex-row items-center gap-1 py-3 px-6 font-body font-extralight text-sm uppercase text-black">{{ childlink.title }}{% render 'arrow-down' %}</div>
+                      <div x-show="grndchldopn" x-cloak>
+                       {% for grandchildlink in childlink.links %}
+                       <a href="{{ grandchildlink.url }}" class="block py-3 mx-11 font-body font-extralight text-sm uppercase text-black">{{ grandchildlink.title }}</a>
+                       {% endfor %}
+                      </div>
+                      </div>
+                      {% else %}
+                      <a href="{{ childlink.url }}" class="font-body font-extralight text-sm uppercase text-black hover:opacity-80">
+                      <h1 class="py-3 px-6">{{ childlink.title }}</h1>
+                      </a>  
+                    {% endif %}
+                     
+                  {% endfor %}
+                </div>  
+              {% else %}
+               <div class="relative">
+                <a href="{{ link.url }}" class="font-body font-extralight text-sm uppercase text-black hover:opacity-80">
+                <h1 class="p-3">{{ link.title }}</h1>
+                </a>
+               </div>
+              {% endif %}
+             {% endfor %}
+          </div>   
+           
+          
+      </div>
+      </div>
+    </div> 
+
+    
       <!-- SOCIAL LINKS -->
-      <div class="hidden md:flex justify-center md:justify-start gap-8">
+      <div class="hidden md:flex justify-center md:justify-start gap-8 hamicon">
         <a href="{{ settings.facebook_link }}"><i class="icon-white">{% render 'facebook' %}</i></a>
         <a href="{{ settings.twitter_link }}"><i class="icon-white">{% render 'twitter' %}</i></a>
         <a href="{{ settings.instagram_link }}"><i class="icon-white">{% render 'instagram' %}</i></a>
@@ -19,17 +115,20 @@
       </div>
 
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex-grow flex items-center justify-center lg:flex-1 truncate">
+      <div class="flex items-center justify-center lg:flex-1 truncate">
         {% assign header_image = section.settings.header_image %}
         {% if header_image != blank %}
-        <img width="85" height="30" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image">
+        <a href="{{ shop.url }}"><img width="85" height="30" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
         {% else %}
         <h1 class="text-xl text-white uppercase font-bold font-body truncate">{{ shop.name }}</h1>
         {% endif %}
       </div>
-
+    <!-- MOBILE CART -->
+     <div class="md:hidden flex items-center px-5 navicon">
+      <a href="{{ routes.cart_url }}" class="fade-up-enter-active">{% render 'cart' %}</a>
+     </div>
       <!-- CART LOGIN REGISTER LINKS -->
-      <div x-data="{ isCartOpen: false }" class="hidden md:flex items-center">
+      <div x-data="{ isCartOpen: false }" class="hidden md:flex items-center navicon">
     <!-- Cart link -->
     <a href="#" @click="isCartOpen = !isCartOpen" class="px-5 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90">
         {% render 'cart' %}
