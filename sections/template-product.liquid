@@ -4,8 +4,6 @@
 <!-- Include Flickity JavaScript -->
 {{ 'node_modules/flickity/dist/flickity.pkgd.min.js' | asset_url | script_tag }}
 
-
-{% assign selected_variant = product.selected_or_first_available_variant %}
 <style>
   body
   {overflow-x: hidden;}  
@@ -38,7 +36,64 @@
   transform: rotate(-225deg);
   }
 
+  .flickity-prev-next-button.next {
+        right: 0px !important;
+        
+    }
+    .flickity-prev-next-button.previous {
+  left: 0px !important;
+  
+}
+  .flickity-prev-next-button .arrow {
+  fill: none !important;
+  
+}
+  .flickity-prev-next-button.next{
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 5l7 7-7 7'></path></svg>") no-repeat center center;
+    background-size: 34px !important;
+   
+}
+.flickity-prev-next-button.previous {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 19l-7-7 7-7'></path></svg>") no-repeat center center;
+  background-size: 34px !important;
+}
+@media only screen and (max-width: 600px) {
+    .flickity-prev-next-button {
+        top: 105%;
+    }
+    .flickity-prev-next-button.next {
+        right: 5px !important;
+        background-size: 19px !important;
+    }
+    .flickity-prev-next-button.previous {
+  left: 5px !important;
+  background-size: 19px !important;
+  
+}
+.flickity-page-dots {
+  display: flex;
+  justify-content: center;
+}
+
+/* Style for the individual dot */
+.flickity-page-dots .dot {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px; /* Adjust the margin as needed */
+}
+
+/* Style for the active dot */
+.flickity-page-dots .dot.is-selected {
+  background-color: #333; /* Change the color of the active dot */
+}
+
+  }
 </style>
+
+{% assign selected_variant = product.selected_or_first_available_variant %}
+
 
 <div class="w-fit mt-5 mx-auto md:mx-10 md:overflow-x-hidden 2xl:mx-28 lg:mx-10 xl:mx-15 lg:pt-10">
  <div class="flex flex-col lg:flex-row">
@@ -84,7 +139,7 @@
 
     
     <!-- Product Details -->
-    <div class="product--information w-fit px-12 flex flex-col">
+    <div class="product--information w-fit px-12 py-6 md:py-0 flex flex-col">
         {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
             <input type="hidden" name="id" value="{{ selected_variant.id }}">
 
@@ -141,21 +196,21 @@
                                 </variant-selector>
                             {% endunless %}
                         </div>
-
+                    <div class="flex flex-row items-end gap-2">
                     {% when 'quantity' %}
-                        <div class="mt-3">
+                        <div class="mt-3 w-1/2">
                             <label for="Quantity-{{ section.id }}">Quantity</label>
 
                             <div class="flex flex-row gap-2 items-center">
-                                <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-1/2 border px-6 py-3 my-2">
-                                <a href="/checkout?product={{ product.id }}" class="w-full px-6 py-4 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center text-xs my-2">Buy Now</a>
+                                <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2">
+                               
                             </div>
                         </div>
                 
 
                     {% when 'checkout_buttons' %}
-                        <div class="mb-3">
-                            <button type="submit" name="add" class="w-full px-6 py-4 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center text-xs my-2"
+                        <div class="my-2 w-1/2">
+                            <button type="submit" name="add" class="w-full px-4 md:px-6 py-4 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center text-xs"
                                 {% if selected_variant.available == false %}
                                     disabled
                                 {% endif %}
@@ -167,6 +222,22 @@
                                 {% endif %}
                             </button>
                         </div>
+                    
+                    </div> 
+                    
+                    
+                    <div class="my-2 flex justify-center">
+                        
+                        
+                          {% if cart.item_count == 0 %}
+                            <!-- If the cart is empty, add the product to the cart -->
+                            <button type="submit" name="add" class="block w-full px-6 py-3.5 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center">BUY NOW</button>
+                          {% else %}
+                            <!-- If the cart is not empty, move to the checkout page -->
+                            <a href="{{ routes.checkout }}" class="block w-full px-6 py-3.5 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center"s>BUY NOW</a>
+                          {% endif %}
+                          
+                    </div> 
 
                     {% when 'description' %}
                         <div class="">
@@ -223,12 +294,14 @@
  </div>
     
     <!-- Related Products -->
-     <div class="w-full py-12 product--related">
-        
+    
+     <div class="w-full md:mt-16 py-16 product--related">
+        <div class="w-28 md:w-[550px] mx-auto border-t-[1px] border-[#f1f1f1] mb-5 md:mb-10"></div>  
      <div class="product-recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related">
   {%- if recommendations.performed? and recommendations.products_count > 0 -%}
     {% if recommendations.intent == 'related' %}
-      <h2 class="text-2xl uppercase font-body font-thin text-center mb-9 md:mb-16">You may also like</h2>
+      <h2 class="text-2xl uppercase font-body font-thin text-center mt-5 mb-5 md:mb-10">You may also like</h2>
+      <div class="w-28 md:w-[550px] mx-auto border-t-[1px] border-[#f1f1f1] md:mt-10 my-4 md:my-12"></div> 
     {% elsif recommendations.intent == 'complementary' %}
       <h2>Pair it with</h2>
     {% endif %}
@@ -322,10 +395,13 @@
                 if(oldPrice && newPrice) oldPrice.innerHTML = newPrice.innerHTML;
             });
         }
+       
     }
 
     customElements.define("variant-selector", VariantSelector);
 </script>
+
+
 
 <script>
 //accordiontabs
@@ -359,8 +435,8 @@ if (panel.style.maxHeight){
     // Flickity options
     cellSelector: '.carousel-cell',
     contain: true,
-    pageDots: false,
-    prevNextButtons: false,
+    pageDots: true,
+    prevNextButtons: true,
     wrapAround: true
   });
 
