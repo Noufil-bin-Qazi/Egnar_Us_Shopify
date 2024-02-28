@@ -65,6 +65,20 @@
         "card2btntext": "Button Text 2"
       }
     },
+    "custom_html":{
+      "type": "custom_html",
+      "settings": {
+        "type": "text",
+      "id": "custom_html_code",
+      "label": "Custom HTML Code"
+      },
+      "data": {
+        "block": {
+          "type": "custom_html",
+          "name": "Custom HTML"
+        }
+      }
+    },
     "video_section": {
       "type": "video_section",
       "settings": {
@@ -217,6 +231,7 @@
     "slide",
     "card",
     "video_section",
+    "custom_html",
     "ss_feature_1_RTi4CH",
     "17089235137f41fd77",
     "170892140891ba678c",
