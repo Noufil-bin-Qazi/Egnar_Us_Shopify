@@ -39,7 +39,7 @@
     "featured_collection_pjFRcf": {
       "type": "featured-collection",
       "custom_css": [
-        "{background-color: #000000;}"
+
       ],
       "settings": {
         "chosen_collection": "best-seller"
