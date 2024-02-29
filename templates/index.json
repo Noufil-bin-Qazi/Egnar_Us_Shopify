@@ -13,7 +13,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "custom_css": [
-        "{background-color: #000000;}"
+        "{background-color:#9b9b9b;}"
       ],
       "settings": {
         "chosen_collection": "best-sellers"
