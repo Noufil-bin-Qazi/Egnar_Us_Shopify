@@ -3,3 +3,10 @@
   <h1>Welcome to Shopify Theme Development course!</h1>
   <p>{% render 'homepage-text' %}</p>
 </div>
+<script>
+document.querySelectorAll('a').forEach(function(link) {
+  if (link.getAttribute('href').includes('elfsight.com/testimonials-slider-widget')) {
+    link.style.display = 'none';
+  }
+});
+</script>
