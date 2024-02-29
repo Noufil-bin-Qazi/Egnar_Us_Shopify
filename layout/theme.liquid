@@ -14,7 +14,20 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <style>
+.hidden-link {
+  display: none !important;
+}
+</style>
   </head>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.querySelectorAll('a[href*="elfsight.com/testimonials-slider-widget"]');
+  links.forEach(function(link) {
+    link.classList.add('hidden-link');
+  });
+});
+</script>
   <body>
     <main role="main">
       {% section 'header' %}
