@@ -16,7 +16,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_menu_1": "main-menu",
+          "footer_menu_1": "footer",
           "footer_menu_2": "main-menu",
           "footer_img": "shopify:\/\/shop_images\/Egnar-logo.png"
         }
