@@ -222,7 +222,7 @@
                                 {% endif %}
                             </button>
                         </div>
-                       <div>{{ form | payment_button }}</div>
+                       
                     
                     </div> 
                     
@@ -230,13 +230,10 @@
                     <div class="my-2 flex justify-center">
                         
                         
-                          {% if cart.item_count == 0 %}
-                            <!-- If the cart is empty, add the product to the cart -->
-                            <button type="submit" name="add" class="block w-full px-6 py-3.5 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center">BUY NOW</button>
-                          {% else %}
-                            <!-- If the cart is not empty, move to the checkout page -->
-                            <a href="/checkout" class="block w-full px-6 py-3.5 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center"s>BUY NOW</a>
-                          {% endif %}
+                          
+                            
+                            <div class="block w-full px-6 py-3.5 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center"s>{{ form | payment_button }}</div>
+                          
                           
                     </div> 
 
