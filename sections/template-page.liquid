@@ -10,6 +10,11 @@
             <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image_about | img_url: 'master' }}" alt="Background Image">
 
         {% endif %}
+     {% when 'our vision' %}
+        {% if section.settings.background_image_about %}
+            <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image_vision | img_url: 'master' }}" alt="Background Image">
+
+        {% endif %}
     {% else %}
         
    {% endcase %} 
@@ -34,7 +39,7 @@
 <div class="justify-center px-20 lg:px-36 py-8 font-body font-extralight --pagedescription">{{ page.content }}</div>
 {% schema %}
 {
-    "name": "Template Page",
+    "name": "Template Page Settings",
     "settings": [
        
         {
@@ -46,6 +51,11 @@
         "type": "image_picker",
         "id": "background_image_about",
         "label": "Background Image for About Page"
+        },
+        {
+        "type": "image_picker",
+        "id": "background_image_vision",
+        "label": "Background Image for Vision Page"
         }
     ]
 }
