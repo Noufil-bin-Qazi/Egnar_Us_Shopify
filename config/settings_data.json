@@ -1,5 +1,6 @@
 {
   "current": {
+    "checkout_button_color": "#000000",
     "sections": {
       "header": {
         "type": "header",
