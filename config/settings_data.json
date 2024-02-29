@@ -49,8 +49,7 @@
       ".tcustomizer-btn--active {border: 1px solid #565656; border-radius: 0; box-shadow: none;}",
       ".tcustomizer-hide-button {display: block !important;}",
       ".tcustomizer-overlap-button {display: none !important;}",
-      "#product-form label,input {font-size: 13px; font-weight: 200;}",
-      "a[href=\"https:\/\/elfsight.com\/testimonials-slider-widget\/?utm_source=websites&utm_medium=clients&utm_content=testimonials-slider&utm_term=egnar.us&utm_campaign=free-widget\"] {display: none !important;}"
+      "#product-form label,input {font-size: 13px; font-weight: 200;}"
     ]
   }
 }
