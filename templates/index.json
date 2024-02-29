@@ -171,7 +171,7 @@
 
       ],
       "settings": {
-        "custom_html_code": "<script src=\"https:\/\/static.elfsight.com\/platform\/platform.js\" data-use-service-core defer><\/script> <div class=\"elfsight-app-63c6f3a5-a662-498b-be84-2b4c8fee9db8\" data-elfsight-app-lazy><\/div><script>         document.addEventListener(\"DOMContentLoaded\", function() {             var link = document.querySelector('a[href*=\"elfsight.com\/testimonials-slider-widget\"]');             if (link) {                 link.style.display = \"none\";                 console.log('link removed');             }         });     <\/script>"
+        "custom_html_code": "<script src=\"https:\/\/static.elfsight.com\/platform\/platform.js\" data-use-service-core defer><\/script> <div class=\"elfsight-app-63c6f3a5-a662-498b-be84-2b4c8fee9db8\" data-elfsight-app-lazy><\/div>"
       }
     },
     "17089235137f41fd77": {
