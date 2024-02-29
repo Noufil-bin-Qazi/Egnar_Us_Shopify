@@ -51,8 +51,8 @@
       ".tcustomizer-hide-button {display: block !important;}",
       ".tcustomizer-overlap-button {display: none !important;}",
       "#product-form label,input {font-size: 13px; font-weight: 200;}",
-      ".shopify-payment-button__button {font-size: 12px; font-family: Prompt; font-weight: 400; letter-spacing: 0.1rem; text-transform: uppercase; padding: 0.25rem 1rem; }",
-      ".shopify-payment-button__button--unbranded:hover:not([disabled]) {background-color: #000000;}"
+      ".shopify-payment-button__button {font-size: 12px; font-family: Prompt; font-weight: 400; letter-spacing: 0.1rem; text-transform: uppercase; padding: 0.25rem 1rem; background-color: rgba(0, 0, 0, 0.1);}",
+      ".shopify-payment-button__button--unbranded:hover:not([disabled]) {background-color: rgba(0, 0, 0, 0.1); transition-property: background-color;transition-timing-function: cubic-bezier(.4,0,.2,1);transition-duration: .15s; }"
     ]
   }
 }
