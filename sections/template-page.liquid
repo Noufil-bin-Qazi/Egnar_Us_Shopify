@@ -1,0 +1,52 @@
+<div class="relative h-80 max-h-80 w-full --pageimage">
+    {% assign title_lowercase = page.title |  downcase %}
+   {% case title_lowercase %}
+    {% when 'contact' %}
+        {% if section.settings.background_image_contact %}
+            <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image_contact | img_url: 'master' }}" alt="Background Image">
+        {% endif %}
+    {% when 'about' %}
+        {% if section.settings.background_image_about %}
+            <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image_about | img_url: 'master' }}" alt="Background Image">
+
+        {% endif %}
+    {% else %}
+        
+   {% endcase %} 
+  
+  
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="text-white text-center collheader">
+      <h1 class="text-4xl md:text-5xl uppercase tracking-wider fade-up-enter-active">
+        {% assign wordbold = page.title | split: ' ' %}
+        {% assign firstword = wordbold | first %}
+        <span class="font-normal font-body">{{ firstword }}</span>
+        {% for word in wordbold offset: 1  %}
+            <span class="font-body font-extralight">{{ word }}</span>
+        {% endfor %}
+      
+      </h1>
+      <!-- Add other content as needed -->
+    </div>
+  </div>
+</div>
+
+<div class="justify-center px-20 lg:px-36 py-8 font-body font-extralight --pagedescription">{{ page.content  }}</div>
+{% schema %}
+{
+    "name": "Template Page",
+    "settings": [
+       
+        {
+        "type": "image_picker",
+        "id": "background_image_contact",
+        "label": "Background Image for Contact Page"
+        },
+        {
+        "type": "image_picker",
+        "id": "background_image_about",
+        "label": "Background Image for About Page"
+        }
+    ]
+}
+{% endschema %}
