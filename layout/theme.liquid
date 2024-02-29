@@ -21,12 +21,14 @@
       {{ content_for_layout }}
       {% section 'footer' %}
     </main>
-    <script>document.addEventListener("DOMContentLoaded", function() {
-  var link = document.querySelector('a[href*="elfsight.com/testimonials-slider-widget"]');
-  if (link) {
-    link.remove();
-  }
-});
-</script>
+   <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var link = document.querySelector('a[href*="elfsight.com/testimonials-slider-widget"]');
+            if (link) {
+                link.style.display = "none";
+                console.log('link removed');
+            }
+        });
+    </script>
   </body>
 </html>
