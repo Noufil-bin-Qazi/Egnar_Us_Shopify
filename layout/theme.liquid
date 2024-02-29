@@ -14,6 +14,12 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+     <script>document.addEventListener('DOMContentLoaded', function() {
+  var widget = document.querySelector('a[href^="https://elfsight.com/testimonials-slider-widget/"]');
+  if (widget) {
+    widget.parentNode.removeChild(widget);
+  }
+});</script>
   </head>
   <body>
     <main role="main">
@@ -21,11 +27,6 @@
       {{ content_for_layout }}
       {% section 'footer' %}
     </main>
-    <script>document.addEventListener('DOMContentLoaded', function() {
-  var widget = document.querySelector('a[href^="https://elfsight.com/testimonials-slider-widget/"]');
-  if (widget) {
-    widget.parentNode.removeChild(widget);
-  }
-});</script>
+   
   </body>
 </html>
