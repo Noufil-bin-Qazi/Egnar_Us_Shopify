@@ -3,11 +3,13 @@
     "template": {
       "type": "template-page",
       "settings": {
+        "background_image_contact": "shopify:\/\/shop_images\/ban_2.png"
       }
     },
     "contact-form": {
       "type": "contact-form",
       "settings": {
+        "title": ""
       }
     }
   },
