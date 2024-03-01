@@ -221,7 +221,7 @@
     </div>
     <!-- Login and search links -->
     <a href="{{ routes.account_login_url }}" class="px-5 font-body font-extralight text-base text-white hover:opacity-90">{% render 'account' %}</a>
-    <a href="#" @click.prevent="isOpen = !isOpen" class="pl-5 font-body font-extralight text-base text-white hover:opacity-90">{% render 'search-two' %}</a>
+    <a href="#" @click.prevent="isOpen = !isOpen" class="px-5 font-body font-extralight text-base text-white hover:opacity-90">{% render 'search-two' %}</a>
     <a href="#" @click.prevent="isOpen = !isOpen" class="pl-5 font-body font-extralight text-base text-white hover:opacity-90">{% render 'usa-flag' %}</a>
     <!-- Search box content -->
     <div x-show="isOpen" @click.away="isOpen = false"
