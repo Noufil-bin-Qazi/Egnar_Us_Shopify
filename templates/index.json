@@ -227,6 +227,16 @@
             "rating": 5,
             "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
           }
+        },
+        "testimonial_3Tb9q7": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "Sarah Harper",
+            "testimonial_text": "Absolutely love my new Egnar.us activewear! The quality is top-notch and the fit is perfect. I feel confident and stylish whether I'm at the gym or running errands.",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
         }
       },
       "block_order": [
@@ -235,7 +245,8 @@
         "testimonial_pC39M3",
         "testimonial_7J68yf",
         "testimonial_iwNA3T",
-        "testimonial_be6ppW"
+        "testimonial_be6ppW",
+        "testimonial_3Tb9q7"
       ],
       "settings": {
         "heading_testimonials": "What Our Clients Say",
