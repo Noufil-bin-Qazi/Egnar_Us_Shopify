@@ -952,6 +952,14 @@ video {
   height: 0.75rem;
 }
 
+.h-\[45rem\]{
+  height: 45rem;
+}
+
+.h-\[48rem\]{
+  height: 48rem;
+}
+
 .max-h-80{
   max-height: 20rem;
 }
@@ -1662,6 +1670,10 @@ video {
 
 .pt-\[533px\]{
   padding-top: 533px;
+}
+
+.pb-5{
+  padding-bottom: 1.25rem;
 }
 
 .text-left{
