@@ -242,9 +242,10 @@
           "type": "testimonial",
           "settings": {
             "testimonial_type": "Google",
-            "author": "John Doe",
-            "testimonial_text": "Enter testimonial text here",
-            "rating": 5
+            "author": "Laura Stevenson",
+            "testimonial_text": "'m a runner, and Egnar.us activewear is my go-to for all my races. The fabric is so lightweight and breathable, and the designs are so fun. Plus, the pockets are a game-changer for holding my essentials",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
           }
         }
       },
