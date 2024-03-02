@@ -203,8 +203,9 @@
           "settings": {
             "testimonial_type": "Google",
             "author": "John Doe",
-            "testimonial_text": "Enter testimonial text here",
-            "rating": 5
+            "testimonial_text": "As a fitness enthusiast, I'm always on the lookout for durable activewear that can keep up with my workouts. Egnar.us checks all the boxes - it's comfortable, stylish, and holds up wash after wash",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
           }
         },
         "testimonial_f43qJ3": {
