@@ -74,10 +74,6 @@
         "video_selected": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7a8d917537ca485b9373f04fad1b1744.mp4"
       }
     },
-    "testimonials":{
-      "type": "testimonials"
-      
-    },
     "ss_feature_1_RTi4CH": {
       "type": "ss-feature-1",
       "blocks": {
@@ -167,6 +163,67 @@
         "content_width": 120,
         "border_thickness": 0,
         "lazy": true
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_QRY9er": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Facebook",
+            "author": "Amanda Gibson",
+            "testimonial_text": "Enter testimonial text here",
+            "rating": 5
+          }
+        },
+        "testimonial_HB6zFm": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "John Doe",
+            "testimonial_text": "Enter testimonial text here",
+            "rating": 5
+          }
+        },
+        "testimonial_pC39M3": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "John Doe",
+            "testimonial_text": "Enter testimonial text here",
+            "rating": 5
+          }
+        },
+        "testimonial_7J68yf": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "John Doe",
+            "testimonial_text": "Enter testimonial text here",
+            "rating": 5
+          }
+        },
+        "testimonial_f43qJ3": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "John Doe",
+            "testimonial_text": "Enter testimonial text here",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_QRY9er",
+        "testimonial_HB6zFm",
+        "testimonial_pC39M3",
+        "testimonial_7J68yf",
+        "testimonial_f43qJ3"
+      ],
+      "settings": {
+        "heading_testimonials": "What Our Clients Say",
+        "logo_image": "shopify:\/\/shop_images\/Egnar-logo.png"
       }
     },
     "custom_html": {
