@@ -74,10 +74,6 @@
         "video_selected": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7a8d917537ca485b9373f04fad1b1744.mp4"
       }
     },
-    "testimonials":{
-      "type": "testimonials"
-      
-    },
     "ss_feature_1_RTi4CH": {
       "type": "ss-feature-1",
       "blocks": {
@@ -167,6 +163,105 @@
         "content_width": 120,
         "border_thickness": 0,
         "lazy": true
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_QRY9er": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Facebook",
+            "author": "Amanda Gibson",
+            "testimonial_text": "I'm a personal trainer, and I recommend Egnar.us activewear to all my clients. The quality is amazing, and the fit is always perfect. Plus, they have such a wide range of sizes, so everyone can find something they love.",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
+        },
+        "testimonial_HB6zFm": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "Jennifer Patterson",
+            "testimonial_text": "I recently started a fitness journey, and Egnar.us activewear has been a game-changer. It's comfortable enough for my workouts but stylish enough for everyday wear. Plus, the prices are unbeatable.",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
+        },
+        "testimonial_pC39M3": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Instagram",
+            "author": "Rachel Thompson",
+            "testimonial_text": "I'm a busy mom, and Egnar.us activewear is my go-to for running after my kids or squeezing in a quick workout. The fabric is so soft and stretchy, and the fit is always flattering",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
+        },
+        "testimonial_7J68yf": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "Alex Mathews.",
+            "testimonial_text": "As a fitness enthusiast, I'm always on the lookout for durable activewear that can keep up with my workouts. Egnar.us checks all the boxes - it's comfortable, stylish, and holds up wash after wash",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
+        },
+        "testimonial_iwNA3T": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "Jessica Langford",
+            "testimonial_text": "I've tried many activewear brands, but Egnar.us is by far the best! The fabric is so soft and breathable, and the designs are so trendy. I'll definitely be a repeat customer.",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
+        },
+        "testimonial_be6ppW": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Facebook",
+            "author": "Emily Crawford",
+            "testimonial_text": "I'm a yoga instructor, and I swear by Egnar.us activewear. The flexibility and comfort of their pieces are unmatched. Plus, they have such a wide range of colors and styles.",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
+        },
+        "testimonial_3Tb9q7": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "Sarah Harper",
+            "testimonial_text": "Absolutely love my new Egnar.us activewear! The quality is top-notch and the fit is perfect. I feel confident and stylish whether I'm at the gym or running errands.",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
+        },
+        "testimonial_erg4Qf": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "Laura Stevenson",
+            "testimonial_text": "'m a runner, and Egnar.us activewear is my go-to for all my races. The fabric is so lightweight and breathable, and the designs are so fun. Plus, the pockets are a game-changer for holding my essentials",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_QRY9er",
+        "testimonial_HB6zFm",
+        "testimonial_pC39M3",
+        "testimonial_7J68yf",
+        "testimonial_iwNA3T",
+        "testimonial_be6ppW",
+        "testimonial_3Tb9q7",
+        "testimonial_erg4Qf"
+      ],
+      "settings": {
+        "heading_testimonials": "What Our Clients Say",
+        "logo_image": "shopify:\/\/shop_images\/Egnar-logo.png"
       }
     },
     "custom_html": {
