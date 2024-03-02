@@ -237,6 +237,15 @@
             "rating": 5,
             "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
           }
+        },
+        "testimonial_erg4Qf": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Google",
+            "author": "John Doe",
+            "testimonial_text": "Enter testimonial text here",
+            "rating": 5
+          }
         }
       },
       "block_order": [
@@ -246,7 +255,8 @@
         "testimonial_7J68yf",
         "testimonial_iwNA3T",
         "testimonial_be6ppW",
-        "testimonial_3Tb9q7"
+        "testimonial_3Tb9q7",
+        "testimonial_erg4Qf"
       ],
       "settings": {
         "heading_testimonials": "What Our Clients Say",
