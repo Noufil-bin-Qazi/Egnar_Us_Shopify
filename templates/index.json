@@ -208,13 +208,14 @@
             "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
           }
         },
-        "testimonial_f43qJ3": {
+        "testimonial_iwNA3T": {
           "type": "testimonial",
           "settings": {
             "testimonial_type": "Google",
-            "author": "John Doe",
-            "testimonial_text": "Enter testimonial text here",
-            "rating": 5
+            "author": "Jessica Langford",
+            "testimonial_text": "I've tried many activewear brands, but Egnar.us is by far the best! The fabric is so soft and breathable, and the designs are so trendy. I'll definitely be a repeat customer.",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
           }
         }
       },
@@ -223,7 +224,7 @@
         "testimonial_HB6zFm",
         "testimonial_pC39M3",
         "testimonial_7J68yf",
-        "testimonial_f43qJ3"
+        "testimonial_iwNA3T"
       ],
       "settings": {
         "heading_testimonials": "What Our Clients Say",
