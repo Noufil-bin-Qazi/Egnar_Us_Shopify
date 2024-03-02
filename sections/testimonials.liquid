@@ -1,0 +1,227 @@
+<!-- Include Flickity CSS -->
+{{ 'node_modules/flickity/css/flickity.css' | asset_url | stylesheet_tag }}
+
+<!-- Include Flickity JavaScript -->
+{{ 'node_modules/flickity/dist/flickity.pkgd.min.js' | asset_url | script_tag }}
+<style>
+    .star {
+  font-size: 20px;
+  color: #FFA900;
+}
+
+.star.filled {
+  color: #FFA900;
+}
+    .testimonial-carousel
+    .flickity-prev-next-button.next {
+        right: 20px !important;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        z-index: 99999;
+    }
+    .testimonial-carousel
+    .flickity-prev-next-button.previous {
+  left: 20px !important;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.flickity-prev-next-button .arrow {
+  fill: none !important;
+  
+}
+
+.flickity-prev-next-button.next{
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 5l7 7-7 7'></path></svg>") no-repeat center center;
+    background-size: 24px !important;
+   
+}
+.flickity-prev-next-button.previous {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 19l-7-7 7-7'></path></svg>") no-repeat center center;
+  background-size: 24px !important;
+}
+@media only screen and (max-width: 600px) {
+    .testimonial-carousel
+    .flickity-prev-next-button.next {
+        right: -5px !important;
+        background-size: 16px !important;
+    }
+    .testimonial-carousel
+    .flickity-prev-next-button.previous {
+  left: -5px !important;
+  background-size: 16px !important;
+  
+}
+  } 
+</style>
+{% if section.settings.background_image != blank %}
+    {% assign background_image_url = section.settings.background_image | img_url: 'master' %}
+   {% else %}
+    {% assign background_image_url = 'https://cdn.shopify.com/s/files/1/0683/7338/1345/files/1-2.png' %} 
+  {% endif %}
+  <section class="bg-cover overflow-hidden bg-center" style="background-image: url('{{ background_image_url }}');">
+  
+    <div class="h-[40rem] flex flex-col justify-start items-center TestimonialsHeader">
+      <div class="h-fit mt-20 Slideshow__Content Slideshow__Content--Position"> <!-- Add 70px padding to left and right --> 
+     <h1 class="font-body text-white font-extralight uppercase text-shadow text-center text-2xl md:text-3xl mb-10 px-10 md:mx-20">{{ section.settings.heading_testimonials | default: "Testimonials" }}</h1> <!-- Set h1 font size to 30px -->
+      <div class="SectionTestimonials__Wrapper">
+        <div class="testimonial-carousel w-screen px-5 lg:px-20 overflow-hidden">
+          {% for block in section.blocks %}
+           
+            {% case block.type %}
+                {% when 'testimonial' %}
+                    <div class="carousel-cell w-full md:w-1/3 xl:w-1/4">
+                       <div class="testimonial flex flex-col bg-stone-900 m-5 p-5 items-center text-center" {{ block.shopify_attributes }}>
+                        <div class="rating">
+                                {% for i in (1..5) %}
+                                    {% if i <= block.settings.rating %}
+                                    <span class="star filled">&#9733;</span>
+                                    {% else %}
+                                    <span class="star">&#9734;</span>
+                                    {% endif %}
+                                {% endfor %}
+                        </div>
+                        <p class="text-white font-body font-normal mx-5 lg:mx-3 2xl:mx-5 mb-5">{{ block.settings.testimonial_text | default: "Enter testimonial text here" }}</p>
+                        
+                        
+                        {% if block.settings.testimonial_image != blank %}
+                            {% assign testimonial_image_url = block.settings.testimonial_image %}
+                          {% else %}
+                            {% assign testimonial_image_url = 'https://cdn.shopify.com/s/files/1/0683/7338/1345/files/blank-profile-picture-973460_640.png?v=1709361914' %}  
+                        {% endif %}
+                        
+                    
+                        <img src="{{ testimonial_image_url | img_url: 'master' }}" class="h-12 opacity-50 rounded-full mb-2" alt="Testimonial Image">
+                        
+                        <p class="text-white font-body font-normal mx-5 flex flex-row justify-center items-center gap-1">{{ block.settings.author |  default: "John Doe" }} {% render 'verified-badge' %} </p>
+                        
+                        {% if block.settings.testimonial_type == 'Google' %}
+                            <div class="testimonial-google">
+                                <p class="text-white text-opacity-50 text-xs font-body font-normal mb-2">Google Review</p>
+                            </div>
+                        {% elsif block.settings.testimonial_type == 'Facebook' %}
+                            <div class="testimonial-facebook">
+                                <p class="text-white text-opacity-50 text-xs font-body font-normal mb-2">Facebook Review</p>
+                            </div>
+                        {% elsif block.settings.testimonial_type == 'Instagram' %}
+                            <div class="testimonial-instagram">
+                                <p class="text-white text-opacity-50 text-xs font-body font-normal mb-2">Intagram Review</p>
+                            </div>
+                        {% endif %}
+                            
+                        {% if section.settings.logo_image %}
+                            <img class="h-8 object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 z-10 mb-2" 
+                                  src="{{ section.settings.logo_image | img_url: 'master' }}" 
+                                  alt="{{ section.settings.logo_image.alt }}">
+                            {% else %}
+                              <img class="h-8 mb-2" src="https://cdn.shopify.com/s/files/1/0683/7338/1345/files/Blvck_Paris_White_220x_2f77c1c3-7e74-45c6-bbaf-24f5b45c31f0.png?v=1707962193" alt="">        
+                        {% endif %}
+                        </div> 
+                       
+                        
+                    
+                </div>
+                {% else %}
+                    
+            {% endcase %}
+            
+            
+          {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    var carousels = document.querySelectorAll('.testimonial-carousel');
+
+    carousels.forEach(function (elem) {
+        new Flickity(elem, {
+            // Flickity options go here
+            cellAlign: 'left',
+            pageDots: true,
+            loop: true,
+            contain: true
+            
+        });
+    });
+});
+  
+  
+</script>
+{% schema %}
+    {
+      "name": "Testimonials Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Select Background Image"
+        },
+        { 
+           "type": "text",
+           "label": "Heading",
+           "id": "heading_testimonials",
+           "default": "What Our Clients Say"
+    
+        },
+        {
+           "type": "image_picker",
+           "id": "logo_image",
+           "label": "Select Logo for Testimonials"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "testimonial",
+          "name": "Testimonial",
+          "limit": 10,
+          "settings": [
+               
+               {
+                "type": "select",
+                "label": "Testimonial Type",
+                "id": "testimonial_type",
+                "options": [
+                    { "value": "Google", "label": "Google Review" },
+                    { "value": "Facebook", "label": "Facebook Review" },
+                    { "value": "Instagram", "label": "Instagram Review" }
+                ]
+                }, 
+                {
+                "type": "text",
+                "label": "Author",
+                "id": "author",
+                "default": "John Doe"
+                },
+                {
+                "type": "textarea",
+                "label": "Testimonial text",
+                "id": "testimonial_text",
+                "default": "Enter testimonial text here"
+                },
+                {
+                "type": "range",
+                "label": "Rating",
+                "id": "rating",
+                "min": 0,
+                "max": 5,
+                "step": 1,
+                "default": 5    
+                },
+                {
+                "type": "image_picker",
+                "label": "Select Testimonial Image",
+                "id": "testimonial_image"
+
+                }
+            ]
+        }
+      ],
+      
+    "presets": [
+        
+    ]
+    }
+    {% endschema %}
