@@ -217,6 +217,16 @@
             "rating": 5,
             "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
           }
+        },
+        "testimonial_be6ppW": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_type": "Facebook",
+            "author": "Emily Crawford",
+            "testimonial_text": "I'm a yoga instructor, and I swear by Egnar.us activewear. The flexibility and comfort of their pieces are unmatched. Plus, they have such a wide range of colors and styles.",
+            "rating": 5,
+            "testimonial_image": "shopify:\/\/shop_images\/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png"
+          }
         }
       },
       "block_order": [
@@ -224,7 +234,8 @@
         "testimonial_HB6zFm",
         "testimonial_pC39M3",
         "testimonial_7J68yf",
-        "testimonial_iwNA3T"
+        "testimonial_iwNA3T",
+        "testimonial_be6ppW"
       ],
       "settings": {
         "heading_testimonials": "What Our Clients Say",
