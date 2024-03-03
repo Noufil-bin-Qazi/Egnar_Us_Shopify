@@ -152,7 +152,7 @@ z-index: 1000;
       </div>
 
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex items-center justify-center lg:flex-1 md:mx-0 truncate logos">
+      <div class="flex items-center justify-center lg:flex-1 ml-16 mr-10 md:mx-0 truncate logos">
         {% assign header_image = section.settings.header_image %}
         {% if header_image != blank %}
         <a href="{{ shop.url }}"><img width="85" height="30" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
@@ -161,7 +161,7 @@ z-index: 1000;
         {% endif %}
       </div>
     <!-- MOBILE CART -->
-     <div class="md:hidden flex items-center -mr-36 md:mx-5 navicon">
+     <div class="md:hidden flex items-center navicon">
        <a href="{{ routes.cart_url }}" class="fade-up-enter-active">
         <svg class="w-5 h-5" fill="#ffffff" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
           viewBox="0 0 489 489" xml:space="preserve">
