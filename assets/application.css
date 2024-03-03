@@ -931,6 +931,10 @@ video {
   margin-right: -75px;
 }
 
+.-mr-\[90px\]{
+  margin-right: -90px;
+}
+
 .block{
   display: block;
 }
