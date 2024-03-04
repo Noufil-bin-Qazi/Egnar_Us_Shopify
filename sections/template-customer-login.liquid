@@ -49,6 +49,21 @@
                 </div>
             {% endform %}
         </div>
+        {% if shop.checkout.guest_login %}
+         <hr class="my-12">
+         <div>
+            <h1 class="mt-6 text-center text-2xl font-body font-extralight">Continue as a guest</h1>
+         </div>
+
+         {% form 'guest_login' %}
+            <div>
+                    <button type="submit" class="relative w-full py-3.5 px-4 text-[12px] tracking-widest font-body font-normal uppercase text-white bg-black hover:bg-opacity-85 transition-opacity">
+                       Continue
+                    </button>
+            </div>
+         {% endform %} 
+
+        {% endif %}
     </div>
     <div x-show="pwRecoverForm" class="max-w-md w-full space-y-8">
         <div>
