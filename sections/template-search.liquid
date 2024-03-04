@@ -1,20 +1,20 @@
-<div class="container mx-auto">
+<div class="container py-10 mx-auto">
     {% paginate search.results by 10 %}
-        <h1 class="text-xl my-4 text-center">Search Results</h1>
+        <h1 class="text-xl my-4 font-extralight font-body text-center">Search Results</h1>
 
         <div class="flex justify-center items-center">
-            <form action="{{ routes.search_url }}" method="get" class="border flex rounded">
+            <form action="{{ routes.search_url }}" method="get" class="flex rounded">
                 <input type="search" name="q" placeholder="Search" value="{{ search.terms | escape }}"
-                    class="px-4 py-2 w-80 border-none"
+                    class="px-4 py-3 w-80 border"
                 >
 
-                <button type="submit" class="bg-gray-900 hover:bg-gray-700 text-white border px-4">Search</button>
+                <button type="submit" class="bg-black bg-opacity-85 uppercase font-body font-extralight hover:bg-opacity-100 text-white text-sm border px-4 py-3">Search</button>
             </form>
         </div>
         {% if search.performed %}
             {% if search.results.size > 0 %}
                 <div class="max-w-6xl mx-auto">
-                    <p class="text-gray-500 text-center my-10">{{ search.results.size }} results for the search term {{ search.terms | escape }}</p>
+                    <p class="text-gray-500 font-body font-extralight text-center my-10">{{ search.results.size }} results for the search term {{ search.terms | escape }}</p>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                         {% for item in search.results %}
                             {% case item.object_type %}
