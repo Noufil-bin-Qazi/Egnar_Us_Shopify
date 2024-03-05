@@ -178,7 +178,7 @@ z-index: 1000;
       </div>
 
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex items-center justify-center lg:flex-1 ml-[55px] mr-10 md:mx-0 truncate logos">
+      <div class="flex items-center justify-center lg:flex-1  mr-10 md:mx-0 truncate logos">
         {% assign header_image = section.settings.header_image %}
         {% if header_image != blank %}
         <a href="{{ shop.url }}"><img width="85" height="30" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
