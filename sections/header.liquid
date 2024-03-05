@@ -57,7 +57,7 @@ z-index: 1000;
 
     <!-- MOBILE MENU -->
     <div x-data="{ MobMenuOpen: false }" class="md:hidden flex items-center hamicon" x-cloak>
-      <a href="#" @click="MobMenuOpen = true" class="px-5 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
+      <a href="#" @click="MobMenuOpen = true" class="px-4 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
         {% render 'hamburger' %}
       </a>
       <a href="#" @click.prevent="isOpen = !isOpen" class="px-2 mr-10 block md:hidden font-body font-extralight text-base text-white hover:opacity-90">{% render 'search-two' %}</a>
