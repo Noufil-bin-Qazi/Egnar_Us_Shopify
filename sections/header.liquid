@@ -268,7 +268,7 @@ z-index: 1000;
       <div class="flex items-center justify-center lg:flex-1 md:mx-0 truncate logos">
         {% assign header_image = section.settings.header_image %}
         {% if header_image != blank %}
-        <a href="{{ shop.url }}"><img class="w-full h-6" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
+        <a href="{{ shop.url }}"><img class="w-auto h-5" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
         {% else %}
         <h1 class="text-xl text-white uppercase font-bold font-body truncate">{{ shop.name }}</h1>
         {% endif %}
