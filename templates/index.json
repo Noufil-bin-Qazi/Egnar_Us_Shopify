@@ -21,6 +21,7 @@
     },
     "three-cards": {
       "type": "three-cards",
+      "disabled": true,
       "settings": {
         "card_image1": "shopify:\/\/shop_images\/collection-img-02.png",
         "card_image2": "shopify:\/\/shop_images\/collection-img-03.png",
@@ -34,6 +35,16 @@
         "card2btntext": "View Collection",
         "card3button_href": "https:\/\/egnar.us\/collections\/accessories",
         "card3btntext": "View Collection"
+      }
+    },
+    "hero_afTRdp": {
+      "type": "hero",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/3_758f55aa-fd0c-45b8-af39-a71da3f50642.png",
+        "heading_hero": "Shop Best Sellers",
+        "subheading_hero": "",
+        "button1_href": "https:\/\/egnar.us\/collections\/all",
+        "firstbtntext": "Shop Collection"
       }
     },
     "featured_collection_pjFRcf": {
@@ -313,6 +324,7 @@
     "hero",
     "featured-collection",
     "three-cards",
+    "hero_afTRdp",
     "featured_collection_pjFRcf",
     "slide",
     "card",
