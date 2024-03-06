@@ -53,9 +53,9 @@
       <h3 class="text-sm text-center md:text-left font-body text-white font-normal uppercase mb-4">Connect</h3>
       <!-- Add your social icons with links -->
       <div class="flex justify-center md:justify-start gap-8 mb-5">
-        <a href="#"><i class="icon-white">{% render 'facebook' %}</i></a>
+        <a href="{{ settings.facebook_link }}"><i class="icon-white">{% render 'facebook' %}</i></a>
         <a href="#" class="hidden"><i class="icon-white">{% render 'twitter' %}</i></a>
-        <a href="#" class="px-5"><i class="icon-white">{% render 'instagram' %}</i></a>
+        <a href="{{ settings.instagram_link }}" class="px-5"><i class="icon-white">{% render 'instagram' %}</i></a>
         <a href="#" class="hidden"><i class="icon-white">{% render 'youtube' %}</i></a>
         <a href="#"class="hidden"><i class="icon-white">{% render 'tiktok' %}</i></a>
         <a href="#" class="hidden"><i class="icon-white">{% render 'linkedin' %}</i></a>
@@ -99,6 +99,18 @@
         "type": "image_picker",
         "label": "select image",
         "id": "footer_img"
+    },
+    {
+        "type": "text",
+        "id": "facebook_link",
+        "label": "Facebook Link",
+        "default": "#"
+    },
+    {
+        "type": "text",
+        "id": "instagram_link",
+        "label": "Instagram Link",
+        "default": "#"
     }
     
   ],
