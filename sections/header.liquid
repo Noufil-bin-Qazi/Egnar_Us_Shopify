@@ -118,8 +118,8 @@ z-index: 1000;
     <div class="--header_desktop_upper lg:px-12 flex items-center justify-between py-5 border-b-[0.5px] border-gray-500">
 
     <!-- MOBILE MENU -->
-    <div x-data="{ MobMenuOpen: false }" class="md:hidden flex items-center hamicon" x-cloak>
-      <a href="#" @click="MobMenuOpen = true" class="button--show px-2 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
+    <div x-data="{ MobMenuOpen: false }" class="md:hidden flex items-center" x-cloak>
+      <a href="#" @click="MobMenuOpen = true" class="button--show hamicon px-2 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
         {% render 'hamburger' %}
       </a>
       <a href="#" @click.prevent="isOpen = !isOpen" class="px-2 mr-10 block md:hidden font-body font-extralight text-base text-white hover:opacity-90">{% render 'search-two' %}</a>
