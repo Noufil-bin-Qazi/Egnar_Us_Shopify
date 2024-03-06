@@ -1,3 +1,9 @@
+<!-- Include Flickity CSS -->
+{{ 'node_modules/flickity/css/flickity.css' | asset_url | stylesheet_tag }}
+
+<!-- Include Flickity JavaScript -->
+{{ 'node_modules/flickity/dist/flickity.pkgd.min.js' | asset_url | script_tag }}
+
 <style>
   .icon-white {
   color: #ffffff;
@@ -37,7 +43,7 @@
   .navicon a {
     animation: fadeInRight 1.2s ease-in-out;
   }
-  .hamicon a{
+  .hamicon {
    animation: fadeInLeft 1.2s ease-in-out;
   }
   .logos a{
@@ -48,16 +54,47 @@
 top: 0;
 z-index: 1000;
   }
-  
+  .mobile-carousel
+.flickity-prev-next-button.next{
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 5l7 7-7 7'></path></svg>") no-repeat center center;
+    background-size: 24px !important;
+   
+}
+.mobile-carousel
+.flickity-prev-next-button.previous {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 19l-7-7 7-7'></path></svg>") no-repeat center center;
+  background-size: 24px !important;
+}
+.mobile-carousel{
+  width: 100%;
+  overflow:  hidden !important;
+}
+
+    .mobile-carousel
+    .flickity-prev-next-button.next {
+        right: 0px !important;
+        background-size: 16px !important;
+        top: 5%;
+        
+    }
+    .mobile-carousel
+    .flickity-prev-next-button.previous {
+  left: 75% !important;
+  background-size: 16px !important;
+  top: 5%;
+  }
+
+
   [x-cloak] { display: none !important; }
+  
 </style>
 <div class="bg-black bottom-1 top-0 z-50 shadow-md" id="header" x-data="{ isOpen: false }">
   <div class="mx-auto">
     <div class="--header_desktop_upper lg:px-12 flex items-center justify-between py-5 border-b-[0.5px] border-gray-500">
 
     <!-- MOBILE MENU -->
-    <div x-data="{ MobMenuOpen: false }" class="md:hidden flex items-center hamicon" x-cloak>
-      <a href="#" @click="MobMenuOpen = true" class="px-2 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
+    <div x-data="{ MobMenuOpen: false }" class="md:hidden flex items-center" x-cloak>
+      <a href="#" @click="MobMenuOpen = true" class="hamicon px-2 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
         {% render 'hamburger' %}
       </a>
       <a href="#" @click.prevent="isOpen = !isOpen" class="px-2 mr-10 block md:hidden font-body font-extralight text-base text-white hover:opacity-90">{% render 'search-two' %}</a>
@@ -99,7 +136,7 @@ z-index: 1000;
               </div>
           </div>
           <!-- Mobile Menu items -->
-          <div class="px-4" x-data="{ childopn : false}">
+          <div class="px-4 py-3" x-data="{ childopn : false}">
              {% for link in linklists.main-menu.links %}
               {% if link.links != blank %}
                 <div @click="childopn =! childopn" class="flex flex-row justify-between space-between items-center">
@@ -134,28 +171,52 @@ z-index: 1000;
                </div>
               {% endif %}
              {% endfor %}
-             <!--MOBILE EXTRA ACCOUNT LINK , PRODUCT-->
+             <!--MOBILE EXTRA ACCOUNT LINK , FEATURED PRODUCTS-->
              <div class="relative">
               <a href="{{ routes.account_login_url }}" class="font-body font-extralight text-sm uppercase text-white hover:opacity-80">
               <h1 class="p-3">Account</h1>
               </a>
-              <p class="p-3 font-body font-extralight text-sm text-white uppercase">Featured</p>
-              {% assign product_id = section.settings.selected_product %}
-              {% assign product = all_products[product_id] %}
-              {% if product %}
-                <div class="p-3 flex flex-row">
-                  <div class="w-1/2"><img class="w-full h-full object-cover" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}"></div>
-                  <div class="w-full pl-3 flex items-start justify-start flex-col">
-                    <a href="{{ product.url }}" class="text-white text-left leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
-                    <p class="text-gray-500 font-extralight text-[13px] text-left pt-1">{{ product.price | money }}</p>
-
-                  </div>
-                </div>
               
-                <!-- Render other details of the selected product as needed -->
-              {% else %}
-                <p class="p-3 text-white">Select Product First.</p>
-              {% endif %}
+              
+              
+              {% assign collection_handle = section.settings.selected_collection %}
+        
+        {% if collection_handle %}
+                {% assign collection = collections[collection_handle] %}
+                {% if collection %}
+                        {% comment %}
+                            debugging: <p>Collection ID: {{ collection.id }}</p>
+                            <p>Collection Title: {{ collection.title }}</p>
+                            <p>Number of Products: {{ collection.products.size }}</p>
+                        {% endcomment %} 
+                      <a href="{{ collection.url }}" class="p-3 text-sm uppercase font-body font-extralight text-left text-white">{{ collection.title }}</a>
+                        {% if collection.products.size > 0 %}
+                            <div class="mobile-carousel py-3 h-36">
+                            {% for product in collection.products %}
+                                <div class="carousel-cell my-3 px-3">
+                                  <div class="flex flex-row">
+                                    <div class="w-1/2"><img class="w-full h-full object-cover" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}"></div>
+                                  <div class="w-2/3 pl-3 flex items-start justify-start flex-col">
+                                    <a href="{{ product.url }}" class="h-full text-white text-left leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
+                                    <p class="text-gray-500 font-extralight text-[13px] text-left pt-1">{{ product.price | money }}</p>
+                
+                                  </div>
+                                  </div>
+                                  
+                                </div>
+                            {% endfor %} 
+                            </div>
+                        
+                        {% else %}
+                        <p class="text-white text-center">No products found in the selected collection.</p>
+                        {% endif %}
+                        
+                {% else %}
+                    <p class="text-white text-center">Collection not found.</p>
+                {% endif %}
+        {% else %}
+        <p class="text-white text-center">Collection handle not set.</p>
+        {% endif %}
               
               
              </div>
@@ -453,7 +514,23 @@ z-index: 1000;
     
 </script>
 
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    var carousels = document.querySelectorAll('.mobile-carousel');
 
+    carousels.forEach(function (elem) {
+        new Flickity(elem, {
+            // Flickity options go here
+            wrapAround: true,
+            cellAlign: 'left',
+            pageDots: false,
+            contain: true
+        });
+    });
+});
+  
+  
+</script>
 {% schema %}
   {
     "name": "Header",
@@ -461,7 +538,7 @@ z-index: 1000;
       {
       "type": "image_picker",
       "id": "header_image",
-      "label": "Header Image"
+      "label": "Header Logo"
       },
       {
         "type": "text",
@@ -500,9 +577,9 @@ z-index: 1000;
         "default": "#"
       },
       {
-      "type": "product",
-      "id": "selected_product",
-      "label": "Select a product"
+      "type": "collection",
+      "id": "selected_collection",
+      "label": "Select collection for mobile menu"
       }
     ]
   }
