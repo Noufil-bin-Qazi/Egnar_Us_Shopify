@@ -20,7 +20,9 @@
         "settings": {
           "footer_menu_1": "services",
           "footer_menu_2": "footer",
-          "footer_img": "shopify:\/\/shop_images\/egnarlogonew.png"
+          "footer_img": "shopify:\/\/shop_images\/egnarlogonew.png",
+          "facebook_link": "https:\/\/www.facebook.com\/profile.php?id=100094633816201&mibextid=PtKPJ9",
+          "instagram_link": "https:\/\/www.instagram.com\/egnar.us\/"
         }
       }
     },
