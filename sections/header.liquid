@@ -556,7 +556,7 @@ showButton.addEventListener( 'click', function() {
     var cellWidth = carouselCells[0].getBoundingClientRect().width; // Get width of the first cell
     carouselCells.forEach(function(cell, index) {
         // Calculate translateX percentage based on cell index and width
-        var translateXPercentage = -1240 + index * (1280 / carouselCells.length);
+        var translateXPercentage = -1220 + index * (1260 / carouselCells.length);
         // Set transform for each cell
         cell.style.transform = 'translateX(' + translateXPercentage + '%)';
     });
