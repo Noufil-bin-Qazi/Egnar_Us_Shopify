@@ -62,9 +62,9 @@
                         {% endcomment %} 
                       <h1 class="text-2xl uppercase font-body font-thin text-center mb-9 md:mb-16">{{ collection.title }}</h1>
                         {% if collection.products.size > 0 %}
-                            <div class="main-carousel mb-5 md:mx-20">
+                            <div class="{% if section.settings.enable_flickity %}main-carousel{% else %}grid md:grid-cols-4 grid-cols-2{% endif %} mb-5 md:mx-20">
                             {% for product in collection.products %}
-                                <div class="carousel-cell h-fit md:w-1/4 pb-10">
+                            <div class="{% if section.settings.enable_flickity %}carousel-cell md:w-1/4{% else %}w-full{% endif %} h-fit pb-10" id="mobile-collection">
                                 {% render 'product-card', product: product %}
                                 </div>
                             {% endfor %} 
@@ -90,8 +90,8 @@
     
 </section>
 
-
-<script>
+{% if section.settings.enable_flickity %}
+  <script>
  document.addEventListener('DOMContentLoaded', function () {
     var carousels = document.querySelectorAll('.main-carousel');
 
@@ -108,6 +108,9 @@
   
 </script>
 
+{% endif %}
+
+
 {% schema %}
     {
       "name": "Featured Collection",
@@ -118,6 +121,12 @@
         "id": "chosen_collection",
         "info": "Select the collection to display in the slider."
         
+        },
+        {
+        "type": "checkbox",
+        "id": "enable_flickity",
+        "label": "Enable Flickity Slider",
+        "default": true
         }
       ],
       "presets": [
