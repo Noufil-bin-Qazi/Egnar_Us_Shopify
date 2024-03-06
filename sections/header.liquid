@@ -140,11 +140,11 @@ z-index: 1000;
           <div class="--Drawertitle flex flex-row justify-between p-7 bg-black border-b sticky top-0">
               <h2 class="text-xl uppercase text-center font-body font-extralight"> 
                 {% if section.settings.header_image %}
-                  <img class="h-6 object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 z-10 mt-1" 
+                  <img class="h-6 object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 z-10 mt-" 
                         src="{{ section.settings.header_image | img_url: 'master' }}" 
                         alt="{{ section.settings.header_image.alt }}">
                   {% else %}
-                    <img class="h-3 md:h-8 w-auto mb-2" src="https://cdn.shopify.com/s/files/1/0683/7338/1345/files/Blvck_Paris_White_220x_2f77c1c3-7e74-45c6-bbaf-24f5b45c31f0.png?v=1707962193" alt="">        
+                    <img class="h-8 mb-2" src="https://cdn.shopify.com/s/files/1/0683/7338/1345/files/Blvck_Paris_White_220x_2f77c1c3-7e74-45c6-bbaf-24f5b45c31f0.png?v=1707962193" alt="">        
               {% endif %}
               </h2>
               <div @click="MobMenuOpen = false" class="overflow-hidden focus:outline-none icon-white">
@@ -268,7 +268,7 @@ z-index: 1000;
       <div class="flex items-center justify-center lg:flex-1 md:mx-0 truncate logos">
         {% assign header_image = section.settings.header_image %}
         {% if header_image != blank %}
-        <a href="{{ shop.url }}"><img class="w-auto h-6" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
+        <a href="{{ shop.url }}"><img class="w-auto h-5 md:h-6" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
         {% else %}
         <h1 class="text-xl text-white uppercase font-bold font-body truncate">{{ shop.name }}</h1>
         {% endif %}
