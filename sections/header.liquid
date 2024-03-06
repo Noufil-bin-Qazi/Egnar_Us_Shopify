@@ -66,8 +66,33 @@ z-index: 1000;
   background-size: 24px !important;
 }
 .mobile-carousel{
+  display: none;
+  
+}
+.mobile-carousel .carousel-cell{
   width: 100%;
-  overflow:  hidden !important;
+  height: 200px;
+  margin-right: 10px;
+  counter-increment: carousel-cell;
+}
+.mobile-carousel .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+ 
+  
+}
+.mobile-carousel .carousel.is-expanded .carousel-cell:before {
+  line-height: 400px;
+}
+.mobile-carousel.carousel-cell.is-expanded { width: 80%; }
+.mobile-carousel.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  
 }
 
     .mobile-carousel
@@ -94,12 +119,12 @@ z-index: 1000;
 
     <!-- MOBILE MENU -->
     <div x-data="{ MobMenuOpen: false }" class="md:hidden flex items-center" x-cloak>
-      <a href="#" @click="MobMenuOpen = true" class="hamicon px-2 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
+      <a href="#" @click="MobMenuOpen = true" class="button--show hamicon px-2 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
         {% render 'hamburger' %}
       </a>
       <a href="#" @click.prevent="isOpen = !isOpen" class="px-2 mr-10 block md:hidden font-body font-extralight text-base text-white hover:opacity-90">{% render 'search-two' %}</a>
       <!-- MOBILE MENU content -->
-      <div x-show="MobMenuOpen" @click.away="MobMenuOpen = false" class="fixed inset-0 overflow-hidden z-50" x-cloak>
+      <div x-show="MobMenuOpen" @click.away="MobMenuOpen = false" class="fixed inset-0 overflow-x-hidden overflow-y-visible z-50" x-cloak>
       <!-- Background overlay -->
       <div class="absolute inset-0 bg-[#363636] opacity-70 transition-opacity ease-linear duration-50" x-show.transition.opacity.duration.50ms="MobMenuOpen"></div>
       <!-- Mobile drawer -->
@@ -112,7 +137,7 @@ z-index: 1000;
            x-transition:leave-start="translate-x-0"
            x-transition:leave-end="-translate-x-full">
           <!-- Drawer title and close button -->
-          <div class="--Drawertitle flex flex-row justify-between p-7 border-b sticky top-0">
+          <div class="--Drawertitle flex flex-row justify-between p-7 bg-black border-b sticky top-0">
               <h2 class="text-xl uppercase text-center font-body font-extralight"> 
                 {% if section.settings.header_image %}
                   <img class="h-8 object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 z-10 mb-2" 
@@ -174,7 +199,7 @@ z-index: 1000;
              <!--MOBILE EXTRA ACCOUNT LINK , FEATURED PRODUCTS-->
              <div class="relative">
               <a href="{{ routes.account_login_url }}" class="font-body font-extralight text-sm uppercase text-white hover:opacity-80">
-              <h1 class="p-3">Account</h1>
+              <h1 class="p-3 mb-2">Account</h1>
               </a>
               
               
@@ -191,11 +216,11 @@ z-index: 1000;
                         {% endcomment %} 
                       <a href="{{ collection.url }}" class="p-3 text-sm uppercase font-body font-extralight text-left text-white">{{ collection.title }}</a>
                         {% if collection.products.size > 0 %}
-                            <div class="mobile-carousel py-3 h-36">
+                            <div class="mobile-carousel p-3 h-52">
                             {% for product in collection.products %}
-                                <div class="carousel-cell my-3 px-3">
-                                  <div class="flex flex-row">
-                                    <div class="w-1/2"><img class="w-full h-full object-cover" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}"></div>
+                                <div class="carousel-cell w-full my-3 px-3">
+                                  <div class="flex -mt-[190px] px-3 flex-row">
+                                    <div class="w-1/2"><img class="w-full h-full pl-1 object-cover" src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.featured_image.alt }}"></div>
                                   <div class="w-2/3 pl-3 flex items-start justify-start flex-col">
                                     <a href="{{ product.url }}" class="text-white text-left leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
                                     <p class="text-gray-500 font-extralight text-[13px] text-left pt-1">{{ product.price | money }}</p>
@@ -515,18 +540,27 @@ z-index: 1000;
 </script>
 
 <script>
- document.addEventListener('DOMContentLoaded', function () {
-    var carousels = document.querySelectorAll('.mobile-carousel');
+ var carousel = document.querySelector('.mobile-carousel');
+var flkty = new Flickity( carousel,{
+  pageDots: false
+} );
 
-    carousels.forEach(function (elem) {
-        new Flickity(elem, {
-            // Flickity options go here
-            wrapAround: true,
-            cellAlign: 'left',
-            pageDots: false,
-            contain: true
-        });
+var showButton = document.querySelector('.button--show');
+showButton.addEventListener( 'click', function() {
+  // un-hide carousel
+  carousel.style.display = 'block';
+  // Flickity resize
+  flkty.resize();
+   // Adjust translateX percentage for carousel cells
+   var carouselCells = carousel.querySelectorAll('.carousel-cell');
+    var cellWidth = carouselCells[0].getBoundingClientRect().width; // Get width of the first cell
+    carouselCells.forEach(function(cell, index) {
+        // Calculate translateX percentage based on cell index and width
+        var translateXPercentage = -325 + index * (625 / carouselCells.length);
+        // Set transform for each cell
+        cell.style.transform = 'translateX(' + translateXPercentage + '%)';
     });
+    flkty.reposition();
 });
   
   
