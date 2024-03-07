@@ -23,7 +23,22 @@
         {% if section.settings.background_image_network %}
             
         <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image_network | img_url: 'master' }}" alt="Background Image">
-        {% endif %}   
+        {% endif %} 
+     {% when 'returns policy' %}
+        {% if section.settings.background_image_returns %}
+            
+        <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image_returns | img_url: 'master' }}" alt="Background Image">
+        {% endif %}
+     {% when 'terms of service' %}
+        {% if section.settings.background_image_terms %}
+            
+        <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image_terms | img_url: 'master' }}" alt="Background Image">
+        {% endif %}
+     {% when 'privacy policy' %}
+        {% if section.settings.background_image_policy %}
+            
+        <img class="absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image_policy | img_url: 'master' }}" alt="Background Image">
+        {% endif %}
     {% else %}
         
    {% endcase %} 
@@ -59,22 +74,37 @@
         {
         "type": "image_picker",
         "id": "background_image_about",
-        "label": "Background Image for About"
+        "label": "Background Image for About Page"
         },
         {
         "type": "image_picker",
         "id": "background_image_vision",
-        "label": "Background Image for Vision"
+        "label": "Background Image for Vision Page"
         },
         {
         "type": "image_picker",
         "id": "background_image_mfc",
-        "label": "Background Image for Manufacturing"
+        "label": "Background Image for Manufacturing Page"
         },
         {
         "type": "image_picker",
         "id": "background_image_network",
-        "label": "Background Image for Network"
+        "label": "Background Image for Network Page"
+        },
+        {
+        "type": "image_picker",
+        "id": "background_image_returns",
+        "label": "Background Image for Returns Page"
+        },
+        {
+        "type": "image_picker",
+        "id": "background_image_terms",
+        "label": "Background Image for Terms Page"
+        },
+        {
+        "type": "image_picker",
+        "id": "background_image_policy",
+        "label": "Background Image for Policy Page"
         }
     ]
 }

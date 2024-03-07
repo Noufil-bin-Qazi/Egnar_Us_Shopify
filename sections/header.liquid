@@ -140,7 +140,7 @@ z-index: 1000;
           <div class="--Drawertitle flex flex-row justify-between p-7 bg-black border-b sticky top-0">
               <h2 class="text-xl uppercase text-center font-body font-extralight"> 
                 {% if section.settings.header_image %}
-                  <img class="h-8 object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 z-10 mb-2" 
+                  <img class="h-6 object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 z-10 mt-" 
                         src="{{ section.settings.header_image | img_url: 'master' }}" 
                         alt="{{ section.settings.header_image.alt }}">
                   {% else %}
@@ -256,19 +256,19 @@ z-index: 1000;
     
       <!-- SOCIAL LINKS -->
       <div class="hidden md:flex w-60 justify-center md:justify-start gap-8 hamicon">
-        <a href="{{ settings.facebook_link }}" class="pl-5"><i class="icon-white">{% render 'facebook' %}</i></a>
-        <a href="{{ settings.twitter_link }}" class="hidden"><i class="icon-white">{% render 'twitter' %}</i></a>
-        <a href="{{ settings.instagram_link }}" class="px-5"><i class="icon-white">{% render 'instagram' %}</i></a>
-        <a href="{{ settings.youtube_link }}" class="hidden"><i class="icon-white">{% render 'youtube' %}</i></a>
-        <a href="{{ settings.tiktok_link }}" class="hidden"><i class="icon-white">{% render 'tiktok' %}</i></a>
-        <a href="{{ settings.linkedin_link }}" class="hidden"><i class="icon-white">{% render 'linkedin' %}</i></a>
+        <a href="{{ section.settings.facebook_link }}" target="_blank" class="pl-5"><i class="icon-white">{% render 'facebook' %}</i></a>
+        <a href="{{ section.settings.twitter_link }}" target="_blank" class="hidden"><i class="icon-white">{% render 'twitter' %}</i></a>
+        <a href="{{ section.settings.instagram_link }}" target="_blank" class="px-5"><i class="icon-white">{% render 'instagram' %}</i></a>
+        <a href="{{ section.settings.youtube_link }}" target="_blank" class="hidden"><i class="icon-white">{% render 'youtube' %}</i></a>
+        <a href="{{ section.settings.tiktok_link }}" target="_blank" class="hidden"><i class="icon-white">{% render 'tiktok' %}</i></a>
+        <a href="{{ section.settings.linkedin_link }}" target="_blank" class="hidden"><i class="icon-white">{% render 'linkedin' %}</i></a>
       </div>
 
       <!-- STORE NAME / STORE LOGO -->
       <div class="flex items-center justify-center lg:flex-1 md:mx-0 truncate logos">
         {% assign header_image = section.settings.header_image %}
         {% if header_image != blank %}
-        <a href="{{ shop.url }}"><img width="85" height="30" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
+        <a href="{{ shop.url }}"><img class="px-3 h-6 -ml-1 md:px-0 w-auto md:h-7" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
         {% else %}
         <h1 class="text-xl text-white uppercase font-bold font-body truncate">{{ shop.name }}</h1>
         {% endif %}

@@ -16,7 +16,8 @@
 
       ],
       "settings": {
-        "chosen_collection": "best-sellers"
+        "chosen_collection": "best-sellers",
+        "enable_flickity": false
       }
     },
     "three-cards": {
@@ -53,7 +54,8 @@
 
       ],
       "settings": {
-        "chosen_collection": "best-seller"
+        "chosen_collection": "best-seller",
+        "enable_flickity": true
       }
     },
     "slide": {
