@@ -1737,6 +1737,10 @@ video {
   background-size: cover;
 }
 
+.bg-contain{
+  background-size: contain;
+}
+
 .bg-center{
   background-position: center;
 }
@@ -2592,6 +2596,11 @@ video {
 
   .md\:overflow-x-hidden{
     overflow-x: hidden;
+  }
+
+  .md\:object-cover{
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 
   .md\:px-20{
