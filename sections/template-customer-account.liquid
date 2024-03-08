@@ -7,7 +7,7 @@
             <div class="w-full my-6 md:my-12">
                 <h2 class="text-xl font-normal font-body text-gray-800">Order history</h2>
 
-                {% paginate customer.orders by 2 %}
+                {% paginate customer.orders by 9 %}
                     <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                         {% for order in customer.orders %}
                             <div class="relative">
@@ -46,10 +46,10 @@
         {% endif %}
 
 
-        <div class="w-full md:w-1/4">
+        <div class="w-full md:pl-4 md:w-1/4">
             <h2 class="text-xl font-normal font-body text-gray-800 mb-12">Account details</h2>
 
-            <p class="text-xs font-normal font-body text-gray-800">{{ customer.default_address | format_address }}</p>
+            <div class="font-extralight font-body text-gray-800">{{ customer.default_address | format_address }}</div>
 
             <a href="{{ routes.account_addresses_url }}" class="text-sm font-body text-blue-600 hover:text-blue-900 underline">View addresses</a>
         </div>
