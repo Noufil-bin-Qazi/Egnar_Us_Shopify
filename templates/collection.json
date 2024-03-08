@@ -4,7 +4,8 @@
       "type": "template-collection",
       "settings": {
         "number_of_products_per_page": 6,
-        "background_image": "shopify:\/\/shop_images\/Screenshot_2024-03-07_at_10.35.42_PM.png"
+        "background_image": "shopify:\/\/shop_images\/Screenshot_2024-03-07_at_10.35.42_PM.png",
+        "mobile_background_image": "shopify:\/\/shop_images\/ban_2.png"
       }
     }
   },
