@@ -75,7 +75,7 @@ z-index: 1000;
 }
 
 .mobile-carousel .carousel-cell{
-  width: 39%;
+  width: 69%;
   height: 130px;
   margin-right: 10px;
   counter-increment: carousel-cell;
@@ -567,7 +567,7 @@ showButton.addEventListener( 'click', function() {
     var cellWidth = carouselCells[0].getBoundingClientRect().width; // Get width of the first cell
     carouselCells.forEach(function(cell, index) {
         // Calculate translateX percentage based on cell index and width
-        var translateXPercentage = -1900 + index * (1980 / carouselCells.length);
+        var translateXPercentage = -1000 + index * (1080 / carouselCells.length);
         // Set transform for each cell
         cell.style.transform = 'translateX(' + translateXPercentage + '%)';
     });
