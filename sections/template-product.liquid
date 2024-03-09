@@ -202,16 +202,9 @@
                             <label for="Quantity-{{ section.id }}">Quantity</label>
 
                             <div class="flex flex-row gap-2 items-center">
-                              <form action="#" method="post">
-            <input type="hidden" name="quantity" value="0">
-            <button type="submit" name="quantity_action" value="decrease">{% render 'minus'%}</button>
-        </form>
-                                <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2" readonly>
-                                       <form action="#" method="post">
-            <input type="hidden" name="quantity" value="0">
-            <button type="submit" name="quantity_action" value="increase">{% render 'plus'%}</button>
-        </form>
-
+                              
+                                <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2">
+                               
                             </div>
                         </div>
                 
@@ -500,22 +493,6 @@ if (panel.style.maxHeight){
   observer.observe(productRecommendationsSection);
 </script>
 
-<script>
-function updateQuantity(event, action) {
-    event.preventDefault(); // Prevent form submission
-
-    var quantityInput = document.getElementById('Quantity-{{ section.id }}');
-    var currentQuantity = parseInt(quantityInput.value);
-    var newQuantity = currentQuantity + (action === 'increase' ? 1 : -1);
-    
-    if (newQuantity < 1) {
-        newQuantity = 1; // Ensure quantity doesn't go below 1
-    }
-
-    quantityInput.value = newQuantity;
-}
-</script>
-                                  
 {% schema %}
     {
         "name": "Product",
