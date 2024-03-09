@@ -202,7 +202,7 @@
                             <label for="Quantity-{{ section.id }}">Quantity</label>
 
                             <div class="flex flex-row gap-2 items-center">
-                              <button class="quantity__button no-js-hidden disabled" name="minus" type="button" onclick="decrementQuantity()">
+                              <button class="w-10 border border-r-0 py-2 px-3 items-center justify-center" name="minus" type="button" onclick="decrementQuantity()">
                               <span class="hidden">Decrease quantity for {{ product.title }}</span>
                               <!-- Add your minus icon or text here -->
                               {% render 'minus' %}
