@@ -202,7 +202,17 @@
                             <label for="Quantity-{{ section.id }}">Quantity</label>
 
                             <div class="flex flex-row gap-2 items-center">
-                            <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2">    
+                              <button class="quantity__button no-js-hidden disabled" name="minus" type="button" onclick="decrementQuantity()">
+        <span class="visually-hidden">Decrease quantity for {{ product.title }}</span>
+        <!-- Add your minus icon or text here -->
+        Minus
+    </button>
+    <input class="quantity__input" type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2">
+    <button class="quantity__button no-js-hidden" name="plus" type="button" onclick="incrementQuantity()">
+        <span class="visually-hidden">Increase quantity for {{ product.title }}</span>
+        <!-- Add your plus icon or text here -->
+        Plus
+    </button>
                             </div>
                         </div>
                 
@@ -322,6 +332,22 @@
      
 </div>
 
+                                  <script>
+    function incrementQuantity() {
+        var input = document.getElementById('Quantity-{{ section.id }}');
+        var newValue = parseInt(input.value) + 1;
+        input.value = newValue;
+    }
+
+    function decrementQuantity() {
+        var input = document.getElementById('Quantity-{{ section.id }}');
+        var newValue = parseInt(input.value) - 1;
+        if (newValue < 1) {
+            newValue = 1; // Ensure quantity doesn't go below 1
+        }
+        input.value = newValue;
+    }
+</script>
 
 
 <script>
