@@ -202,8 +202,16 @@
                             <label for="Quantity-{{ section.id }}">Quantity</label>
 
                             <div class="flex flex-row gap-2 items-center">
-                                <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2">
-                               
+                              <form action="#" method="post">
+            <input type="hidden" name="quantity" value="0">
+            <button type="submit" name="quantity_action" value="decrease">{% render 'icon-minus'%}</button>
+        </form>
+                                <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2" readonly>
+                                       <form action="#" method="post">
+            <input type="hidden" name="quantity" value="0">
+            <button type="submit" name="quantity_action" value="increase">{% render 'icon-plus'%}</button>
+        </form>
+
                             </div>
                         </div>
                 
