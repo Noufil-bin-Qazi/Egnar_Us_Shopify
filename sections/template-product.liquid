@@ -500,6 +500,22 @@ if (panel.style.maxHeight){
   observer.observe(productRecommendationsSection);
 </script>
 
+<script>
+function updateQuantity(event, action) {
+    event.preventDefault(); // Prevent form submission
+
+    var quantityInput = document.getElementById('Quantity-{{ section.id }}');
+    var currentQuantity = parseInt(quantityInput.value);
+    var newQuantity = currentQuantity + (action === 'increase' ? 1 : -1);
+    
+    if (newQuantity < 1) {
+        newQuantity = 1; // Ensure quantity doesn't go below 1
+    }
+
+    quantityInput.value = newQuantity;
+}
+</script>
+                                  
 {% schema %}
     {
         "name": "Product",
