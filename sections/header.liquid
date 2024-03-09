@@ -224,7 +224,7 @@ z-index: 1000;
                             <div class="mobile-carousel p-3 h-52 overflow-hidden">
                             {% for product in collection.products %}
                                 
-                                  <div class="carousel-cell flex my-3 px-3 flex-row">
+                                  <div class="carousel-cell flex my-5 px-3 flex-row">
                                     <img class="h-24 w-4/5 pl-1 object-cover" src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.featured_image.alt }}">
                                   <div class="w-1/2 pl-3 flex items-start justify-start flex-col">
                                     <a href="{{ product.url }}" class="text-white text-left leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
