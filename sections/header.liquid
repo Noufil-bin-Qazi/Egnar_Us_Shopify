@@ -73,9 +73,10 @@ z-index: 1000;
   display: none;
   
 }
+
 .mobile-carousel .carousel-cell{
-  width: 100%;
-  height: 200px;
+  width: 39%;
+  height: 130px;
   margin-right: 10px;
   counter-increment: carousel-cell;
 }
@@ -220,19 +221,19 @@ z-index: 1000;
                         {% endcomment %} 
                       <a href="{{ collection.url }}" class="p-3 text-sm uppercase font-body font-extralight text-left text-white">{{ collection.title }}</a>
                         {% if collection.products.size > 0 %}
-                            <div class="mobile-carousel p-3 h-52">
+                            <div class="mobile-carousel p-3 h-52 overflow-hidden">
                             {% for product in collection.products %}
-                                <div class="carousel-cell w-full my-3 px-3">
-                                  <div class="flex -mt-[190px] px-3 flex-row">
-                                    <div class="w-1/2"><img class="w-full h-full pl-1 object-cover" src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.featured_image.alt }}"></div>
-                                  <div class="w-2/3 pl-3 flex items-start justify-start flex-col">
+                                
+                                  <div class="carousel-cell flex my-3 px-3 flex-row">
+                                    <img class="h-24 w-4/5 pl-1 object-cover" src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.featured_image.alt }}">
+                                  <div class="w-1/2 pl-3 flex items-start justify-start flex-col">
                                     <a href="{{ product.url }}" class="text-white text-left leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
                                     <p class="text-gray-500 font-extralight text-[13px] text-left pt-1">{{ product.price | money }}</p>
                 
                                   </div>
                                   </div>
                                   
-                                </div>
+                                
                             {% endfor %} 
                             </div>
                         
@@ -547,8 +548,10 @@ z-index: 1000;
  var carousel = document.querySelector('.mobile-carousel');
 var flkty = new Flickity( carousel,{
   pageDots: false,
-  cellAlign: 'left',
+  cellAlign: 'right',
   contain: true,
+  adaptiveHeight: true,
+  imagesLoaded: true,
   freeScroll: false,
   draggable: false
 } );
@@ -564,7 +567,7 @@ showButton.addEventListener( 'click', function() {
     var cellWidth = carouselCells[0].getBoundingClientRect().width; // Get width of the first cell
     carouselCells.forEach(function(cell, index) {
         // Calculate translateX percentage based on cell index and width
-        var translateXPercentage = -1200 + index * (1280 / carouselCells.length);
+        var translateXPercentage = -1900 + index * (1980 / carouselCells.length);
         // Set transform for each cell
         cell.style.transform = 'translateX(' + translateXPercentage + '%)';
     });
