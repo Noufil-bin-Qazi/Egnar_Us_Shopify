@@ -204,7 +204,7 @@
                             <div class="flex flex-row gap-2 items-center">
                                 <a href="{{ product.url }}?update_quantity=-1&quantity={{ item.quantity | minus: 1 }}" data-action="update-item-quantity" data-quantity="{{ item.quantity | minus: 1 }}" class="w-10 border border-r-0 py-2 px-3 items-center justify-center">{% render 'minus' %}</a>
                                        
-                                <input type="text" name="updates[]" id="updates_{{ product.url }}" value="{{ item.quantity | default: 1 }}" min="1" class="w-full border px-6 py-3 my-2 readonly-input" readonly>
+                                <input type="text" name="updates[]" id="updates_{{ variant.id }}" value="{{ item.quantity | default: 1 }}" min="1" class="w-full border px-6 py-3 my-2 readonly-input" readonly>
                                 <a href="{{ product.url }}?update_quantity=1&quantity={{ item.quantity | plus: 1 }}" data-action="update-item-quantity" data-quantity="{{ item.quantity | plus: 1 }}" class="w-10 border border-r-0 py-2 px-3 items-center justify-center">{% render 'plus' %}</a>
                             </div>
                         </div>
