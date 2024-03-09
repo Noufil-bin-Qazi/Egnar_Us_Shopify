@@ -210,7 +210,7 @@
                               
                               <input class="quantity__input" type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2 input-readonly" readonly>
                              
-                              <button class="quantity__button no-js-hidden" name="plus" type="button" onclick="incrementQuantity()">
+                              <button class="w-10 border border-r-0 py-2 px-3 items-center justify-center" name="plus" type="button" onclick="incrementQuantity()">
                               <span class="hidden">Increase quantity for {{ product.title }}</span>
                               <!-- Add your plus icon or text here -->
                               {% render 'plus' %}
