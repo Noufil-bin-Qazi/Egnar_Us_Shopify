@@ -201,9 +201,20 @@
                         <div class="mt-3 w-1/2">
                             <label for="Quantity-{{ section.id }}">Quantity</label>
 
-                            <div class="flex flex-row gap-2 items-center">
-                                <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full border px-6 py-3 my-2">
-                               
+                            <div class="flex flex-row items-center mb-2 border">
+                              <button class="w-10  p-3 items-center justify-center" name="minus" type="button" onclick="decrementQuantity()">
+                              <span class="hidden">Decrease quantity for {{ product.title }}</span>
+                              <!-- Add your minus icon or text here -->
+                              {% render 'minus' %}
+                              </button>
+                              
+                              <input type="text" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full  p-3 text-xs font-body font-extralight text-gray-500 text-center" readonly>
+                             
+                              <button class="w-10  p-2 items-center justify-center" name="plus" type="button" onclick="incrementQuantity()">
+                              <span class="hidden">Increase quantity for {{ product.title }}</span>
+                              <!-- Add your plus icon or text here -->
+                              {% render 'plus' %}
+                              </button>
                             </div>
                         </div>
                 
@@ -232,7 +243,7 @@
                         
                           
                             
-                            <div class="block w-full px-6 py-3.5 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center"s>{{ form | payment_button }}</div>
+                            <div class="block w-full py-3 mb-1 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center"s>{{ form | payment_button }}</div>
                           
                           
                     </div> 
@@ -323,6 +334,22 @@
      
 </div>
 
+                                  <script>
+    function incrementQuantity() {
+        var input = document.getElementById('Quantity-{{ section.id }}');
+        var newValue = parseInt(input.value) + 1;
+        input.value = newValue;
+    }
+
+    function decrementQuantity() {
+        var input = document.getElementById('Quantity-{{ section.id }}');
+        var newValue = parseInt(input.value) - 1;
+        if (newValue < 1) {
+            newValue = 1; // Ensure quantity doesn't go below 1
+        }
+        input.value = newValue;
+    }
+</script>
 
 
 <script>
