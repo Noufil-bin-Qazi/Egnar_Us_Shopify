@@ -55,69 +55,6 @@ top: 0;
 z-index: 1000;
    
   }
-   .mobile-carousel {
-  
-     display: flex;
-  flex-direction: row; /* Ensure the direction is set to row for horizontal layout */
-}
-  .mobile-carousel .flickity-prev-next-button .arrow {
-  fill: none !important;
-  
-}
-  .mobile-carousel
-.flickity-prev-next-button.next{
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 5l7 7-7 7'></path></svg>") no-repeat center center;
-    background-size: 24px !important;
-   
-}
-.mobile-carousel
-.flickity-prev-next-button.previous {
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 19l-7-7 7-7'></path></svg>") no-repeat center center;
-  background-size: 24px !important;
-}
-
-.flickity-viewport {
-  overflow: visible;
-}
-.mobile-carousel .carousel-cell{
-  width: 70%;
-  height: 130px;
-  margin-right: 90px;
-  counter-increment: carousel-cell;
-}
-.mobile-carousel .carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
- 
-  
-}
-.mobile-carousel .carousel.is-expanded .carousel-cell:before {
-  line-height: 400px;
-}
-.mobile-carousel.carousel-cell.is-expanded { width: 80%; }
-.mobile-carousel.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  
-}
-
-    .mobile-carousel
-    .flickity-prev-next-button.next {
-        right: 0px !important;
-        background-size: 16px !important;
-        top: 5%;
-        
-    }
-    .mobile-carousel
-    .flickity-prev-next-button.previous {
-  left: 75% !important;
-  background-size: 16px !important;
-  top: 5%;
-  }
 
 
   [x-cloak] { display: none !important; }
@@ -557,40 +494,13 @@ z-index: 1000;
 </script>
 
 <script>
- var carousel = document.querySelector('.mobile-carousel');
-var flkty = new Flickity( carousel,{
-  pageDots: false,
-  prevNextButtons: true,
-  cellAlign: 'left',
-  contain: true,
-  adaptiveHeight: true,
-  imagesLoaded: true,
-  freeScroll: true,
-  draggable: true
-} );
-
-var showButton = document.querySelector('.button--show');
-showButton.addEventListener( 'click', function() {
-  // un-hide carousel
-  carousel.style.display = 'block';
-  // Flickity resize
-  flkty.resize();
-   // Adjust translateX percentage for carousel cells
-   var carouselCells = carousel.querySelectorAll('.carousel-cell');
-    var cellWidth = carouselCells[0].getBoundingClientRect().width; // Get width of the first cell
-    carouselCells.forEach(function(cell, index) {
-        // Calculate translateX percentage based on cell index and width
-<<<<<<< HEAD
-        var translateXPercentage = -1020 + index * (1120 / carouselCells.length);
-=======
-        var translateXPercentage = -1100 + index * (1180 / carouselCells.length);
->>>>>>> 3930e7bb72e3a87324e5f475ea6bacdc184f24f9
-        // Set transform for each cell
-        cell.style.transform = 'translateX(' + translateXPercentage + '%)';
-    });
-    flkty.reposition();
+$(document).ready(function(){
+  $('.mobile-carousel').slick({
+    infinite: true,
+  slidesToShow: 2,
+  slidesToScroll: 2
+  });
 });
-  
   
 </script>
 
