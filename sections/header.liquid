@@ -557,18 +557,41 @@ z-index: 1000;
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var elem = document.querySelector('.mobile-carousel');
-    if (elem) {
-      var flkty = new Flickity(elem, {
-        cellAlign: 'left',
-        contain: true,
-        prevNextButtons: true,
-        draggable: true,
-        pageDots: false
-      });
-    }
-  });
+ var carousel = document.querySelector('.mobile-carousel');
+var flkty = new Flickity( carousel,{
+  pageDots: false,
+  prevNextButtons: true,
+  cellAlign: 'left',
+  contain: true,
+  adaptiveHeight: true,
+  imagesLoaded: true,
+  freeScroll: true,
+  draggable: true
+} );
+
+var showButton = document.querySelector('.button--show');
+showButton.addEventListener( 'click', function() {
+  // un-hide carousel
+  carousel.style.display = 'block';
+  // Flickity resize
+  flkty.resize();
+   // Adjust translateX percentage for carousel cells
+   var carouselCells = carousel.querySelectorAll('.carousel-cell');
+    var cellWidth = carouselCells[0].getBoundingClientRect().width; // Get width of the first cell
+    carouselCells.forEach(function(cell, index) {
+        // Calculate translateX percentage based on cell index and width
+<<<<<<< HEAD
+        var translateXPercentage = -1020 + index * (1120 / carouselCells.length);
+=======
+        var translateXPercentage = -1100 + index * (1180 / carouselCells.length);
+>>>>>>> 3930e7bb72e3a87324e5f475ea6bacdc184f24f9
+        // Set transform for each cell
+        cell.style.transform = 'translateX(' + translateXPercentage + '%)';
+    });
+    flkty.reposition();
+});
+  
+  
 </script>
 
 {% schema %}
