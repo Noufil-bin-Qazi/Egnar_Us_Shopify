@@ -537,7 +537,7 @@ z-index: 1000;
 
 <!-- Initialize the Carousel -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
       const track = document.querySelector('.carousel-track');
       const slides = Array.from(track.children);
       const nextButton = document.querySelector('.carousel-control.next');
@@ -551,28 +551,29 @@ z-index: 1000;
       slides.forEach(setSlidePosition);
 
       const moveToSlide = (track, currentSlide, targetSlide) => {
-        track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+        const amountToMove = targetSlide.style.left;
+        track.style.transform = 'translateX(-' + amountToMove + ')';
         currentSlide.classList.remove('current-slide');
         targetSlide.classList.add('current-slide');
       };
 
       // When I click next, move slides to the left
       nextButton.addEventListener('click', e => {
-        console.log('Next button clicked'); // Debugging: log when the next button is clicked
         const currentSlide = track.querySelector('.current-slide') || slides[0];
-        const nextSlide = currentSlide.nextElementSibling || slides[0];
-        console.log('Current slide:', currentSlide); // Debugging: log the current slide
-        console.log('Next slide:', nextSlide); // Debugging: log the next slide
+        let nextSlide = currentSlide.nextElementSibling;
+        if (!nextSlide) {
+          nextSlide = slides[0]; // Loop back to the start
+        }
         moveToSlide(track, currentSlide, nextSlide);
       });
 
       // When I click prev, move slides to the right
       prevButton.addEventListener('click', e => {
-        console.log('Prev button clicked'); // Debugging: log when the prev button is clicked
         const currentSlide = track.querySelector('.current-slide') || slides[0];
-        const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
-        console.log('Current slide:', currentSlide); // Debugging: log the current slide
-        console.log('Prev slide:', prevSlide); // Debugging: log the previous slide
+        let prevSlide = currentSlide.previousElementSibling;
+        if (!prevSlide) {
+          prevSlide = slides[slides.length - 1]; // Loop back to the end
+        }
         moveToSlide(track, currentSlide, prevSlide);
       });
 
