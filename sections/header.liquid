@@ -195,7 +195,7 @@ z-index: 1000;
                         {% endcomment %} 
                       <a href="{{ collection.url }}" class="p-3 text-sm uppercase font-body font-extralight text-left text-white">{{ collection.title }}</a>
                         {% if collection.products.size > 0 %}
-                          
+                          <div class="parent-container">
                             <div class="collection-carousel p-3 h-52 overflow-hidden">
                               {% for product in collection.products %}
                                 <div class="cell flex my-5 px-3 flex-row">
@@ -210,7 +210,7 @@ z-index: 1000;
                             <button class="carousel-control prev">&lt;</button>
                             <button class="carousel-control next">&gt;</button>
 
-                        
+                          </div>
                         {% else %}
                         <p class="text-white text-center">No products found in the selected collection.</p>
                         {% endif %}
