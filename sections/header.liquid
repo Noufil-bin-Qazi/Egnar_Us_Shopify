@@ -555,6 +555,7 @@ z-index: 1000;
 </script>
 
 <script>
+  document.addEventListener('DOMContentLoaded', function () {
  var carousel = document.querySelector('.mobile-carousel');
 var flkty = new Flickity( carousel,{
   pageDots: false,
@@ -566,7 +567,7 @@ var flkty = new Flickity( carousel,{
   freeScroll: true,
   draggable: true
 } );
-
+});
 var showButton = document.querySelector('.button--show');
 showButton.addEventListener( 'click', function() {
   // un-hide carousel
