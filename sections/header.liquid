@@ -539,7 +539,7 @@ z-index: 1000;
     let currentIndex = 0;
 
     const moveToSlide = (index) => {
-      const slideWidth = slides[0].getBoundingClientRect().width + 10;
+      const slideWidth = slides[0].getBoundingClientRect().width;
       const amountToMove = slideWidth * index;
       track.style.transform = 'translateX(-' + amountToMove + 'px)';
       currentIndex = index;
