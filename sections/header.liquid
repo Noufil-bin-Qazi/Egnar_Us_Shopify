@@ -528,7 +528,7 @@ z-index: 1000;
 
 <!-- Initialize the Carousel -->
 <script>
-window.onload = function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const track = document.querySelector('.collection-carousel');
     const slides = Array.from(track.children);
     const nextButton = document.querySelector('.carousel-control.next');
@@ -566,7 +566,7 @@ window.onload = function() {
 
     // Initialize the first slide
     moveToSlide(0);
-  };
+  });
 </script>
 
 
