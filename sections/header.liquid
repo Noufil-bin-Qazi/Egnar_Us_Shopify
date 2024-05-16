@@ -163,21 +163,22 @@ z-index: 1000;
                         {% endcomment %} 
                       <a href="{{ collection.url }}" class="p-3 text-sm uppercase font-body font-extralight text-left text-white">{{ collection.title }}</a>
                         {% if collection.products.size > 0 %}
-                            <div class="mobile-carousel p-3 h-52 overflow-hidden">
-                            {% for product in collection.products %}
-                                
-                                  <div class="cells flex my-5 px-3 flex-row">
+                            <div class="carousel-container">
+                              <div class="carousel-track collection-carousel">
+                                {% for product in collection.products %}
+                                  <div class="cell flex my-5 px-3 flex-row">
                                     <img class="h-24 w-4/5 pl-1 object-cover" src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.featured_image.alt }}">
-                                  <div class="w-1/2 pl-3 flex items-start justify-start flex-col">
-                                    <a href="{{ product.url }}" class="text-white text-left leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
-                                    <p class="text-gray-500 font-extralight text-[13px] text-left pt-1">{{ product.price | money }}</p>
-                
+                                    <div class="w-1/2 pl-3 flex items-start justify-start flex-col">
+                                      <a href="{{ product.url }}" class="text-white text-left leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
+                                      <p class="text-gray-500 font-extralight text-[13px] text-left pt-1">{{ product.price | money }}</p>
+                                    </div>
                                   </div>
-                                  </div>
-                                  
-                                
-                            {% endfor %} 
+                                {% endfor %}
+                              </div>
+                              <button class="carousel-control prev">&lt;</button>
+                              <button class="carousel-control next">&gt;</button>
                             </div>
+
                         
                         {% else %}
                         <p class="text-white text-center">No products found in the selected collection.</p>
