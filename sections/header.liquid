@@ -534,28 +534,44 @@ z-index: 1000;
 </script>
 
 
-<!-- Initialize the Slick Carousel -->
+<!-- Initialize the Carousel -->
 <script type="text/javascript">
-  $(document).ready(function(){
-    $('.mobile-carousel').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      dots: true,
-      arrows: false,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
+  document.addEventListener('DOMContentLoaded', function() {
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector('.carousel-control.next');
+      const prevButton = document.querySelector('.carousel-control.prev');
+      const slideWidth = slides[0].getBoundingClientRect().width;
+
+      // Arrange the slides next to one another
+      const setSlidePosition = (slide, index) => {
+        slide.style.left = slideWidth * index + 'px';
+      };
+      slides.forEach(setSlidePosition);
+
+      const moveToSlide = (track, currentSlide, targetSlide) => {
+        track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+        currentSlide.classList.remove('current-slide');
+        targetSlide.classList.add('current-slide');
+      };
+
+      // When I click next, move slides to the left
+      nextButton.addEventListener('click', e => {
+        const currentSlide = track.querySelector('.current-slide') || slides[0];
+        const nextSlide = currentSlide.nextElementSibling || slides[0];
+        moveToSlide(track, currentSlide, nextSlide);
+      });
+
+      // When I click prev, move slides to the right
+      prevButton.addEventListener('click', e => {
+        const currentSlide = track.querySelector('.current-slide') || slides[0];
+        const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
+        moveToSlide(track, currentSlide, prevSlide);
+      });
+
+      // Initialize the first slide as the current slide
+      slides[0].classList.add('current-slide');
     });
-  });
 </script>
 
   
