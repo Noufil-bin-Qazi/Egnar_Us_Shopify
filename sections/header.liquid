@@ -557,15 +557,21 @@ z-index: 1000;
 
       // When I click next, move slides to the left
       nextButton.addEventListener('click', e => {
+        console.log('Next button clicked'); // Debugging: log when the next button is clicked
         const currentSlide = track.querySelector('.current-slide') || slides[0];
         const nextSlide = currentSlide.nextElementSibling || slides[0];
+        console.log('Current slide:', currentSlide); // Debugging: log the current slide
+        console.log('Next slide:', nextSlide); // Debugging: log the next slide
         moveToSlide(track, currentSlide, nextSlide);
       });
 
       // When I click prev, move slides to the right
       prevButton.addEventListener('click', e => {
+        console.log('Prev button clicked'); // Debugging: log when the prev button is clicked
         const currentSlide = track.querySelector('.current-slide') || slides[0];
         const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1];
+        console.log('Current slide:', currentSlide); // Debugging: log the current slide
+        console.log('Prev slide:', prevSlide); // Debugging: log the previous slide
         moveToSlide(track, currentSlide, prevSlide);
       });
 
