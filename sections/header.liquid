@@ -536,50 +536,72 @@ z-index: 1000;
 
 <!-- Initialize the Carousel -->
 <script>
- document.addEventListener('DOMContentLoaded', function() {
-      const track = document.querySelector('.carousel-track');
-      const slides = Array.from(track.children);
-      const nextButton = document.querySelector('.carousel-control.next');
-      const prevButton = document.querySelector('.carousel-control.prev');
-      const slideWidth = slides[0].getBoundingClientRect().width;
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log("Document loaded");
 
-      // Arrange the slides next to one another
-      const setSlidePosition = (slide, index) => {
-        slide.style.left = slideWidth * index + 'px';
-      };
-      slides.forEach(setSlidePosition);
+    const track = document.querySelector('.collection-carousel');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-control.next');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const slideWidth = slides[0].getBoundingClientRect().width;
 
-      const moveToSlide = (track, currentSlide, targetSlide) => {
-        const amountToMove = targetSlide.style.left;
-        track.style.transform = 'translateX(-' + amountToMove + ')';
-        currentSlide.classList.remove('current-slide');
-        targetSlide.classList.add('current-slide');
-      };
+    console.log("Track element:", track);
+    console.log("Slides:", slides);
+    console.log("Next button:", nextButton);
+    console.log("Previous button:", prevButton);
+    console.log("Slide width:", slideWidth);
 
-      // When I click next, move slides to the left
-      nextButton.addEventListener('click', e => {
-        const currentSlide = track.querySelector('.current-slide') || slides[0];
-        let nextSlide = currentSlide.nextElementSibling;
-        if (!nextSlide) {
-          nextSlide = slides[0]; // Loop back to the start
-        }
-        moveToSlide(track, currentSlide, nextSlide);
-      });
+    // Arrange the slides next to one another
+    const setSlidePosition = (slide, index) => {
+      console.log("Setting position for slide", index);
+      slide.style.left = slideWidth * index + 'px';
+    };
+    slides.forEach(setSlidePosition);
 
-      // When I click prev, move slides to the right
-      prevButton.addEventListener('click', e => {
-        const currentSlide = track.querySelector('.current-slide') || slides[0];
-        let prevSlide = currentSlide.previousElementSibling;
-        if (!prevSlide) {
-          prevSlide = slides[slides.length - 1]; // Loop back to the end
-        }
-        moveToSlide(track, currentSlide, prevSlide);
-      });
+    const moveToSlide = (track, currentSlide, targetSlide) => {
+      const amountToMove = targetSlide.style.left;
+      console.log("Moving to slide:", targetSlide, "Amount to move:", amountToMove);
+      track.style.transform = 'translateX(-' + amountToMove + ')';
+      currentSlide.classList.remove('current-slide');
+      targetSlide.classList.add('current-slide');
+    };
 
-      // Initialize the first slide as the current slide
-      slides[0].classList.add('current-slide');
+    // When I click next, move slides to the left
+    nextButton.addEventListener('click', e => {
+      console.log("Next button clicked");
+      const currentSlide = track.querySelector('.current-slide') || slides[0];
+      let nextSlide = currentSlide.nextElementSibling;
+      if (!nextSlide) {
+        nextSlide = slides[0]; // Loop back to the start
+      }
+      console.log("Current slide:", currentSlide);
+      console.log("Next slide:", nextSlide);
+      moveToSlide(track, currentSlide, nextSlide);
     });
+
+    // When I click prev, move slides to the right
+    prevButton.addEventListener('click', e => {
+      console.log("Prev button clicked");
+      const currentSlide = track.querySelector('.current-slide') || slides[0];
+      let prevSlide = currentSlide.previousElementSibling;
+      if (!prevSlide) {
+        prevSlide = slides[slides.length - 1]; // Loop back to the end
+      }
+      console.log("Current slide:", currentSlide);
+      console.log("Prev slide:", prevSlide);
+      moveToSlide(track, currentSlide, prevSlide);
+    });
+
+    // Initialize the first slide as the current slide
+    if (slides.length > 0) {
+      slides[0].classList.add('current-slide');
+      console.log("Initialized first slide as current slide");
+    } else {
+      console.log("No slides found");
+    }
+  });
 </script>
+
 
   
 
