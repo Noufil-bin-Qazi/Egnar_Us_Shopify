@@ -58,8 +58,7 @@ z-index: 1000;
    .mobile-carousel {
   
      display: flex;
-     flex-wrap: nowrap;
-     overflow: hidden;
+  flex-direction: row; /* Ensure the direction is set to row for horizontal layout */
 }
   .mobile-carousel .flickity-prev-next-button .arrow {
   fill: none !important;
@@ -78,19 +77,13 @@ z-index: 1000;
 }
 
 .flickity-viewport {
-  overflow: hidden; /* Hide overflow content */
-}
-
-.flickity-slider {
-  display: flex; /* Flexbox layout for the slider */
-  flex-direction: row; /* Horizontal row layout */
+  overflow: visible;
 }
 .mobile-carousel .carousel-cell{
   width: 70%;
   height: 130px;
   margin-right: 90px;
   counter-increment: carousel-cell;
-  display: inline-block;
 }
 .mobile-carousel .carousel-cell:before {
   display: block;
@@ -572,7 +565,6 @@ z-index: 1000;
         contain: true,
         prevNextButtons: true,
         draggable: true,
-        wrapAround: true,
         pageDots: false
       });
     }
