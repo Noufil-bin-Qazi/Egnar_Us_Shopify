@@ -55,47 +55,34 @@ top: 0;
 z-index: 1000;
    
   }
- .carousel-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      height: 200px; /* Adjust height as needed */
-    }
+ .collection-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
 
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+.cell {
+  min-width: 100%;
+}
 
-    .carousel-track .cell {
-      min-width: 100%;
-      box-sizing: border-box;
-    }
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
 
-    .carousel-track .cell img {
-      width: 100%;
-      height: auto;
-    }
+.prev {
+  left: 10px;
+}
 
-    .carousel-control {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      z-index: 10;
-    }
-
-    .carousel-control.prev {
-      left: 10px;
-    }
-
-    .carousel-control.next {
-      right: 10px;
-    }
+.next {
+  right: 10px;
+}
   
   [x-cloak] { display: none !important; }
   
