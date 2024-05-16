@@ -226,7 +226,7 @@ z-index: 1000;
                         {% endcomment %} 
                       <a href="{{ collection.url }}" class="p-3 text-sm uppercase font-body font-extralight text-left text-white">{{ collection.title }}</a>
                         {% if collection.products.size > 0 %}
-                            <div class="mobile-carousel p-3 h-52 overflow-hidden" data-flickity='{ "cellAlign": "left", "contain": true }'>
+                            <div class="mobile-carousel p-3 h-52 overflow-hidden">
                             {% for product in collection.products %}
                                 
                                   <div class="carousel-cell flex my-5 px-3 flex-row">
@@ -557,7 +557,18 @@ z-index: 1000;
 </script>
 
 <script>
-  
+  document.addEventListener("DOMContentLoaded", function() {
+    var elem = document.querySelector('.mobile-carousel');
+    if (elem) {
+      var flkty = new Flickity(elem, {
+        cellAlign: 'left',
+        contain: true,
+        prevNextButtons: true,
+        draggable: true,
+        pageDots: false
+      });
+    }
+  });
 </script>
 
 {% schema %}
