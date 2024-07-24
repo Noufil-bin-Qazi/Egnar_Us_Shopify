@@ -1,10 +1,19 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
         "background_image": "shopify:\/\/shop_images\/Screenshot_2024-05-21_at_6.38.18_AM.png",
-        "mob_background_image": "shopify:\/\/shop_images\/Screenshot_2024-05-21_at_6.38.18_AM.png",
+        "mob_background_image": "shopify:\/\/shop_images\/Untitled_design_-_2024-07-24T171411.840.png",
         "heading_hero": "summer drop 1.0",
         "subheading_hero": "",
         "button1_href": "https:\/\/egnar.us\/collections\/all",
