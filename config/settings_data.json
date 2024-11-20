@@ -1,14 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "checkout_button_color": "#1773b0",
     "sections": {
       "header": {
         "type": "header",
+        "custom_css": [
+          ".--header_desktop_upper {background-color: transparent !important; border-bottom: none !important; /* Removes the border if needed */}"
+        ],
         "settings": {
-          "header_image": "shopify:\/\/shop_images\/egnarlogonew_9da10ce0-083a-400f-8883-2210a6df892a.png",
-          "facebook_link": "https:\/\/www.facebook.com\/profile.php?id=100094633816201&mibextid=PtKPJ9",
+          "header_image": "shopify://shop_images/egnarlogonew_9da10ce0-083a-400f-8883-2210a6df892a.png",
+          "facebook_link": "https://www.facebook.com/profile.php?id=100094633816201&mibextid=PtKPJ9",
           "twitter_link": "#",
-          "instagram_link": "https:\/\/www.instagram.com\/egnar.us\/",
+          "instagram_link": "https://www.instagram.com/egnar.us/",
           "youtube_link": "",
           "tiktok_link": "",
           "linkedin_link": "",
@@ -20,27 +32,23 @@
         "settings": {
           "footer_menu_1": "services",
           "footer_menu_2": "footer",
-          "footer_img": "shopify:\/\/shop_images\/egnarlogonew.png",
-          "facebook_link": "https:\/\/www.facebook.com\/profile.php?id=100094633816201&mibextid=PtKPJ9",
-          "instagram_link": "https:\/\/www.instagram.com\/egnar.us\/"
+          "footer_img": "shopify://shop_images/egnarlogonew.png",
+          "facebook_link": "https://www.facebook.com/profile.php?id=100094633816201&mibextid=PtKPJ9",
+          "instagram_link": "https://www.instagram.com/egnar.us/"
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "8170924994765517213": {
-        "type": "shopify:\/\/apps\/tepo-product-options\/blocks\/app-embed\/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
+        "type": "shopify://apps/tepo-product-options/blocks/app-embed/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   },
   "presets": {
-    "Default": {
-    }
+    "Default": {}
   },
   "platform_customizations": {
     "custom_css": [
