@@ -22,18 +22,20 @@
       opacity: 1;
     }
   }
- .fade-in-down {
-    opacity: 0;
-    animation: fadeInDown 2s ease-out forwards;
-  }  
-@keyframes fadeInDown {
+   
+.logos a {
+    opacity: 0;  /* Start with the element hidden */
+    animation: fadeInFromTop 1.2s ease-out forwards;  /* Apply animation */
+  }
+  
+ @keyframes fadeInFromTop {
     from {
-      opacity: 0;
-      transform: translateY(400px);
+      opacity: 0;                 
+      transform: translateY(-400px); 
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 1;                  
+      transform: translateY(0);    
     }
   }
 @keyframes fadeInRight {
@@ -64,10 +66,7 @@
   .hamicon {
    animation: fadeInLeft 1.2s ease-in-out;
   }
-  .logos a {
-  opacity: 0;  /* Start as invisible */
-  animation: fadeInDown 1.2s ease-in-out forwards;
-}
+ 
   #shopify-section-header{
     position: sticky;
 top: 0;
@@ -276,7 +275,7 @@ z-index: 1000;
       </div>
 
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex items-center justify-center lg:flex-1 md:mx-0 truncate">
+      <div class="flex items-center justify-center lg:flex-1 md:mx-0 truncate logos">
         {% assign header_image = section.settings.header_image %}
         {% if header_image != blank %}
         <a href="{{ shop.url }}"><img class="px-3 h-6 -ml-1 md:px-0 w-auto md:h-7" src="{{ section.settings.header_image | img_url: 'master' }}" alt="Header Image"></a>
