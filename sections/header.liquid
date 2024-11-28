@@ -8,6 +8,21 @@
   .icon-white {
   color: #ffffff;
 }
+  
+.fade-in-on-load {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
 @keyframes fadeInDown {
     from {
       opacity: 0;
@@ -414,7 +429,7 @@ z-index: 1000;
                @mouseenter="open = true"
                @mouseleave="open = false"
                type="button" 
-               class="inline-flex font-body font-extralight uppercase text-sm text-white hover:opacity-90 border-0 border-white hover:border-b-2 py-3"
+               class="fade-in-on-load inline-flex font-body font-extralight uppercase text-sm text-white hover:opacity-90 border-0 border-white hover:border-b-2 py-3"
               >
               {{ link.title }}
               </button>
