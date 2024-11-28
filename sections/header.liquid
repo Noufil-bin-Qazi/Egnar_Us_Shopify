@@ -106,7 +106,12 @@ z-index: 1000;
       <a href="#" @click="MobMenuOpen = true" class="button--show hamicon px-2 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
         <svg width="24" height="24" class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z" fill="#ffffff"/></svg>
       </a>
-      <a href="#" @click.prevent="isOpen = !isOpen" class="px-2 mr-10 block md:hidden font-body font-extralight text-base text-white hover:opacity-90">{% render 'search-two' %}</a>
+      <a href="#" @click.prevent="isOpen = !isOpen" class="px-2 mr-10 block md:hidden font-body font-extralight text-base text-white hover:opacity-90">
+        <svg width="24" height="24" class="w-7 h-7" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.5 15.5L19 19" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 11C5 14.3137 7.68629 17 11 17C12.6597 17 14.1621 16.3261 15.2483 15.237C16.3308 14.1517 17 12.654 17 11C17 7.68629 14.3137 5 11 5C7.68629 5 5 7.68629 5 11Z" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
       <!-- MOBILE MENU content -->
       <div x-show="MobMenuOpen" @click.away="MobMenuOpen = false" class="fixed inset-0 overflow-x-hidden overflow-y-visible z-50" x-cloak>
       <!-- Background overlay -->
