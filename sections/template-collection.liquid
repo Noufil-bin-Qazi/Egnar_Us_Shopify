@@ -52,7 +52,7 @@
         {% assign sorted_products = collection.products %}
     {% endcase %}
     <!-- Add this code where you want the form to appear -->
-      <div x-data="{ isOpen: false, selectedSort: '{{ sort_option | default: "manual" }}' }">
+      <div x-data="{ isOpen: false, selectedSort: '{{ sort_option | default: "manual" }}' }" x-cloak>
         <label @click="isOpen = !isOpen" class="cursor-pointer text-[13px] items-center flex gap-1 flex-row text-gray-700 font-body font-extralight" id="sort-label">Sort {% render 'arrow-down' %}</label>
         <div x-show="isOpen" @click.away="isOpen = false" class="relative">
             <div x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute z-50 right-[-17px] py-5 mt-6 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
