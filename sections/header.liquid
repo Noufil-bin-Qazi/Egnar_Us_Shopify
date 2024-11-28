@@ -102,7 +102,7 @@ z-index: 1000;
     <div class="--header_desktop_upper lg:px-12 flex items-center justify-between py-5 border-b-[0.5px] border-gray-500">
 
     <!-- MOBILE MENU -->
-    <div x-data="{ MobMenuOpen: false }" class="md:hidden sm:inline-flex items-center" x-cloak>
+    <div x-data="{ MobMenuOpen: false }" class="md:hidden inline-flex items-center" x-cloak>
       <a href="#" @click="MobMenuOpen = true" class="button--show hamicon px-2 font-body font-extralight whitespace-nowrap text-base text-white hover:opacity-90 fade-up-enter-active">
         {% render 'hamburger' %}
       </a>
