@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "template": {
@@ -5,38 +14,31 @@
       "blocks": {
         "vendor": {
           "type": "vendor",
-          "settings": {
-          }
+          "settings": {}
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_selector": {
           "type": "variant_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "quantity": {
           "type": "quantity",
-          "settings": {
-          }
+          "settings": {}
         },
         "checkout_buttons": {
           "type": "checkout_buttons",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -48,38 +50,35 @@
         "checkout_buttons",
         "description"
       ],
-      "settings": {
-      }
+      "custom_css": [
+        "#mainCarousel {width: auto; /* Automatically adjusts to the content width */ height: auto; /* Automatically adjusts to the content height */ display: flex; /* Aligns items horizontally */ justify-content: center; /* Centers the content horizontally */ align-items: center; /* Centers the content vertically */ overflow: hidden; /* Hides overflow content */}",
+        "#mainCarousel img {max-width: 100%; /* Ensures images scale down within the container */ height: auto; /* Maintains the image's aspect ratio */ display: block; /* Removes unnecessary spacing below the image */}"
+      ],
+      "settings": {}
     },
     "170895019054dc777d": {
       "type": "apps",
-      "settings": {
-      }
+      "settings": {}
     },
     "1708939365d21d87ac": {
       "type": "apps",
-      "settings": {
-      }
+      "settings": {}
     },
     "17089218146f36c19b": {
       "type": "apps",
-      "settings": {
-      }
+      "settings": {}
     },
     "1708921871374ebb86": {
       "type": "apps",
-      "settings": {
-      }
+      "settings": {}
     },
     "170893921726ff9430": {
       "type": "apps",
-      "settings": {
-      }
+      "settings": {}
     },
     "17089448873b112c22": {
       "type": "apps",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
