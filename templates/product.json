@@ -50,10 +50,7 @@
         "checkout_buttons",
         "description"
       ],
-      "custom_css": [
-        "#mainCarousel {display: flex; justify-content: center; align-items: center; overflow: hidden; /* Avoid clipping the image */ background-color: black; /* Optional for better visualization */}",
-        "#mainCarousel img {display: block; max-width: 100%; /* Adjust to fit container width */ height: auto; /* Maintain aspect ratio */}"
-      ],
+      "custom_css": [],
       "settings": {}
     },
     "170895019054dc777d": {
