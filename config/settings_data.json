@@ -15,7 +15,8 @@
         "type": "header",
         "custom_css": [
           ".--header_desktop_upper {background-color: black !important; /* Removes the border if needed */}",
-          ".--header_desktop_lower {background-color: black !important; /* Removes the border if needed */}"
+          ".--header_desktop_lower {background-color: black !important; /* Removes the border if needed */}",
+          ".- {margin-top: 50px; /* Moves the section down */}"
         ],
         "settings": {
           "header_image": "shopify://shop_images/egnarlogonew_9da10ce0-083a-400f-8883-2210a6df892a.png",
