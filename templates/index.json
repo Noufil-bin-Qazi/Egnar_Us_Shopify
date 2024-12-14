@@ -11,10 +11,7 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "custom_css": [
-        ".herosec {margin-top: 150px;}",
-        ".heromobile {margin-top: 75px;}"
-      ],
+      "custom_css": [],
       "settings": {
         "background_image": "shopify://shop_images/Screenshot_2024-05-21_at_6.38.18_AM.png",
         "mob_background_image": "shopify://shop_images/Untitled_design_-_2024-07-24T171411.840.png",
