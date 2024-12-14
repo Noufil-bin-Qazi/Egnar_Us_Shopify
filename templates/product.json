@@ -51,8 +51,8 @@
         "description"
       ],
       "custom_css": [
-        "#mainCarousel {width: auto; /* Automatically adjusts to the content width */ height: auto; /* Automatically adjusts to the content height */ display: flex; /* Aligns items horizontally */ justify-content: center; /* Centers the content horizontally */ align-items: center; /* Centers the content vertically */ overflow: hidden; /* Hides overflow content */}",
-        "#mainCarousel img {max-width: 100%; /* Ensures images scale down within the container */ height: auto; /* Maintains the image's aspect ratio */ display: block; /* Removes unnecessary spacing below the image */}"
+        "#mainCarousel {display: flex; justify-content: center; align-items: center; overflow: hidden; /* Avoid clipping the image */ background-color: black; /* Optional for better visualization */}",
+        "#mainCarousel img {display: block; max-width: 100%; /* Adjust to fit container width */ height: auto; /* Maintain aspect ratio */}"
       ],
       "settings": {}
     },
