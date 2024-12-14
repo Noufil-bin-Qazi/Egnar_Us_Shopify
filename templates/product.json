@@ -50,7 +50,10 @@
         "checkout_buttons",
         "description"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "#mainCarousel {width: 720px; /* Fixed width */ height: 1080px; /* Fixed height */ display: flex; justify-content: center; align-items: center; overflow: hidden; /* Ensure images stay within bounds */ background-color: black; /* Optional background color */}",
+        "#mainCarousel img {width: 100%; /* Adjust image to match the carousel's width */ height: 100%; /* Ensure the image fully fills the height */ object-fit: cover; /* Maintain proper scaling without distortion */ display: block;}"
+      ],
       "settings": {}
     },
     "170895019054dc777d": {
