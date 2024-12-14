@@ -14,8 +14,7 @@
       "header": {
         "type": "header",
         "custom_css": [
-          ".--header_desktop_upper {background-color: black !important; /* Removes the border if needed */}",
-          ".tcustomizer__image{border-radius: 20% !important;}"
+          ".--header_desktop_upper {background-color: black !important; /* Removes the border if needed */}"
         ],
         "settings": {
           "header_image": "shopify://shop_images/egnarlogonew_9da10ce0-083a-400f-8883-2210a6df892a.png",
