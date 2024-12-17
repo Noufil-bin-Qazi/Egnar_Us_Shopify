@@ -11,9 +11,7 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "custom_css": [
-        ".herosec img {position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; max-width: 100%; max-height: 100%; object-fit: cover; /* Adjust as needed: cover, contain, etc. */}"
-      ],
+      "custom_css": [],
       "settings": {
         "background_image": "shopify://shop_images/Screenshot_2024-05-21_at_6.38.18_AM.png",
         "mob_background_image": "shopify://shop_images/Untitled_design_-_2024-07-24T171411.840.png",
