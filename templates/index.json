@@ -12,7 +12,7 @@
     "hero": {
       "type": "hero",
       "custom_css": [
-        ".herosec {padding-top: 100px; display: flex; align-items: center; justify-content: center;}"
+        ".herosec {margin-top: 100px;}"
       ],
       "settings": {
         "background_image": "shopify://shop_images/Screenshot_2024-05-21_at_6.38.18_AM.png",
