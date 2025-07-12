@@ -91,6 +91,7 @@
     },
     "video_section": {
       "type": "video_section",
+      "disabled": true,
       "settings": {
         "video_selected": "https://cdn.shopify.com/videos/c/o/v/7a8d917537ca485b9373f04fad1b1744.mp4"
       }
@@ -280,6 +281,7 @@
         "testimonial_3Tb9q7",
         "testimonial_erg4Qf"
       ],
+      "disabled": true,
       "settings": {
         "heading_testimonials": "What Our Clients Say",
         "logo_image": "shopify://shop_images/Egnar-logo.png"
@@ -304,8 +306,14 @@
           "settings": {
             "title": "",
             "title_color": "",
+            "title_size_v2": 0,
             "alignment": "center",
-            "margin_top": 50,
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
             "background_color": "",
             "feed_id": "",
             "html_area": ""
