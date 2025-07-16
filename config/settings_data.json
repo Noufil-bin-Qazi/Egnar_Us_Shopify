@@ -42,8 +42,8 @@
     },
     "content_for_index": [],
     "blocks": {
-      "8170924994765517213": {
-        "type": "shopify://apps/tepo-product-options/blocks/app-embed/906ef57c-14e4-45d8-8b53-3ba7349d56a6",
+      "239497251091147081": {
+        "type": "shopify://apps/jotly-size-chart/blocks/embed/97eaca86-aad8-492c-9d4d-0dfdc4899889",
         "disabled": false,
         "settings": {}
       }
