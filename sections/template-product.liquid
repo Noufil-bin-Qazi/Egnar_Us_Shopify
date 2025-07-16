@@ -1,142 +1,660 @@
 <!-- Include Flickity CSS -->
-{{ 'flickity.css' | asset_url | stylesheet_tag }}
+{{ 'node_modules/flickity/css/flickity.css' | asset_url | stylesheet_tag }}
+
 <!-- Include Flickity JavaScript -->
-{{ 'flickity.pkgd.min.js' | asset_url | script_tag }}
+{{ 'node_modules/flickity/dist/flickity.pkgd.min.js' | asset_url | script_tag }}
 
 <style>
-  body { overflow-x: hidden; }
-
+  body
+  {overflow-x: hidden;}  
+  /* Add your custom styles as needed */
   .thumbnail-item {
     text-align: center;
     cursor: pointer;
   }
-  .tcustomizer__image--big {
+  .tcustomizer__image--big{
     width: 3em !important;
     height: 3em !important;
   }
   .product--information { height: fit-content; }
-
+  
   .panel {
-    padding: 0 2px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    border-bottom: solid 1px #f1f1f1;
+  padding: 0 2px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-bottom: solid 1px #f1f1f1;
   }
   h5.accordion-tab:after {
-    content: "\002B";
-    line-height: 13px;
-    font-size: 35px;
-    font-weight: 100;
-    float: right;
-    color: #4A5568;
-    margin-right: 20px;
-    transition: transform 0.5s;
-    transform-origin: 50% 60%;
+  content: "\002B";
+  line-height: 13px;
+  font-size: 35px;
+  font-weight: 100;
+  float: right;
+  color: #4A5568;
+  margin-right: 20px;
+  transition: transform 0.5s;
+  transform-origin: 50% 60%;
   }
   .active:after {
-    transform: rotate(-225deg);
+  transform: rotate(-225deg);
   }
+  .flickity-viewport{
+    height: 800px !important;
+  }
+  .flickity-prev-next-button.next {
+        right: 0px !important;
+        
+    }
+    .flickity-prev-next-button.previous {
+  left: 0px !important;
+  
+}
+  .flickity-prev-next-button .arrow {
+  fill: none !important;
+  
+}
+  .flickity-prev-next-button.next{
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 5l7 7-7 7'></path></svg>") no-repeat center center;
+    background-size: 34px !important;
+   
+}
+.flickity-prev-next-button.previous {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 19l-7-7 7-7'></path></svg>") no-repeat center center;
+  background-size: 34px !important;
+}
+  .tcustomizer__image {
+  border-radius: 150px !important;
+}
+@media only screen and (max-width: 600px) {
+  .flickity-viewport{
+    height: 500px !important;
+  }  
+  .flickity-prev-next-button {
+        top: 105%;
+    }
+    .flickity-prev-next-button.next {
+        right: 5px !important;
+        background-size: 19px !important;
+    }
+    .flickity-prev-next-button.previous {
+  left: 5px !important;
+  background-size: 19px !important;
+  
+}
+.flickity-page-dots {
+  display: flex;
+  justify-content: center;
+}
 
-  .variant-buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
+/* Style for the individual dot */
+.flickity-page-dots .dot {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 5px; /* Adjust the margin as needed */
+}
+
+/* Style for the active dot */
+.flickity-page-dots .dot.is-selected {
+  background-color: #333; /* Change the color of the active dot */
+}
+
   }
-  .variant-button {
-    border: 1px solid #ccc;
-    background: white;
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: center;
-  }
-  .variant-button:hover {
-    border-color: #000;
-  }
-  .variant-button.active {
-    background-color: black;
-    color: white;
-    border-color: black;
-  }
+  .jotly-size-chart-container {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.variant-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.variant-button {
+  border: 1px solid #ccc;
+  background: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.variant-button:hover {
+  border-color: #000;
+}
+
+.variant-button.active {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+.variant-options {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.variant-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.variant-button {
+  border: 1px solid #ccc;
+  background: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.variant-button:hover {
+  border-color: #000;
+}
+
+.variant-button.active {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
 </style>
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
-<div class="product--information px-6 py-4">
-  {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
-    <input type="hidden" name="id" id="variant-id" value="{{ selected_variant.id }}">
 
-    <div class="mb-4">
-      <span class="text-xs text-gray-500">{{ product.vendor }}</span>
-      <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
-      <div id="price-{{ section.id }}">
-        {% if selected_variant.compare_at_price > selected_variant.price %}
-          <span class="line-through text-base text-gray-500">{{ selected_variant.compare_at_price | money }}</span>
-        {% endif %}
-        <span class="text-sm text-gray-700">{{ selected_variant.price | money }}</span>
-      </div>
-    </div>
+<div class="w-fit mt-5 mx-auto md:mx-10 md:overflow-x-hidden 2xl:mx-28 lg:mx-10 xl:mx-15 lg:pt-10">
+ <div class="flex flex-col lg:flex-row">
 
-    {% if product.variants.size > 1 %}
-      <div class="variant-options">
-        <label class="block text-sm font-medium mb-2">Size</label>
-        <div class="variant-buttons">
-          {% assign variant_option_index = 0 %}
-          {% for value in product.options_with_values[variant_option_index].values %}
-            <button type="button" class="variant-button" data-value="{{ value }}">{{ value }}</button>
-          {% endfor %}
+    <!-- Productslideshow Carousel -->
+    <div class="w-full md:w-[740px] lg:w-[481px] xl:w-[740px] 2xl:w-[940px] flex flex-col md:flex-row">
+        <!-- Thumbnail Carousel -->
+        <div class="hidden xl:block w-[90px]">
+        
+        <div id="thumbnailCarousel" class="flex flex-col">
+            {% unless product.images.size > 0 %}
+            <!-- Placeholder images for Thumbnail Carousel -->
+            {% for i in (1..2) %}
+                <div class="thumbnail-item {% if i == 1 %}border border-gray-500{% endif %} items-center cursor-pointer w-[70px] h-[70px] overflow-hidden m-2.5" data-index="{{ forloop.index }}">{{ 'product-' | append: i | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}</div>
+            {% endfor %}
+            {% else %}
+            {% for image in product.images %}
+              {% assign index = forloop.index %}
+             <div class="thumbnail-item items-center {% if index == 1 %}border border-gray-500{% endif %} cursor-pointer w-[70px] h-[70px] overflow-hidden m-2.5" data-index="{{ index }}"><img src="{{ image.src | img_url: '100x100' }}" alt="{{ image.alt }}" class="w-full h-full object-cover"></div>
+            {% endfor %}
+            {% endunless %}
         </div>
-      </div>
-    {% endif %}
+        </div>
 
-    <div class="mb-4">
-      <label for="Quantity-{{ section.id }}">Quantity</label>
-      <div class="flex border items-center">
-        <button type="button" class="w-10 p-2" onclick="decrementQuantity()">{% render 'minus' %}</button>
-        <input type="text" name="quantity" id="Quantity-{{ section.id }}" value="1" readonly class="text-center w-full p-2 text-xs text-gray-700">
-        <button type="button" class="w-10 p-2" onclick="incrementQuantity()">{% render 'plus' %}</button>
-      </div>
+        <!-- Flickity Main Carousel -->
+        <div class="w-full lg:w-[480px] xl:w-[601px] 2xl:w-[800px] px-5">
+        
+        <div id="mainCarousel" class="carousel">
+            {% unless product.images.size > 0 %}
+            <!-- Placeholder images for Main Carousel -->
+            {% for i in (1..2) %}
+                <div class="carousel-cell w-full">{{ 'product-' | append: i | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}</div>
+            {% endfor %}
+            {% else %}
+            {% for image in product.images %}
+                <div class="carousel-cell w-full 2xl:h-[810px]"><img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt }}" class="w-full h-full 2xl:w-[810px] object-cover"></div>
+            {% endfor %}
+            {% endunless %}
+        </div>
+        </div>
     </div>
+    
 
-    <button type="submit" name="add" class="bg-black text-white py-3 px-6 uppercase text-sm tracking-wide w-full">
-      {% if selected_variant.available %}Add to Cart{% else %}Sold Out{% endif %}
-    </button>
-  {% endform %}
+    
+    <!-- Product Details -->
+    <div class="product--information w-fit px-12 py-6 md:py-0 flex flex-col">
+        {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
+<input type="hidden" name="id" id="variant-id" value="{{ product.variants.first.id }}">
 
-  <div class="accordion-div mt-6">
-    <h5 class="accordion-tab font-body font-light uppercase text-gray-700 py-3">Description</h5>
-    <div class="panel">
-      <p class="text-sm text-gray-600 leading-6">{{ product.description }}</p>
+
+  
+</script>
+
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'vendor' %}
+                        <div class="my-3">
+                            <span class="text-xs text-gray-500">{{ product.vendor }}</span>
+                        </div>
+                    {% when 'title' %}
+                        <div class="my-3">
+                            <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
+                        </div>
+                    {% when 'price' %}
+                        <div class="my-3" id="price-{{ section.id }}">
+                            <span class="text-base text-gray-500 line-through">{{ selected_variant.compare_at_price | money }}</span>
+                            <span class="text-sm text-gray-400">{{ selected_variant.price | money }}</span>
+
+                            {% if selected_variant.price < selected_variant.compare_at_price %}
+                                <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
+                            {% endif %}
+                        </div>
+                    {% when 'variant_selector' %}
+                        <div class="my-3">
+                            {% unless product.has_only_default_variant %}
+                                <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
+                                    {% for option in product.options_with_values %}
+                                        <label class="text-[13px] font-body font-extralight" for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+
+                                        <div class="my-2">
+                                            <select 
+                                                name="options[{{ option.name | escape }}]" 
+                                                id="Option-{{ section.id }}-{{ forloop.index0 }}" 
+                                                class="w-full border py-3 px-3"
+                                            >
+                                                {% for value in option.values %}
+                                                    <option
+                                                        value="{{ value | escape }}"
+                                                        {% if option.selected_value == value %}
+                                                            selected="selected"
+                                                        {% endif %}
+                                                    >
+                                                        {{ value }}
+                                                    </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+
+                                        <script type="application/json">
+                                            {{ product.variants | json }}
+                                        </script>
+
+                                    {% endfor %}
+                                </variant-selector>
+                            {% endunless %}
+                        </div>
+                  <div class="flex flex-col gap-2">
+                  {% if product.variants.size > 1 %}
+  <div class="variant-options mb-4 w-full">
+    <label class="block text-sm font-medium mb-2">Size</label>
+    <div class="variant-buttons flex gap-3">
+      {% assign variant_option_index = 0 %}
+      {% for value in product.options_with_values[variant_option_index].values %}
+        <button
+          type="button"
+          class="variant-button border border-gray-400 rounded px-4 py-2 text-sm hover:border-black"
+          data-value="{{ value }}">
+          {{ value }}
+        </button>
+      {% endfor %}
     </div>
   </div>
+{% endif %}
+
+                    {% when 'quantity' %}
+                        <div class="mt-3 w-full">
+                            <label for="Quantity-{{ section.id }}">Quantity</label>
+
+                            <div class="flex flex-row items-center mb-2 border">
+                              <button class="w-10  p-3 items-center justify-center" name="minus" type="button" onclick="decrementQuantity()">
+                              <span class="hidden">Decrease quantity for {{ product.title }}</span>
+                              <!-- Add your minus icon or text here -->
+                              {% render 'minus' %}
+                              </button>
+                              
+                              <input type="text" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full  p-3 text-xs font-body font-extralight text-gray-500 text-center" readonly>
+                             
+                              <button class="w-10  p-2 items-center justify-center" name="plus" type="button" onclick="incrementQuantity()">
+                              <span class="hidden">Increase quantity for {{ product.title }}</span>
+                              <!-- Add your plus icon or text here -->
+                              {% render 'plus' %}
+                              </button>
+                            </div>
+                        </div>
+                
+
+                    {% when 'checkout_buttons' %}
+                        <div class="my-2 w-1/2">
+                            <button type="submit" name="add" class="w-full px-4 md:px-6 py-4 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center text-xs"
+                                {% if selected_variant.available == false %}
+                                    disabled
+                                {% endif %}
+                            >
+                                {% if selected_variant.available == false %}
+                                    Sold out
+                                {% else %}
+                                    Add to cart
+                                {% endif %}
+                            </button>
+                        </div>
+                       
+                    
+                    </div> 
+                    
+                    
+                    <div class="my-2 flex h-12 justify-center">
+                        
+                        
+                          
+                            
+                            <div class="block w-full py-3 mb-1 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center"s>{{ form | payment_button }}</div>
+                          
+                          
+                    </div> 
+
+                  {% when 'description' %}
+  <div class="">
+    
+    <!-- Size Chart Button Placement -->
+    <div class="my-3 jotly-size-chart-container"></div>
+    
+    <div class="accordion-div">
+      <!-- Description Tab -->
+      <h5 class="accordion-tab font-body font-extralight uppercase text-gray-700 py-5">Description</h5>
+      <div class="panel">
+        <div class="panel_description">
+          <h6 class="py-5 font-body text-xs font-extralight text-gray-700 leading-6">
+            {{ product.description }}
+          </h6>
+        </div>
+      </div>
+
+      <!-- Fabric Tab -->
+      <h5 class="accordion-tab font-body font-extralight uppercase text-gray-700 py-5">Fabric</h5>
+      <div class="panel">
+        <div class="panel_description">
+          <h6 class="py-5 font-body text-xs font-extralight text-gray-700 leading-6">
+            Our pieces are made from heavyweight, breathable cotton designed to maintain structure, fit, and comfort — even after repeated wear.
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+                              </div>
+              
+                            </div>
+                        </div>
+                             
+                       
+                    {% else %}
+                        
+                {% endcase %}
+            {% endfor %}
+        {% endform %}
+    </div>
+    
+
+
+ </div>
+    
+    <!-- Related Products -->
+    
+     <div class="w-full md:mt-16 py-16 product--related">
+        <div class="w-28 md:w-[550px] mx-auto border-t-[1px] border-[#f1f1f1] mb-5 md:mb-10"></div>  
+     <div class="product-recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related">
+  {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+    {% if recommendations.intent == 'related' %}
+      <h2 class="text-2xl uppercase font-body font-thin text-center mt-5 mb-5 md:mb-10">You may also like</h2>
+      <div class="w-28 md:w-[550px] mx-auto border-t-[1px] border-[#f1f1f1] md:mt-10 my-4 md:my-12"></div> 
+    {% elsif recommendations.intent == 'complementary' %}
+      <h2>Pair it with</h2>
+    {% endif %}
+
+    <ul class="product--related flex flex-col md:flex-row">
+      {%- for product in recommendations.products -%}
+        <li class="product w-full md:w-1/4 carousel-cell">
+          {% render 'product-card' product: product %}
+        </li>
+      {%- endfor -%}
+    </ul> 
+  {%- endif -%}
 </div>
 
-<script>
-  function incrementQuantity() {
-    var input = document.getElementById('Quantity-{{ section.id }}');
-    input.value = parseInt(input.value) + 1;
-  }
 
-  function decrementQuantity() {
-    var input = document.getElementById('Quantity-{{ section.id }}');
-    var newVal = parseInt(input.value) - 1;
-    input.value = newVal < 1 ? 1 : newVal;
-  }
+          
+          
+            
+     </div>
 
-  var acc = document.getElementsByClassName("accordion-tab");
-  for (var i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
+     
+</div>
+
+                                  <script>
+    function incrementQuantity() {
+        var input = document.getElementById('Quantity-{{ section.id }}');
+        var newValue = parseInt(input.value) + 1;
+        input.value = newValue;
+    }
+
+    function decrementQuantity() {
+        var input = document.getElementById('Quantity-{{ section.id }}');
+        var newValue = parseInt(input.value) - 1;
+        if (newValue < 1) {
+            newValue = 1; // Ensure quantity doesn't go below 1
+        }
+        input.value = newValue;
+    }
 </script>
+
+
+<script>
+    //javascriptsidevariants
+    class VariantSelector extends HTMLElement {
+        constructor() {
+            super();
+            this.addEventListener("change", this.onVariantChange);
+        }
+
+        onVariantChange() {
+            this.getSelectedOptions();
+            this.getSelectedVariant();
+
+            if(this.currentVariant) {
+                this.updateURL();
+                this.updateFormID();
+                this.updatePrice();
+            }
+        }
+
+        getSelectedOptions() {
+            this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
+            console.log(this.options);
+        }
+
+        getVariantJSON() {
+            this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+            return this.variantData;
+        }
+
+        getSelectedVariant() {
+            this.currentVariant = this.getVariantJSON().find(
+                (variant) => {
+                    const findings = !variant.options.map(
+                        (option, index) => {
+                            return this.options[index] === option;
+                        }
+                    ).includes(false);
+
+                    if(findings) return variant;
+                }
+            );
+
+            console.log(this.currentVariant);
+        }
+
+        updateURL() {
+            if(!this.currentVariant) return;
+            window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+        }
+
+        updateFormID() {
+            const form_input = document.querySelector("#product-form").querySelector('input[name="id"]');
+            form_input.value = this.currentVariant.id;
+        }
+
+        updatePrice() {
+            fetch(`${this.dataset.url}?variant=${this.currentVariant.id}&section_id=${this.dataset.section}`)
+            .then((response) => response.text())
+            .then((responseText) => {
+                const id = `price-${this.dataset.section}`;
+                const html = new DOMParser().parseFromString(responseText, 'text/html');
+
+                const oldPrice = document.getElementById(id);
+                const newPrice = html.getElementById(id);
+
+                if(oldPrice && newPrice) oldPrice.innerHTML = newPrice.innerHTML;
+            });
+        }
+       
+    }
+
+    customElements.define("variant-selector", VariantSelector);
+</script>
+
+
+
+<script>
+//accordiontabs
+var acc = document.getElementsByClassName("accordion-tab");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+acc[i].addEventListener("click", function() {
+this.classList.remove("active");
+var panel = this.nextElementSibling;
+if (panel.style.maxHeight){
+  panel.style.maxHeight = null;
+} else {
+  let active = document.querySelectorAll(".accordion-div .accordion-tab.active");
+  for(let j = 0; j < active.length; j++){
+    active[j].classList.remove("active");
+    active[j].nextElementSibling.style.maxHeight = null;
+  }
+  this.classList.toggle("active");
+  panel.style.maxHeight = panel.scrollHeight + "px";
+}
+});
+}
+
+</script>
+
+
+<script>
+  // Initialize Flickity main carousel
+  var mainCarousel = new Flickity('#mainCarousel', {
+    // Flickity options
+    cellSelector: '.carousel-cell',
+    contain: true,
+    pageDots: true,
+    prevNextButtons: true,
+    wrapAround: true
+  });
+
+  // Initialize Thumbnail Carousel
+  var thumbnailCarousel = document.getElementById('thumbnailCarousel');
+  thumbnailCarousel.addEventListener('click', function (event) {
+     // Find the closest ancestor element with the class 'thumbnail-item'
+    var target = event.target.closest('.thumbnail-item');
+    // Check if a 'thumbnail-item' element is found
+    if (target) {
+        // Remove border from all thumbnails
+        var thumbnails = thumbnailCarousel.getElementsByClassName('thumbnail-item');
+        for (var i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].classList.remove('border', 'border-gray-500'); // Adjust the border color as needed
+        }
+       // Get the value of the 'data-index' attribute from the clicked 'thumbnail-item'
+       var index = target.getAttribute('data-index') - 1; // Subtract 1 as Liquid uses 1-based index
+       // Select the corresponding index in the Main Carousel (mainCarousel)
+       mainCarousel.select(index);
+       // Add border to the clicked thumbnail
+       target.classList.add('border', 'border-gray-500');
+    }
+  });
+
+  
+</script>
+
+<script>
+    const handleIntersection = (entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+
+    observer.unobserve(productRecommendationsSection);
+
+    const url = productRecommendationsSection.dataset.url;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+        const html = document.createElement('div');
+        html.innerHTML = text;
+        const recommendations = html.querySelector('.product-recommendations');
+
+        if (recommendations && recommendations.innerHTML.trim().length) {
+          productRecommendationsSection.innerHTML = recommendations.innerHTML;
+        }
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  };
+
+  const productRecommendationsSection = document.querySelector('.product-recommendations');
+  const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+
+  observer.observe(productRecommendationsSection);
+</script>
+
+{% schema %}
+    {
+        "name": "Product",
+        "blocks": [
+            {
+                "type": "vendor",
+                "name": "Vendor",
+                "limit": 1
+            },
+            {
+                "type": "title",
+                "name": "Title",
+                "limit": 1
+            },
+            {
+                "type": "price",
+                "name": "Price",
+                "limit": 1
+            },
+            {
+                "type": "variant_selector",
+                "name": "Variant Selector",
+                "limit": 1
+            },
+            {
+                "type": "quantity",
+                "name": "Quantity",
+                "limit": 1
+            },
+            {
+                "type": "description",
+                "name": "Description",
+                "limit": 1
+            },
+            {
+                "type": "checkout_buttons",
+                "name": "Checkout Buttons",
+                "limit": 1
+            }
+        ]
+    }
+    {% endschema %}
+.jotly-size-chart-button {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
