@@ -186,8 +186,43 @@
         {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
 <input type="hidden" name="id" id="variant-id" value="{{ product.variants.first.id }}">
 
+{% if product.variants.size > 1 %}
+  <div class="variant-options mb-4">
+    <label class="block text-sm font-medium mb-2">Size</label>
+    <div class="variant-buttons flex gap-3">
+      {% assign variant_option_index = 0 %}
+      {% for value in product.options_with_values[variant_option_index].values %}
+        <button
+          type="button"
+          class="variant-button border border-gray-400 rounded px-4 py-2 text-sm hover:border-black"
+          data-value="{{ value }}">
+          {{ value }}
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const variantButtons = document.querySelectorAll(".variant-button");
+    const hiddenInput = document.getElementById("variant-id");
 
-  
+    const variants = {{ product.variants | json }};
+
+    variantButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        variantButtons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+
+        const selectedValue = this.getAttribute("data-value");
+
+        const matchedVariant = variants.find(variant => variant.options[0] === selectedValue);
+        if (matchedVariant) {
+          hiddenInput.value = matchedVariant.id;
+        }
+      });
+    });
+  });
 </script>
 
             {% for block in section.blocks %}
@@ -244,23 +279,6 @@
                             {% endunless %}
                         </div>
                     <div class="flex flex-row items-end gap-2">
-                  {% if product.variants.size > 1 %}
-  <div class="variant-options mb-4">
-    <label class="block text-sm font-medium mb-2">Size</label>
-    <div class="variant-buttons flex gap-3">
-      {% assign variant_option_index = 0 %}
-      {% for value in product.options_with_values[variant_option_index].values %}
-        <button
-          type="button"
-          class="variant-button border border-gray-400 rounded px-4 py-2 text-sm hover:border-black"
-          data-value="{{ value }}">
-          {{ value }}
-        </button>
-      {% endfor %}
-    </div>
-  </div>
-{% endif %}
-
                     {% when 'quantity' %}
                         <div class="mt-3 w-1/2">
                             <label for="Quantity-{{ section.id }}">Quantity</label>
