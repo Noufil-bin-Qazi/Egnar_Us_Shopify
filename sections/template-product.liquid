@@ -158,7 +158,17 @@
     <!-- Product Details -->
     <div class="product--information w-fit px-12 py-6 md:py-0 flex flex-col">
         {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
-            <input type="hidden" name="id" value="{{ selected_variant.id }}">
+           {% if product.has_only_default_variant == false %}
+  {% for option in product.options_with_values %}
+    <label for="option-{{ forloop.index }}">{{ option.name }}</label>
+    <select id="option-{{ forloop.index }}" name="options[{{ option.name }}]">
+      {% for value in option.values %}
+        <option value="{{ value }}">{{ value }}</option>
+      {% endfor %}
+    </select>
+  {% endfor %}
+{% endif %}
+
 
             {% for block in section.blocks %}
                 {% case block.type %}
