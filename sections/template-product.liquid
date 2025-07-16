@@ -278,10 +278,10 @@
                             {% endunless %}
                         </div>
                     <div class="flex flex-row items-end gap-2">
-                  {% if product.variants.size > 1 %}
-  <div class="variant-options mb-4">
+                 {% if product.variants.size > 1 %}
+  <div class="variant-options mb-4 w-full">
     <label class="block text-sm font-medium mb-2">Size</label>
-    <div class="variant-buttons flex gap-3">
+    <div class="variant-buttons flex gap-3 flex-wrap">
       {% assign variant_option_index = 0 %}
       {% for value in product.options_with_values[variant_option_index].values %}
         <button
@@ -295,26 +295,25 @@
   </div>
 {% endif %}
 
-                    {% when 'quantity' %}
-                        <div class="mt-3 w-1/2">
-                            <label for="Quantity-{{ section.id }}">Quantity</label>
+{% when 'quantity' %}
+  <div class="mt-3 w-full max-w-xs">
+    <label for="Quantity-{{ section.id }}">Quantity</label>
 
-                            <div class="flex flex-row items-center mb-2 border">
-                              <button class="w-10  p-3 items-center justify-center" name="minus" type="button" onclick="decrementQuantity()">
-                              <span class="hidden">Decrease quantity for {{ product.title }}</span>
-                              <!-- Add your minus icon or text here -->
-                              {% render 'minus' %}
-                              </button>
-                              
-                              <input type="text" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full  p-3 text-xs font-body font-extralight text-gray-500 text-center" readonly>
-                             
-                              <button class="w-10  p-2 items-center justify-center" name="plus" type="button" onclick="incrementQuantity()">
-                              <span class="hidden">Increase quantity for {{ product.title }}</span>
-                              <!-- Add your plus icon or text here -->
-                              {% render 'plus' %}
-                              </button>
-                            </div>
-                        </div>
+    <div class="flex flex-row items-center mb-2 border">
+      <button class="w-10 p-3 items-center justify-center" name="minus" type="button" onclick="decrementQuantity()">
+        <span class="hidden">Decrease quantity for {{ product.title }}</span>
+        {% render 'minus' %}
+      </button>
+      
+      <input type="text" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="w-full p-3 text-xs font-body font-extralight text-gray-500 text-center" readonly>
+     
+      <button class="w-10 p-2 items-center justify-center" name="plus" type="button" onclick="incrementQuantity()">
+        <span class="hidden">Increase quantity for {{ product.title }}</span>
+        {% render 'plus' %}
+      </button>
+    </div>
+  </div>
+
                 
 
                     {% when 'checkout_buttons' %}
