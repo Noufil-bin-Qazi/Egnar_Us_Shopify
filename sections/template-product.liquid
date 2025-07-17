@@ -186,22 +186,7 @@
         {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
 <input type="hidden" name="id" id="variant-id" value="{{ product.variants.first.id }}">
 
-{% if product.variants.size > 1 %}
-  <div class="variant-options mb-4">
-    <label class="block text-sm font-medium mb-2">Size</label>
-    <div class="variant-buttons flex gap-3">
-      {% assign variant_option_index = 0 %}
-      {% for value in product.options_with_values[variant_option_index].values %}
-        <button
-          type="button"
-          class="variant-button border border-gray-400 rounded px-4 py-2 text-sm hover:border-black"
-          data-value="{{ value }}">
-          {{ value }}
-        </button>
-      {% endfor %}
-    </div>
-  </div>
-{% endif %}
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const variantButtons = document.querySelectorAll(".variant-button");
@@ -244,6 +229,22 @@
                                 <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
                             {% endif %}
                         </div>
+      {% if product.variants.size > 1 %}
+  <div class="variant-options mb-4">
+    <label class="block text-sm font-medium mb-2">Size</label>
+    <div class="variant-buttons flex gap-3">
+      {% assign variant_option_index = 0 %}
+      {% for value in product.options_with_values[variant_option_index].values %}
+        <button
+          type="button"
+          class="variant-button border border-gray-400 rounded px-4 py-2 text-sm hover:border-black"
+          data-value="{{ value }}">
+          {{ value }}
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
                     {% when 'variant_selector' %}
                         <div class="my-3">
                             {% unless product.has_only_default_variant %}
