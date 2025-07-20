@@ -231,6 +231,9 @@
                         </div>
       {% if product.variants.size > 1 %}
   <div class="variant-options mb-4">
+        <!-- Jotly Size Chart Button aligned right -->
+<div class="jotly-size-chart-container flex justify-end mb-1"></div>
+
     <label class="block text-sm font-medium mb-2">Size</label>
     <div class="variant-buttons flex gap-3">
       {% assign variant_option_index = 0 %}
@@ -334,8 +337,11 @@
                   {% when 'description' %}
   <div class="">
     
-    <!-- Size Chart Button Placement -->
-    <div class="my-3 jotly-size-chart-container"></div>
+   {% comment %}
+  <!-- Removed old Jotly Size Chart Position -->
+  <div class="my-3 jotly-size-chart-container"></div>
+{% endcomment %}
+
     
     <div class="accordion-div">
       <!-- Description Tab -->
