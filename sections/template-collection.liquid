@@ -1,24 +1,31 @@
 
-<div class="h-80 max-h-80 w-full --collectionimage absolute top-0 left-0">
+<div class="h-64 md:h-80 max-h-80 w-full --collectionimage absolute top-0 left-0">
   {% if section.settings.background_image %}
-    <img class="hidden md:block absolute inset-0 object-cover w-full h-full" src="{{ section.settings.background_image | img_url: 'master' }}" alt="Background Image">
+    <img 
+      class="hidden md:block absolute inset-0 object-cover w-full h-full"
+      src="{{ section.settings.background_image | img_url: 'master' }}"
+      alt="Background Image"
+    >
   {% endif %}
-  {% if section.settings.mobile_background_image  %}
-    <img class="md:hidden absolute inset-0 w-full h-full" src="{{ section.settings.mobile_background_image | img_url: 'master' }}" alt="Background Image">
+
+  {% if section.settings.mobile_background_image %}
+    <img 
+      class="md:hidden absolute inset-0 w-full h-full object-cover object-center"
+      src="{{ section.settings.mobile_background_image | img_url: 'master' }}"
+      alt="Mobile Background Image"
+    >
   {% endif %}
-  
+
   <div class="absolute inset-0 flex items-center justify-center">
     <div class="text-white text-center collheader">
       <h1 class="text-4xl md:text-5xl mt-18 md:mt-16 uppercase tracking-wider fade-up-enter-active">
         {% assign wordbold = collection.title | split: ' ' %}
         {% assign firstword = wordbold | first %}
         <span class="font-normal font-body">{{ firstword }}</span>
-        {% for word in wordbold offset: 1  %}
-            <span class="font-body font-extralight">{{ word }}</span>
+        {% for word in wordbold offset: 1 %}
+          <span class="font-body font-extralight">{{ word }}</span>
         {% endfor %}
-      
       </h1>
-      <!-- Add other content as needed -->
     </div>
   </div>
 </div>
