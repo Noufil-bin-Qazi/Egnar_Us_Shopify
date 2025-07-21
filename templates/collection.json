@@ -1,11 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "template": {
       "type": "template-collection",
       "settings": {
         "number_of_products_per_page": 6,
-        "background_image": "shopify:\/\/shop_images\/Screenshot_2024-03-07_at_10.35.42_PM.png",
-        "mobile_background_image": "shopify:\/\/shop_images\/ban_2.png"
+        "background_image": "shopify://shop_images/6.3_641bda72-5dfa-403c-a9f1-11d4c01d56e9.jpg",
+        "mobile_background_image": "shopify://shop_images/6.3_641bda72-5dfa-403c-a9f1-11d4c01d56e9.jpg"
       }
     }
   },
