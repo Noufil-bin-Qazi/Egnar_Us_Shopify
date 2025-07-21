@@ -13,8 +13,8 @@
       "type": "template-collection",
       "settings": {
         "number_of_products_per_page": 6,
-        "background_image": "shopify://shop_images/6.3_641bda72-5dfa-403c-a9f1-11d4c01d56e9.jpg",
-        "mobile_background_image": "shopify://shop_images/6.3_641bda72-5dfa-403c-a9f1-11d4c01d56e9.jpg"
+        "background_image": "shopify://shop_images/6.3.png",
+        "mobile_background_image": "shopify://shop_images/6.3.png"
       }
     }
   },
