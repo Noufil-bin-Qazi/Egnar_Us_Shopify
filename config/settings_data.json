@@ -46,6 +46,11 @@
         "type": "shopify://apps/jotly-size-chart/blocks/embed/97eaca86-aad8-492c-9d4d-0dfdc4899889",
         "disabled": false,
         "settings": {}
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
