@@ -181,54 +181,62 @@
     
 
     
-    <!-- Product Details -->
-    <div class="product--information w-fit px-12 py-6 md:py-0 flex flex-col">
-        {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
-<input type="hidden" name="id" id="variant-id" value="{{ product.variants.first.id }}">
+  <!-- Product Details -->
+<div class="product--information w-fit px-12 py-6 md:py-0 flex flex-col">
+  {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
+    <input type="hidden" name="id" id="variant-id" value="{{ product.variants.first.id }}">
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const variantButtons = document.querySelectorAll(".variant-button");
+        const hiddenInput = document.getElementById("variant-id");
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const variantButtons = document.querySelectorAll(".variant-button");
-    const hiddenInput = document.getElementById("variant-id");
+        const variants = {{ product.variants | json }};
 
-    const variants = {{ product.variants | json }};
+        variantButtons.forEach(button => {
+          button.addEventListener("click", function () {
+            variantButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
 
-    variantButtons.forEach(button => {
-      button.addEventListener("click", function () {
-        variantButtons.forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
+            const selectedValue = this.getAttribute("data-value");
 
-        const selectedValue = this.getAttribute("data-value");
-
-        const matchedVariant = variants.find(variant => variant.options[0] === selectedValue);
-        if (matchedVariant) {
-          hiddenInput.value = matchedVariant.id;
-        }
+            const matchedVariant = variants.find(variant => variant.options[0] === selectedValue);
+            if (matchedVariant) {
+              hiddenInput.value = matchedVariant.id;
+            }
+          });
+        });
       });
-    });
-  });
-</script>
+    </script>
 
-            {% for block in section.blocks %}
-                {% case block.type %}
-                    {% when 'vendor' %}
-                        <div class="my-3">
-                            <span class="text-xs text-gray-500">{{ product.vendor }}</span>
-                        </div>
-                    {% when 'title' %}
-                        <div class="my-3">
-                            <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
-                        </div>
-                    {% when 'price' %}
-                        <div class="my-3" id="price-{{ section.id }}">
-                            <span class="text-base text-gray-500 line-through">{{ selected_variant.compare_at_price | money }}</span>
-                            <span class="text-sm text-gray-400">{{ selected_variant.price | money }}</span>
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'vendor' %}
+          <div class="my-3">
+            <span class="text-xs text-gray-500">{{ product.vendor }}</span>
+          </div>
 
-                            {% if selected_variant.price < selected_variant.compare_at_price %}
-                                <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
-                            {% endif %}
-                        </div>
+        {% when 'title' %}
+          <div class="my-3">
+            <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
+          </div>
+
+        {% when 'price' %}
+          <div class="my-3" id="price-{{ section.id }}">
+            <span class="text-base text-gray-500 line-through">{{ selected_variant.compare_at_price | money }}</span>
+            <span class="text-sm text-gray-400">{{ selected_variant.price | money }}</span>
+
+            {% if selected_variant.price < selected_variant.compare_at_price %}
+              <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
+            {% endif %}
+          </div>
+
+        {%- comment -%}
+        Removed:
+        <p class="mb-2 font-body text-xs font-light text-gray-700">Free delivery on 10001</p>
+        {{ content_for_additional_checkout_buttons }}
+        {%- endcomment -%}
+
       {% if product.variants.size > 1 %}
   <div class="variant-options mb-4">
         <!-- Jotly Size Chart Button aligned right -->
