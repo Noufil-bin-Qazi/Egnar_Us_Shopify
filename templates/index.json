@@ -96,6 +96,10 @@
         "video_selected": "https://cdn.shopify.com/videos/c/o/v/7a8d917537ca485b9373f04fad1b1744.mp4"
       }
     },
+    "17532198082f5a6744": {
+      "type": "apps",
+      "settings": {}
+    },
     "ss_feature_1_RTi4CH": {
       "type": "ss-feature-1",
       "blocks": {
@@ -343,6 +347,7 @@
     "slide",
     "card",
     "video_section",
+    "17532198082f5a6744",
     "ss_feature_1_RTi4CH",
     "testimonials",
     "custom_html",
