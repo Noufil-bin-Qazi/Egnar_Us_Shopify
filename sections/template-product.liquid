@@ -216,10 +216,18 @@
             <span class="text-xs text-gray-500">{{ product.vendor }}</span>
           </div>
 
-        {% when 'title' %}
-          <div class="my-3">
-            <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
-          </div>
+       {% when 'title' %}
+  <div class="my-3">
+    <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
+
+    <!-- Judge.me Review Widget -->
+    <div id="judgeme_product_reviews" class="judgeme-review-widget"
+         data-id="{{ product.id }}"
+         data-sku="{{ product.selected_or_first_available_variant.sku }}"
+         data-title="{{ product.title | escape }}"
+         data-url="{{ shop.url }}{{ product.url }}">
+    </div>
+  </div>
 
         {% when 'price' %}
           <div class="my-3" id="price-{{ section.id }}">
