@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "17533963802a1cf210": {
+      "type": "apps",
+      "settings": {}
+    },
     "template": {
       "type": "template-product",
       "blocks": {
@@ -83,19 +87,6 @@
     },
     "17089218146f36c19b": {
       "type": "apps",
-      "settings": {}
-    },
-    "17533963802a1cf210": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_preview_badge_m6JpyA": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_preview_badge_m6JpyA"
-      ],
       "settings": {}
     },
     "175339528353ee3661": {
