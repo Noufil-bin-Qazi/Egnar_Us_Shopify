@@ -26,7 +26,7 @@
       "custom_css": [],
       "settings": {
         "chosen_collection": "best-sellers",
-        "enable_flickity": false
+        "enable_flickity": true
       }
     },
     "three-cards": {
