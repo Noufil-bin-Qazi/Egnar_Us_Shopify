@@ -216,18 +216,10 @@
             <span class="text-xs text-gray-500">{{ product.vendor }}</span>
           </div>
 
-       {% when 'title' %}
-  <div class="my-3">
-    <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
-
-    <!-- Judge.me Review Widget -->
-    <div id="judgeme_product_reviews" class="judgeme-review-widget"
-         data-id="{{ product.id }}"
-         data-sku="{{ product.selected_or_first_available_variant.sku }}"
-         data-title="{{ product.title | escape }}"
-         data-url="{{ shop.url }}{{ product.url }}">
-    </div>
-  </div>
+        {% when 'title' %}
+          <div class="my-3">
+            <h1 class="text-2xl font-body font-extralight text-gray-900">{{ product.title }}</h1>
+          </div>
 
         {% when 'price' %}
           <div class="my-3" id="price-{{ section.id }}">
@@ -238,10 +230,6 @@
               <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
             {% endif %}
           </div>
- <!-- Start of Judge.me code -->
-<div class="jdgm-widget jdgm-preview-badge" data-id="{{ product.id }}"></div>
-<!-- End of Judge.me code -->
-
 
         {%- comment -%}
         Removed:
@@ -350,11 +338,7 @@
                           
                             
                             <div class="block w-full py-3 mb-1 text-[13px] tracking-widest font-body font-normal uppercase text-white bg-black bg-opacity-85 hover:bg-opacity-100 transition-opacity text-center items-center justify-center"s>{{ form | payment_button }}</div>
-                           {%- comment -%}
-        Removed:
-        <p class="mb-2 font-body text-xs font-light text-gray-700">Free delivery on 10001</p>
-        {{ content_for_additional_checkout_buttons }}
-        {%- endcomment -%}
+                          
                           
                     </div> 
 
