@@ -9,12 +9,12 @@
  */
 {
   "sections": {
-    "custom-about-us": {
+    "custom-about": {
       "type": "custom-about-us",
       "settings": {}
     }
   },
   "order": [
-    "custom-about-us"
+    "custom-about"
   ]
 }
