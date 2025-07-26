@@ -4,3 +4,149 @@
     "settings": []
   }
 {% endschema %}
+
+<!-- sections/custom-about-us.liquid -->
+<section class="custom-about-page-section">
+  <style>
+    /* ✅ Global Reset */
+    html, body,
+    body.template-page,
+    .main-content,
+    .shopify-section,
+    .page-width,
+    .page-content {
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+      overflow-x: hidden !important;
+      background: #000 !important;
+    }
+
+    .custom-about-page * {
+      box-sizing: border-box;
+    }
+
+    .custom-about-page {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+    }
+
+    .custom-logo-bar {
+      background-color: #a77e10;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0;
+      margin: 0 auto 20px auto;
+      text-align: center;
+    }
+
+    .custom-logo-bar img {
+      width: 260px;
+      max-width: 90vw;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .custom-about-image {
+      width: 100%;
+      max-width: 100vw;
+      height: auto;
+      display: block;
+    }
+
+    .custom-about-text-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: left;
+      color: #ccc;
+    }
+
+    .custom-about-text-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .custom-about-text-section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .custom-about-quote {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #ccc;
+      background-color: #000;
+    }
+
+    @media screen and (max-width: 768px) {
+      .custom-about-text-section {
+        padding: 40px 16px;
+      }
+
+      .custom-about-text-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .custom-about-text-section p {
+        font-size: 1rem;
+      }
+
+      .custom-logo-bar img {
+        width: 200px;
+      }
+
+      .custom-about-quote {
+        padding: 40px 16px;
+      }
+    }
+  </style>
+
+  <div class="custom-about-page">
+    <!-- ✅ EGNAR Logo -->
+    <div class="custom-logo-bar">
+      <img src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/DOC-20241029-WA0001_241125_154938_600x600.png?v=1753564265" alt="EGNAR Logo">
+    </div>
+
+    <!-- ✅ Section 1 -->
+    <img class="custom-about-image" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/fdfcdsfsd_1024x1024.jpg?v=1753559080" alt="EGNAR Image 1">
+    <div class="custom-about-text-section">
+      <h2>Forged in Resistance</h2>
+      <p>Pain, pressure, failure — we don’t avoid them. We go through them. Because that’s where real strength is built. EGNAR US was born to serve those who push boundaries, who don’t fear the discomfort of progress.</p>
+    </div>
+
+    <!-- ✅ Section 2 -->
+    <img class="custom-about-image" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/NIK_6868_copy_r2n_1024x1024.png?v=1753198207" alt="EGNAR Image 2">
+    <div class="custom-about-text-section">
+      <h2>More Than a Brand</h2>
+      <p>We’re not just a gymwear company. We’re a movement. We represent those who wake up early, stay late, and never take shortcuts. We dress the disciplined, the determined, the driven.</p>
+    </div>
+
+    <!-- ✅ Section 3 -->
+    <img class="custom-about-image" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/56676_1024x1024.jpg?v=1753559715" alt="EGNAR Image 3">
+    <div class="custom-about-text-section">
+      <h2>Built for the Grind</h2>
+      <p>EGNAR gear is made to perform under pressure — durable fabrics, unyielding fits, and designs forged in sweat. We're engineered for intensity, for those who know the grind never stops.</p>
+    </div>
+
+    <!-- ✅ Section 4 -->
+    <img class="custom-about-image" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/6.5_copyied_1024x1024.jpg?v=1753559361" alt="EGNAR Image 4">
+
+    <!-- ✅ Final Quote -->
+    <div class="custom-about-quote">
+      EGNAR US is for those who understand:<br>
+      The grind is the way.<br>
+      The pain is the path.<br>
+      The only way out is through.
+    </div>
+  </div>
+</section>
