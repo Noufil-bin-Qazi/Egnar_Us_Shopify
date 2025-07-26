@@ -112,8 +112,8 @@
             "verified_badge_style": "icon",
             "card_height": "medium",
             "text_size": "small",
-            "stars_size": "medium",
-            "arrows_position": "bottom",
+            "stars_size": "small",
+            "arrows_position": "sides",
             "max_width": 1100,
             "corner_styling": "soft",
             "quote_marks_style": "serif",
@@ -124,7 +124,7 @@
             "show_border": true,
             "border_color": "#ceb732",
             "show_drop_shadow": false,
-            "transition_speed": 5,
+            "transition_speed": 3,
             "header_text": "Customers are saying",
             "show_average_rating": true
           }
