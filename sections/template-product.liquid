@@ -68,10 +68,6 @@
 }
   
 @media only screen and (max-width: 600px) {
-  .flickity-viewport {
-    height: auto !important;
-  }
-
   .flickity-prev-next-button {
     top: 105%;
   }
@@ -103,7 +99,7 @@
     background-color: #333;
   }
 
-  /* ✅ Related Carousel Styling (Scoped) */
+  /* ✅ Limit this styling only to the 'You may also like' carousel */
   #relatedCarousel {
     display: block !important;
     overflow: hidden;
@@ -126,14 +122,8 @@
     object-fit: cover;
     box-sizing: border-box;
   }
+}
 
-  /* ✅ Main Product Carousel Fix */
-  #mainCarousel .carousel-cell {
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    width: 100% !important;
-  }
 }
 
   .jotly-size-chart-container {
