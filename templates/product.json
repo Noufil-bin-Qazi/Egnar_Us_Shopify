@@ -9,10 +9,6 @@
  */
 {
   "sections": {
-    "17533963802a1cf210": {
-      "type": "apps",
-      "settings": {}
-    },
     "template": {
       "type": "template-product",
       "blocks": {
@@ -55,6 +51,10 @@
         "description"
       ],
       "custom_css": [],
+      "settings": {}
+    },
+    "17533963802a1cf210": {
+      "type": "apps",
       "settings": {}
     },
     "1708939365d21d87ac": {
@@ -116,8 +116,8 @@
     }
   },
   "order": [
-    "17533963802a1cf210",
     "template",
+    "17533963802a1cf210",
     "1708939365d21d87ac",
     "170895019054dc777d",
     "17089218146f36c19b",
