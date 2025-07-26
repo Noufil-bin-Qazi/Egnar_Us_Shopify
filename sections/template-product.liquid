@@ -68,28 +68,31 @@
 }
   
 @media only screen and (max-width: 600px) {
+  /* Flickity Buttons */
   .flickity-prev-next-button {
     top: 105%;
   }
 
   .flickity-prev-next-button.next {
-    right: 5px !important;
+    right: 10px !important;
     background-size: 19px !important;
   }
 
   .flickity-prev-next-button.previous {
-    left: 5px !important;
+    left: 10px !important;
     background-size: 19px !important;
   }
 
+  /* Flickity Dots */
   .flickity-page-dots {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
   }
 
   .flickity-page-dots .dot {
-    width: 8px !important;
-    height: 8px !important;
+    width: 8px;
+    height: 8px;
     background-color: #ccc;
     border-radius: 50%;
     margin: 0 5px;
@@ -99,32 +102,41 @@
     background-color: #333;
   }
 
-  /* ✅ Limit this styling only to the 'You may also like' carousel */
+  /* Related Carousel Fixes */
   #relatedCarousel {
-    display: block !important;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
     overflow: hidden;
   }
 
+  #relatedCarousel .flickity-slider {
+    display: flex !important;
+  }
+
   #relatedCarousel .carousel-cell {
-    width: 80vw !important;
-    max-width: 80vw !important;
+    width: 85vw !important;
     margin-right: 10px;
     box-sizing: border-box;
   }
 
   #relatedCarousel .product,
   #relatedCarousel .product-card,
-  #relatedCarousel .product-card-wrapper,
-  #relatedCarousel .product-card img {
+  #relatedCarousel .product-card-wrapper {
     width: 100% !important;
-    max-width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+
+  #relatedCarousel img {
+    width: 100% !important;
     height: auto !important;
     object-fit: cover;
-    box-sizing: border-box;
+    display: block;
   }
 }
 
-}
 
   .jotly-size-chart-container {
   margin-bottom: 1.5rem;
