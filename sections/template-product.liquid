@@ -102,7 +102,7 @@
     background-color: #333;
   }
 
-  /* ✅ FIX: Remove flex and enforce correct width */
+  /* ✅ Related Carousel Styling (Scoped) */
   #relatedCarousel {
     display: block !important;
     overflow: hidden;
@@ -115,17 +115,12 @@
     box-sizing: border-box;
   }
 
-  #relatedCarousel .product {
+  #relatedCarousel .product,
+  #relatedCarousel .product-card,
+  #relatedCarousel .product-card-wrapper,
+  #relatedCarousel .product-card img {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
-    box-sizing: border-box;
-  }
-
-  .product-card,
-  .product-card-wrapper,
-  .product-card img {
-    width: 100% !important;
     height: auto !important;
     object-fit: cover;
     box-sizing: border-box;
