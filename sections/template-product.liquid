@@ -67,48 +67,71 @@
   border-radius: 150px !important;
 }
 @media only screen and (max-width: 600px) {
-  .flickity-viewport{
-    height: 500px !important;
-  }  
+  .flickity-viewport {
+    height: auto !important;
+  }
+
   .flickity-prev-next-button {
-        top: 105%;
-    }
-    .flickity-prev-next-button.next {
-        right: 5px !important;
-        background-size: 19px !important;
-    }
-    .flickity-prev-next-button.previous {
-  left: 5px !important;
-  background-size: 19px !important;
-  
-}
-.flickity-page-dots {
-  display: flex;
-  justify-content: center;
-}
+    top: 105%;
+  }
 
-/* Style for the individual dot */
-.flickity-page-dots .dot {
-  width: 8px !important;
-  height: 8px !important;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 5px; /* Adjust the margin as needed */
-}
+  .flickity-prev-next-button.next {
+    right: 5px !important;
+    background-size: 19px !important;
+  }
 
-/* Style for the active dot */
-.flickity-page-dots .dot.is-selected {
-  background-color: #333; /* Change the color of the active dot */
-}
- #relatedCarousel {
-    display: flex !important;
+  .flickity-prev-next-button.previous {
+    left: 5px !important;
+    background-size: 19px !important;
+  }
+
+  .flickity-page-dots {
+    display: flex;
+    justify-content: center;
+  }
+
+  .flickity-page-dots .dot {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    background-color: #333;
+  }
+
+  /* ✅ FIX: Remove flex and enforce correct width */
+  #relatedCarousel {
+    display: block !important;
     overflow: hidden;
+  }
+
+  #relatedCarousel .carousel-cell {
+    width: 80vw !important;
+    max-width: 80vw !important;
+    margin-right: 10px;
+    box-sizing: border-box;
   }
 
   #relatedCarousel .product {
     width: 100% !important;
-    margin-right: 10px;
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box;
   }
+
+  .product-card,
+  .product-card-wrapper,
+  .product-card img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    box-sizing: border-box;
+  }
+}
+
 }
   }
   .jotly-size-chart-container {
@@ -627,11 +650,13 @@ if (panel.style.maxHeight){
         wrapAround: true,
         pageDots: true,
         prevNextButtons: true,
-        groupCells: true
+        groupCells: 1,
+        cellAlign: 'left'
       });
     }
   });
 </script>
+
 
 {% schema %}
     {
