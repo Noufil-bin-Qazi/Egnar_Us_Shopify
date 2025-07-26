@@ -66,6 +66,7 @@
   .tcustomizer__image {
   border-radius: 150px !important;
 }
+  
 @media only screen and (max-width: 600px) {
   .flickity-viewport {
     height: auto !important;
@@ -125,10 +126,16 @@
     object-fit: cover;
     box-sizing: border-box;
   }
+
+  /* ✅ Main Product Carousel Fix */
+  #mainCarousel .carousel-cell {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    width: 100% !important;
+  }
 }
 
-}
-  }
   .jotly-size-chart-container {
   margin-bottom: 1.5rem;
   text-align: left;
