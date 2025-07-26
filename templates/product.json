@@ -53,6 +53,19 @@
       "custom_css": [],
       "settings": {}
     },
+    "175339528353ee3661": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_preview_badge_i3zxgk": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_i3zxgk"
+      ],
+      "settings": {}
+    },
     "1708939365d21d87ac": {
       "type": "apps",
       "blocks": {
@@ -89,19 +102,6 @@
       "type": "apps",
       "settings": {}
     },
-    "175339528353ee3661": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_preview_badge_i3zxgk": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_preview_badge_i3zxgk"
-      ],
-      "settings": {}
-    },
     "1708921871374ebb86": {
       "type": "apps",
       "settings": {}
@@ -117,11 +117,11 @@
   },
   "order": [
     "template",
+    "175339528353ee3661",
     "1708939365d21d87ac",
     "17533963802a1cf210",
     "170895019054dc777d",
     "17089218146f36c19b",
-    "175339528353ee3661",
     "1708921871374ebb86",
     "170893921726ff9430",
     "17089448873b112c22"
