@@ -2656,3 +2656,75 @@ video {
     padding-left: 5rem;
   }
 }
+/* ---- Desktop View (Default) ---- */
+#relatedCarousel {
+  display: flex !important;
+  overflow: visible !important;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+#relatedCarousel .carousel-cell,
+#relatedCarousel .product {
+  width: auto !important;
+  white-space: normal !important;
+  margin-right: 0;
+}
+
+/* ---- Mobile View (Max Width 600px) ---- */
+@media only screen and (max-width: 600px) {
+  .flickity-viewport {
+    height: auto !important;
+  }
+
+  .flickity-prev-next-button {
+    top: 105%;
+  }
+
+  .flickity-prev-next-button.next {
+    right: 5px !important;
+    background-size: 19px !important;
+  }
+
+  .flickity-prev-next-button.previous {
+    left: 5px !important;
+    background-size: 19px !important;
+  }
+
+  .flickity-page-dots {
+    display: flex;
+    justify-content: center;
+  }
+
+  .flickity-page-dots .dot {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    background-color: #333;
+  }
+
+  .product-recommendations {
+    overflow-x: visible;
+  }
+
+  #relatedCarousel {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+
+  #relatedCarousel .carousel-cell {
+    display: inline-block;
+    width: 80% !important;
+    margin-right: 10px;
+    white-space: normal;
+    vertical-align: top;
+  }
+}
