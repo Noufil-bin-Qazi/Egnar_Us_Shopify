@@ -100,7 +100,16 @@
 .flickity-page-dots .dot.is-selected {
   background-color: #333; /* Change the color of the active dot */
 }
+ #relatedCarousel {
+    display: flex !important;
+    overflow: hidden;
+  }
 
+  #relatedCarousel .product {
+    width: 100% !important;
+    margin-right: 10px;
+  }
+}
   }
   .jotly-size-chart-container {
   margin-bottom: 1.5rem;
@@ -405,7 +414,7 @@
       <h2>Pair it with</h2>
     {% endif %}
 
-    <ul class="product--related flex flex-col md:flex-row">
+   <ul class="product--related carousel md:flex-row" id="relatedCarousel">
       {%- for product in recommendations.products -%}
         <li class="product w-full md:w-1/4 carousel-cell">
           {% render 'product-card' product: product %}
@@ -607,6 +616,21 @@ if (panel.style.maxHeight){
   const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
 
   observer.observe(productRecommendationsSection);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.innerWidth <= 600) {
+      var relatedCarousel = new Flickity('#relatedCarousel', {
+        cellSelector: '.carousel-cell',
+        contain: true,
+        wrapAround: true,
+        pageDots: true,
+        prevNextButtons: true,
+        groupCells: true
+      });
+    }
+  });
 </script>
 
 {% schema %}
