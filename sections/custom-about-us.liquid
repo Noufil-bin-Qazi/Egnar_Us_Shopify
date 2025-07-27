@@ -1,5 +1,13 @@
 <section class="custom-about-page-section">
   <style>
+    /* ✅ Import Detacher font */
+    @font-face {
+      font-family: 'Detacher';
+      src: url('https://cdn.shopify.com/s/files/1/0851/1124/3034/files/Detacher-Regular.ttf?v=1753657848') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     html, body, .main-content, .shopify-section, .page-width, .page-content {
       padding: 0 !important;
       margin: 0 !important;
@@ -26,6 +34,7 @@
       font-weight: 500;
       margin: 60px 0 30px 0;
       text-transform: uppercase;
+      font-family: 'Detacher', sans-serif !important;
     }
 
     .custom-logo-bar {
@@ -40,12 +49,12 @@
     }
 
     .custom-logo-bar img {
-  width: 400px; /* increased from 300px */
-  max-width: 90vw; /* better for responsive scaling */
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
+      width: 400px;
+      max-width: 90vw;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
 
     .custom-about-image {
       width: 100%;
@@ -67,6 +76,7 @@
       font-weight: 600;
       margin-bottom: 20px;
       color: #fff;
+      font-family: 'Detacher', sans-serif !important;
     }
 
     .custom-about-text-section p {
@@ -81,6 +91,7 @@
       line-height: 1.8;
       color: #ccc;
       background-color: #000;
+      font-family: 'Detacher', sans-serif !important;
     }
 
     @media screen and (max-width: 768px) {
@@ -110,27 +121,46 @@
       }
     }
   </style>
-<section class="custom-about-page-section">
-<div class="custom-about-page"><!-- ✅ ABOUT US Heading -->
-<h1 class="custom-about-heading">ABOUT US</h1>
-<!-- ✅ Logo Section -->
-<div class="custom-logo-bar" style="text-align: center;"><img src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/Only_Way_out_Is_through_480x480.png?v=1753656914" style="margin-right: 200.25px; margin-left: 200.25px; float: none;" width="333" height="15"></div>
-<!-- ✅ Section 1 --> <img alt="EGNAR Image 1" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/fdfcdsfsd_1024x1024.jpg?v=1753559080" class="custom-about-image">
-<div class="custom-about-text-section">
-<h2>Forged in Resistance</h2>
-<p>At EGNAR we believe growth isn’t found in comfort — it’s forged in resistance.<br>Pain, pressure, failure we don’t avoid them. We go through them. Because that’s where strength is built.<br></p>
-</div>
-<!-- ✅ Section 2 --> <img alt="EGNAR Image 2" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/NIK_6868_copy_r2n_1024x1024.png?v=1753198207" class="custom-about-image">
-<div class="custom-about-text-section">
-<h2>More Than a Brand</h2>
-<p>We’re not just a gymwear brand.&nbsp;We’re a mindset. A reminder that nothing worth having comes easy and nothing real can be earned without struggle.<br></p>
-</div>
-<!-- ✅ Section 3 --> <img alt="EGNAR Image 3" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/56676_1024x1024.jpg?v=1753559715" class="custom-about-image">
-<div class="custom-about-text-section">
-<h2>Built for the Grind</h2>
-<p>Born in <strong>America</strong>. Built for those who train with purpose. Our gear is crafted to perform under pressure durable fabrics, tactical designs, and fits that move with you, not against you. &nbsp;Every thread is a challenge answered. Every piece is built for the days you want to quit but don’t.<br></p>
-</div>
-<!-- ✅ Section 4 --> <img alt="EGNAR Image 4" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/6.5_copyied_1024x1024.jpg?v=1753559361" class="custom-about-image"> <!-- ✅ Final Quote -->
-<div class="custom-about-quote">EGNAR is for those who understand:<br><span style="color: rgb(255, 255, 255);"><strong>The grind is the way.</strong></span><br><span style="color: rgb(255, 255, 255);"><strong>The pain is the path.</strong></span><br><span style="color: rgb(255, 255, 255);"><strong>The only way out is through.</strong></span></div>
-</div>
+
+  <div class="custom-about-page">
+    <!-- ✅ ABOUT US Heading -->
+    <h1 class="custom-about-heading">ABOUT US</h1>
+
+    <!-- ✅ Logo Section -->
+    <div class="custom-logo-bar" style="text-align: center;">
+      <img src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/Only_Way_out_Is_through_480x480.png?v=1753656914" style="margin-right: 200.25px; margin-left: 200.25px; float: none;" width="333" height="15">
+    </div>
+
+    <!-- ✅ Section 1 -->
+    <img alt="EGNAR Image 1" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/fdfcdsfsd_1024x1024.jpg?v=1753559080" class="custom-about-image">
+    <div class="custom-about-text-section">
+      <h2>Forged in Resistance</h2>
+      <p>At EGNAR we believe growth isn’t found in comfort — it’s forged in resistance.<br>Pain, pressure, failure we don’t avoid them. We go through them. Because that’s where strength is built.<br></p>
+    </div>
+
+    <!-- ✅ Section 2 -->
+    <img alt="EGNAR Image 2" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/NIK_6868_copy_r2n_1024x1024.png?v=1753198207" class="custom-about-image">
+    <div class="custom-about-text-section">
+      <h2>More Than a Brand</h2>
+      <p>We’re not just a gymwear brand.&nbsp;We’re a mindset. A reminder that nothing worth having comes easy and nothing real can be earned without struggle.<br></p>
+    </div>
+
+    <!-- ✅ Section 3 -->
+    <img alt="EGNAR Image 3" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/56676_1024x1024.jpg?v=1753559715" class="custom-about-image">
+    <div class="custom-about-text-section">
+      <h2>Built for the Grind</h2>
+      <p>Born in <strong>America</strong>. Built for those who train with purpose. Our gear is crafted to perform under pressure durable fabrics, tactical designs, and fits that move with you, not against you. &nbsp;Every thread is a challenge answered. Every piece is built for the days you want to quit but don’t.<br></p>
+    </div>
+
+    <!-- ✅ Section 4 -->
+    <img alt="EGNAR Image 4" src="https://cdn.shopify.com/s/files/1/0851/1124/3034/files/6.5_copyied_1024x1024.jpg?v=1753559361" class="custom-about-image">
+
+    <!-- ✅ Final Quote -->
+    <div class="custom-about-quote">
+      EGNAR is for those who understand:<br>
+      <span style="color: rgb(255, 255, 255);"><strong>The grind is the way.</strong></span><br>
+      <span style="color: rgb(255, 255, 255);"><strong>The pain is the path.</strong></span><br>
+      <span style="color: rgb(255, 255, 255);"><strong>The only way out is through.</strong></span>
+    </div>
+  </div>
 </section>
