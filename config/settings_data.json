@@ -66,6 +66,11 @@
         "type": "shopify://apps/getsale/blocks/banner-embed-v3/dae9396b-6892-475e-8260-9c39c0a67574",
         "disabled": false,
         "settings": {}
+      },
+      "15710897563947040993": {
+        "type": "shopify://apps/avada-boost-sales-trust-badge/blocks/app-embed/45454b7f-f6a7-4852-b770-8e0c3992a226",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
