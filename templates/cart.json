@@ -36,10 +36,15 @@
         "seoant_trust_badges_star_rating_mdemz9"
       ],
       "settings": {}
+    },
+    "1753898476d94a01c2": {
+      "type": "apps",
+      "settings": {}
     }
   },
   "order": [
     "template",
-    "1753891456f1539f36"
+    "1753891456f1539f36",
+    "1753898476d94a01c2"
   ]
 }
