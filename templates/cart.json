@@ -1,8 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "template": {
-            "type": "template-cart"
-        } 
+  "sections": {
+    "template": {
+      "type": "template-cart",
+      "settings": {}
     },
-    "order": ["template"]
+    "1753891456f1539f36": {
+      "type": "apps",
+      "blocks": {
+        "seoant_trust_badges_star_rating_mdemz9": {
+          "type": "shopify://apps/seoant-trust-badges/blocks/star_rating/f42f2346-5d14-4b41-a8b9-4b6ee352262e",
+          "settings": {
+            "badge_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "seoant_trust_badges_star_rating_mdemz9"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "template",
+    "1753891456f1539f36"
+  ]
 }
