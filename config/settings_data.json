@@ -52,8 +52,18 @@
         "disabled": false,
         "settings": {}
       },
-      "5394804488230052649": {
-        "type": "shopify://apps/kilatech-countdown-timer/blocks/app-embed/3da8fad5-a736-4384-8c4e-b54de86a161c",
+      "16703339255274331331": {
+        "type": "shopify://apps/getsale/blocks/app-embed-v3/dae9396b-6892-475e-8260-9c39c0a67574",
+        "disabled": false,
+        "settings": {}
+      },
+      "9398818225310167545": {
+        "type": "shopify://apps/getsale/blocks/qty-break-embed-v3/dae9396b-6892-475e-8260-9c39c0a67574",
+        "disabled": false,
+        "settings": {}
+      },
+      "9498845458295061716": {
+        "type": "shopify://apps/getsale/blocks/banner-embed-v3/dae9396b-6892-475e-8260-9c39c0a67574",
         "disabled": false,
         "settings": {}
       }
