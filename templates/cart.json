@@ -11,6 +11,15 @@
   "sections": {
     "template": {
       "type": "template-cart",
+      "blocks": {
+        "checkout_button_488p6t": {
+          "type": "checkout_button",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "checkout_button_488p6t"
+      ],
       "settings": {}
     },
     "1753891456f1539f36": {
