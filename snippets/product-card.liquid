@@ -2,11 +2,11 @@
              <div class="bg-white overflow-hidden">
                      <a href="{{ product.url }}">
                         <div class="overflow-hidden relative group">
-  {% if product.compare_at_price > product.price %}
-    {% assign discount = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price %}
-   <span class="absolute top-4 right-4 bg-black text-white text-xs font-medium px-4 py-1 rounded-md z-30 shadow-sm">
-  Sale
-</span>
+ {% if product.compare_at_price_max > product.price %}
+  {% assign discount = 100 | minus: product.price | times: 100 | divided_by: product.compare_at_price_max | round %}
+  <span class="absolute top-3 right-3 bg-black text-white text-xs px-3 py-1 rounded-md z-30">
+    -{{ discount }}%
+  </span>
       -{{ discount | round }}%
     </span>
   {% endif %}
