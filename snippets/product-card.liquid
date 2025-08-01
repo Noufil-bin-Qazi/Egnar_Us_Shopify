@@ -1,55 +1,48 @@
 <div class="w-full py-3 px-3">
-             <div class="bg-white overflow-hidden">
-                     <a href="{{ product.url }}">
-                        <div class="overflow-hidden relative group">
- {% if product.compare_at_price_max > product.price %}
-  {% assign discount = 100 | minus: product.price | times: 100 | divided_by: product.compare_at_price_max | round %}
-  <span class="absolute top-3 right-3 bg-black text-white text-xs px-3 py-1 rounded-md z-30">
-  -{{ discount | abs }}%
-</span>
-  {{ discount | abs }}%
-  </span>
-      -{{ discount | round }}%
-    </span>
-  {% endif %}
+  <div class="bg-white overflow-hidden">
+    <a href="{{ product.url }}">
+      <div class="overflow-hidden relative group">
+        {% if product.compare_at_price_max > product.price %}
+          {% assign discount = product.compare_at_price_max | minus: product.price | times: 100 | divided_by: product.compare_at_price_max | round %}
+          <span class="absolute top-3 right-3 bg-black text-white text-xs px-3 py-1 rounded-md z-30">
+            -{{ discount }}%
+          </span>
+        {% endif %}
 
-  {% if product.featured_image %}
-    <img class="w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 z-10" 
-         src="{{ product.featured_image | img_url: 'master' }}" 
-         alt="{{ product.featured_image.alt }}">
-  {% endif %}
+        {% if product.featured_image %}
+          <img class="w-full h-full object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 z-10" 
+               src="{{ product.featured_image | img_url: 'master' }}" 
+               alt="{{ product.featured_image.alt }}">
+        {% endif %}
 
-  {% if product.images.size > 1 %}
-    {% assign secondImage = product.images[1] %}
-    <img class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 z-20" 
-         src="{{ secondImage | img_url: 'master' }}" 
-         alt="{{ secondImage.alt }}">
-  {% endif %}
-</div>
+        {% if product.images.size > 1 %}
+          {% assign secondImage = product.images[1] %}
+          <img class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 z-20" 
+               src="{{ secondImage | img_url: 'master' }}" 
+               alt="{{ secondImage.alt }}">
+        {% endif %}
+      </div>
+    </a>
 
-                      </a>
-                            
-                           
+    <div class="flex flex-col p-4">
+      <a href="{{ product.url }}" class="text-gray-700 text-center leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">
+        {{ product.title }}
+      </a>
 
-                           
-                    <div class="flex flex-col p-4">
-                            
-                         <a href="{{ product.url }}" class="text-gray-700 text-center leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
-                      {% if product.compare_at_price > product.price %}
-  <div class="text-center pt-1">
-    <span class="text-gray-400 line-through text-[13px] font-extralight mr-2">
-      {{ product.compare_at_price | money }}
-    </span>
-    <span class="text-gray-900 text-[13px] font-light">
-      {{ product.price | money }}
-    </span>
+      {% if product.compare_at_price > product.price %}
+        <div class="text-center pt-1">
+          <span class="text-gray-400 line-through text-[13px] font-extralight mr-2">
+            {{ product.compare_at_price | money }}
+          </span>
+          <span class="text-gray-900 text-[13px] font-light">
+            {{ product.price | money }}
+          </span>
+        </div>
+      {% else %}
+        <p class="text-gray-900 font-extralight text-[13px] text-center pt-1">
+          {{ product.price | money }}
+        </p>
+      {% endif %}
+    </div>
   </div>
-{% else %}
-  <p class="text-gray-900 font-extralight text-[13px] text-center pt-1">
-    {{ product.price | money }}
-  </p>
-{% endif %}
-                    </div>
-                               
-             </div>
- </div>
+</div>
