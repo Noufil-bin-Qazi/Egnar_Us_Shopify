@@ -63,7 +63,7 @@
       "custom_css": [],
       "settings": {
         "chosen_collection": "best-seller",
-        "enable_flickity": true
+        "enable_flickity": false
       }
     },
     "slide": {
