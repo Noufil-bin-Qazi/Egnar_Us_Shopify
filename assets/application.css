@@ -2728,3 +2728,13 @@ video {
     vertical-align: top;
   }
 }
+
+/* WI ATC Support - Custom CSS */
+.product-card:has(.wqbtn-wrapper) .product-content {
+  min-height: 108px;
+}
+@media (max-width: 425px){
+  .product-card:has(.wqbtn-wrapper) .product-content {
+  min-height: 204px !important;
+}
+}
