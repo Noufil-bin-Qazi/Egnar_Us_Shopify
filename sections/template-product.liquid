@@ -260,28 +260,21 @@
        {% when 'price' %}
   <div class="my-3 flex items-center flex-wrap gap-3" id="price-{{ section.id }}">
     {% if selected_variant.compare_at_price > selected_variant.price %}
-      <!-- Original Price -->
       <span class="text-base text-gray-500 line-through">
         {{ selected_variant.compare_at_price | money }}
       </span>
-
-      <!-- Discounted Price -->
       <span class="text-base text-red-600 font-semibold">
         {{ selected_variant.price | money }}
       </span>
-
-      <!-- Discount Badge -->
-      <span class="text-xs font-medium bg-black text-white px-3 py-1 rounded-md">
+      <span class="text-xs font-medium bg-black text-white px-3 py-1 rounded-full">
         -{{ selected_variant.compare_at_price | minus: selected_variant.price | times: 100.0 | divided_by: selected_variant.compare_at_price | round }}%
       </span>
     {% else %}
-      <!-- Only Price (No Discount) -->
       <span class="text-base text-gray-800 font-semibold">
         {{ selected_variant.price | money }}
       </span>
     {% endif %}
   </div>
-
 
         {%- comment -%}
         Removed:
