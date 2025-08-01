@@ -125,7 +125,7 @@
             "border_color": "#ceb732",
             "show_drop_shadow": true,
             "transition_speed": 3,
-            "header_text": "Customers are saying",
+            "header_text": "Customers Reviews",
             "show_average_rating": true
           }
         }
