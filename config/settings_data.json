@@ -62,11 +62,6 @@
         "disabled": false,
         "settings": {}
       },
-      "23348512398354824": {
-        "type": "shopify://apps/wi-add-to-cart-button-design/blocks/wizz-atc-embed/dc8c508e-8349-4d4e-adb8-536f2f71bace",
-        "disabled": false,
-        "settings": {}
-      },
       "2532827098368908073": {
         "type": "shopify://apps/snap-preorder/blocks/presale-backorder/ff20ec89-389a-4a34-9c65-23e040cb765c",
         "disabled": false,
@@ -74,6 +69,11 @@
       },
       "761129394445959922": {
         "type": "shopify://apps/snap-noti/blocks/notification/81e20000-6e98-4f82-915f-531279817ade",
+        "disabled": false,
+        "settings": {}
+      },
+      "23348512398354824": {
+        "type": "shopify://apps/wi-add-to-cart-button-design/blocks/wizz-atc-embed/dc8c508e-8349-4d4e-adb8-536f2f71bace",
         "disabled": false,
         "settings": {}
       }
