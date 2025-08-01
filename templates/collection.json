@@ -36,7 +36,7 @@
             "stars_size": "medium",
             "arrows_position": "bottom",
             "max_width": 1100,
-            "corner_styling": "soft",
+            "corner_styling": "round",
             "quote_marks_style": "serif",
             "card_color": "#f9f9f9",
             "stars_and_quote_marks_color": "#108474",
@@ -46,7 +46,7 @@
             "border_color": "#108474",
             "show_drop_shadow": true,
             "transition_speed": 5,
-            "header_text": "Customers are saying",
+            "header_text": "Customers Reviews",
             "show_average_rating": true
           }
         }
