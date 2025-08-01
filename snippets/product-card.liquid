@@ -31,7 +31,20 @@
                     <div class="flex flex-col p-4">
                             
                          <a href="{{ product.url }}" class="text-gray-700 text-center leading-6 tracking-[1.4px] uppercase text-[13px] font-extralight font-body">{{ product.title }}</a>
-                        <p class="text-gray-500 font-extralight text-[13px] text-center pt-1">{{ product.price | money }}</p>
+                      {% if product.compare_at_price > product.price %}
+  <div class="text-center pt-1">
+    <span class="text-gray-400 line-through text-[13px] font-extralight mr-2">
+      {{ product.compare_at_price | money }}
+    </span>
+    <span class="text-gray-900 text-[13px] font-light">
+      {{ product.price | money }}
+    </span>
+  </div>
+{% else %}
+  <p class="text-gray-900 font-extralight text-[13px] text-center pt-1">
+    {{ product.price | money }}
+  </p>
+{% endif %}
                     </div>
                                
              </div>
