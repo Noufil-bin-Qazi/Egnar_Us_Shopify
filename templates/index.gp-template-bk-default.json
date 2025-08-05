@@ -1,0 +1,394 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "hero",
+    "featured-collection",
+    "three-cards",
+    "hero_afTRdp",
+    "featured_collection_pjFRcf",
+    "slide",
+    "card",
+    "video_section",
+    "17532198082f5a6744",
+    "ss_feature_1_RTi4CH",
+    "testimonials",
+    "custom_html",
+    "17089235137f41fd77",
+    "170892140891ba678c",
+    "170892495319d70363",
+    "1708925001e340783c"
+  ],
+  "sections": {
+    "170892140891ba678c": {
+      "block_order": [
+        "instafeed_app_block_7xWM84"
+      ],
+      "blocks": {
+        "instafeed_app_block_7xWM84": {
+          "settings": {
+            "alignment": "center",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": "",
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "instafeed_margin_top": 0,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "show_instagram_link": false,
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0
+          },
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5"
+        }
+      },
+      "settings": {},
+      "type": "apps"
+    },
+    "17089235137f41fd77": {
+      "settings": {},
+      "type": "apps"
+    },
+    "170892495319d70363": {
+      "settings": {},
+      "type": "apps"
+    },
+    "1708925001e340783c": {
+      "settings": {},
+      "type": "apps"
+    },
+    "17532198082f5a6744": {
+      "block_order": [
+        "judge_me_reviews_testimonials_carousel_UzFmHy"
+      ],
+      "blocks": {
+        "judge_me_reviews_testimonials_carousel_UzFmHy": {
+          "settings": {
+            "arrows_color": "#000000",
+            "arrows_position": "hidden",
+            "border_color": "#ceb732",
+            "card_color": "#f9f9f9",
+            "card_height": "medium",
+            "corner_styling": "soft",
+            "header_text": "Customers Reviews",
+            "max_reviews": 10,
+            "max_width": 1100,
+            "product_name_text_size": "small",
+            "products": [],
+            "quote_marks_size": "small",
+            "quote_marks_style": "serif",
+            "reviews_selection": "all",
+            "show_average_rating": true,
+            "show_border": true,
+            "show_drop_shadow": true,
+            "show_sample_reviews": true,
+            "star_rating": "4_to_5_star",
+            "stars_and_quote_marks_color": "#ceb732",
+            "stars_size": "small",
+            "text_color": "#000000",
+            "text_size": "small",
+            "transition_speed": 3,
+            "verified_badge_style": "icon"
+          },
+          "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8"
+        }
+      },
+      "settings": {},
+      "type": "apps"
+    },
+    "card": {
+      "disabled": true,
+      "settings": {
+        "card1_heading": "Mindset newsletter",
+        "card1_subheading": "Mindset newsletter",
+        "card1btntext": "BUTTON Text 1",
+        "card1button_href": "#",
+        "card2_heading": "ASRV Second Flight",
+        "card2_subheading": "ASRV Second Flight",
+        "card2btntext": "Button Text 2",
+        "card2button_href": "#"
+      },
+      "type": "card"
+    },
+    "custom_html": {
+      "custom_css": [],
+      "settings": {
+        "custom_html_code": ""
+      },
+      "type": "custom_html"
+    },
+    "featured-collection": {
+      "custom_css": [],
+      "settings": {
+        "chosen_collection": "best-sellers",
+        "enable_flickity": false
+      },
+      "type": "featured-collection"
+    },
+    "featured_collection_pjFRcf": {
+      "custom_css": [],
+      "settings": {
+        "chosen_collection": "best-seller",
+        "enable_flickity": false
+      },
+      "type": "featured-collection"
+    },
+    "hero": {
+      "custom_css": [],
+      "settings": {
+        "background_image": "shopify://shop_images/banner_edit_Final_fc2eddf2-1781-4be6-8e33-2d42a44bab31.png",
+        "button1_href": "https://egnar.us/collections/all",
+        "firstbtntext": "Shop Collection",
+        "heading_hero": "GRAVITY/001",
+        "mob_background_image": "shopify://shop_images/banner_edit_Final_fc2eddf2-1781-4be6-8e33-2d42a44bab31.png",
+        "subheading_hero": "𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗲𝗱 𝗳𝗼𝗿 𝗥𝗲𝘀𝗶𝘀𝘁𝗮𝗻𝗰𝗲"
+      },
+      "type": "hero"
+    },
+    "hero_afTRdp": {
+      "settings": {
+        "background_image": "shopify://shop_images/NIK_6868_copy_r2n.png",
+        "button1_href": "https://egnar.us/collections/all",
+        "firstbtntext": "Shop Collection",
+        "heading_hero": "Best Sellers",
+        "mob_background_image": "shopify://shop_images/NIK_6868_copy_r2n.png",
+        "subheading_hero": ""
+      },
+      "type": "hero"
+    },
+    "slide": {
+      "disabled": true,
+      "settings": {
+        "slide_text": "RELEASING THIS SUNDAY DOWNLOAD",
+        "slidebtntext": "BUTTON Text 1",
+        "slidebutton_href": "#"
+      },
+      "type": "slide"
+    },
+    "ss_feature_1_RTi4CH": {
+      "block_order": [
+        "image_aAgYUt",
+        "image_MHKFxp",
+        "image_QXqWPd",
+        "image_bpYafe"
+      ],
+      "blocks": {
+        "image_MHKFxp": {
+          "settings": {
+            "feature_text": "",
+            "feature_title": "Secure Payment Options",
+            "feature_url": "",
+            "hide_image": false
+          },
+          "type": "image"
+        },
+        "image_QXqWPd": {
+          "settings": {
+            "feature_text": "",
+            "feature_title": "Easy return & Exchange Policy",
+            "feature_url": "",
+            "hide_image": false
+          },
+          "type": "image"
+        },
+        "image_aAgYUt": {
+          "settings": {
+            "feature_text": "",
+            "feature_title": "Fast shipping",
+            "feature_url": "",
+            "hide_image": false
+          },
+          "type": "image"
+        },
+        "image_bpYafe": {
+          "settings": {
+            "feature_text": "",
+            "feature_title": "5.0 Reviews",
+            "feature_url": "",
+            "hide_image": false
+          },
+          "type": "image"
+        }
+      },
+      "settings": {
+        "background_color": "#a7a6a7",
+        "background_gradient": "linear-gradient(0deg, rgba(NaN, NaN, NaN, 1), rgba(120, 196, 245, 1) 100%)",
+        "border_color": "#000000",
+        "border_thickness": 0,
+        "content_width": 120,
+        "feature_bg": "#a7a6a7",
+        "feature_border_color": "#000000",
+        "feature_border_thickness": 0,
+        "feature_gap": 20,
+        "feature_gap_mobile": 20,
+        "feature_heading_color": "#000000",
+        "feature_heading_custom": true,
+        "feature_heading_font": "prompt_n4",
+        "feature_heading_height": 130,
+        "feature_heading_mt": 8,
+        "feature_heading_size": 14,
+        "feature_heading_size_mobile": 12,
+        "feature_icon_color": "#000000",
+        "feature_icon_size": 40,
+        "feature_icon_size_mobile": 20,
+        "feature_padding_horizontal": 10,
+        "feature_padding_vertical": 10,
+        "feature_radius": 0,
+        "feature_row": 4,
+        "feature_row_mobile": 3,
+        "feature_shadow": false,
+        "feature_shadow_color": "#000000",
+        "feature_text_color": "#000000",
+        "feature_text_custom": true,
+        "feature_text_font": "prompt_n4",
+        "feature_text_height": 130,
+        "feature_text_mt": 4,
+        "feature_text_size": 12,
+        "feature_text_size_mobile": 8,
+        "full_width": true,
+        "lazy": true,
+        "margin_bottom": 0,
+        "margin_top": 0,
+        "padding_bottom": 32,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "padding_top": 32
+      },
+      "type": "ss-feature-1"
+    },
+    "testimonials": {
+      "block_order": [
+        "testimonial_QRY9er",
+        "testimonial_HB6zFm",
+        "testimonial_pC39M3",
+        "testimonial_7J68yf",
+        "testimonial_iwNA3T",
+        "testimonial_be6ppW",
+        "testimonial_3Tb9q7",
+        "testimonial_erg4Qf"
+      ],
+      "blocks": {
+        "testimonial_3Tb9q7": {
+          "settings": {
+            "author": "Sarah Harper",
+            "rating": 5,
+            "testimonial_image": "shopify://shop_images/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png",
+            "testimonial_text": "Absolutely love my new Egnar.us activewear! The quality is top-notch and the fit is perfect. I feel confident and stylish whether I'm at the gym or running errands.",
+            "testimonial_type": "Google"
+          },
+          "type": "testimonial"
+        },
+        "testimonial_7J68yf": {
+          "settings": {
+            "author": "Alex Mathews.",
+            "rating": 5,
+            "testimonial_image": "shopify://shop_images/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png",
+            "testimonial_text": "As a fitness enthusiast, I'm always on the lookout for durable activewear that can keep up with my workouts. Egnar.us checks all the boxes - it's comfortable, stylish, and holds up wash after wash",
+            "testimonial_type": "Google"
+          },
+          "type": "testimonial"
+        },
+        "testimonial_HB6zFm": {
+          "settings": {
+            "author": "Jennifer Patterson",
+            "rating": 5,
+            "testimonial_image": "shopify://shop_images/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png",
+            "testimonial_text": "I recently started a fitness journey, and Egnar.us activewear has been a game-changer. It's comfortable enough for my workouts but stylish enough for everyday wear. Plus, the prices are unbeatable.",
+            "testimonial_type": "Google"
+          },
+          "type": "testimonial"
+        },
+        "testimonial_QRY9er": {
+          "settings": {
+            "author": "Amanda Gibson",
+            "rating": 5,
+            "testimonial_image": "shopify://shop_images/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png",
+            "testimonial_text": "I'm a personal trainer, and I recommend Egnar.us activewear to all my clients. The quality is amazing, and the fit is always perfect. Plus, they have such a wide range of sizes, so everyone can find something they love.",
+            "testimonial_type": "Facebook"
+          },
+          "type": "testimonial"
+        },
+        "testimonial_be6ppW": {
+          "settings": {
+            "author": "Emily Crawford",
+            "rating": 5,
+            "testimonial_image": "shopify://shop_images/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png",
+            "testimonial_text": "I'm a yoga instructor, and I swear by Egnar.us activewear. The flexibility and comfort of their pieces are unmatched. Plus, they have such a wide range of colors and styles.",
+            "testimonial_type": "Facebook"
+          },
+          "type": "testimonial"
+        },
+        "testimonial_erg4Qf": {
+          "settings": {
+            "author": "Laura Stevenson",
+            "rating": 5,
+            "testimonial_image": "shopify://shop_images/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png",
+            "testimonial_text": "'m a runner, and Egnar.us activewear is my go-to for all my races. The fabric is so lightweight and breathable, and the designs are so fun. Plus, the pockets are a game-changer for holding my essentials",
+            "testimonial_type": "Google"
+          },
+          "type": "testimonial"
+        },
+        "testimonial_iwNA3T": {
+          "settings": {
+            "author": "Jessica Langford",
+            "rating": 5,
+            "testimonial_image": "shopify://shop_images/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png",
+            "testimonial_text": "I've tried many activewear brands, but Egnar.us is by far the best! The fabric is so soft and breathable, and the designs are so trendy. I'll definitely be a repeat customer.",
+            "testimonial_type": "Google"
+          },
+          "type": "testimonial"
+        },
+        "testimonial_pC39M3": {
+          "settings": {
+            "author": "Rachel Thompson",
+            "rating": 5,
+            "testimonial_image": "shopify://shop_images/blank-profile-picture-973460_640_430x_63b6a27a-cc01-4b50-80d6-8266c0742264.png",
+            "testimonial_text": "I'm a busy mom, and Egnar.us activewear is my go-to for running after my kids or squeezing in a quick workout. The fabric is so soft and stretchy, and the fit is always flattering",
+            "testimonial_type": "Instagram"
+          },
+          "type": "testimonial"
+        }
+      },
+      "disabled": true,
+      "settings": {
+        "heading_testimonials": "What Our Clients Say",
+        "logo_image": "shopify://shop_images/Egnar-logo.png"
+      },
+      "type": "testimonials"
+    },
+    "three-cards": {
+      "disabled": true,
+      "settings": {
+        "card1_heading": "Tops",
+        "card1btntext": "View Collection",
+        "card1button_href": "https://egnar.us/collections/tops",
+        "card2_heading": "Bottoms",
+        "card2btntext": "View Collection",
+        "card2button_href": "https://egnar.us/collections/bottoms",
+        "card3_heading": "Accessories",
+        "card3btntext": "View Collection",
+        "card3button_href": "https://egnar.us/collections/accessories",
+        "card_image1": "shopify://shop_images/collection-img-02.png",
+        "card_image2": "shopify://shop_images/collection-img-03.png",
+        "card_image3": "shopify://shop_images/Collection-img-1.png"
+      },
+      "type": "three-cards"
+    },
+    "video_section": {
+      "disabled": true,
+      "settings": {
+        "video_selected": "https://cdn.shopify.com/videos/c/o/v/7a8d917537ca485b9373f04fad1b1744.mp4"
+      },
+      "type": "video_section"
+    }
+  }
+}

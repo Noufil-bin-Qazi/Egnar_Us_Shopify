@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "template",
+    "1753892087f2985bde"
+  ],
+  "sections": {
+    "1753892087f2985bde": {
+      "block_order": [
+        "judge_me_reviews_testimonials_carousel_nw3fME"
+      ],
+      "blocks": {
+        "judge_me_reviews_testimonials_carousel_nw3fME": {
+          "settings": {
+            "arrows_color": "#000000",
+            "arrows_position": "bottom",
+            "border_color": "#108474",
+            "card_color": "#f9f9f9",
+            "card_height": "medium",
+            "corner_styling": "round",
+            "header_text": "Customers Reviews",
+            "max_reviews": 20,
+            "max_width": 1100,
+            "product_name_text_size": "small",
+            "products": [],
+            "quote_marks_size": "small",
+            "quote_marks_style": "serif",
+            "reviews_selection": "all",
+            "show_average_rating": true,
+            "show_border": true,
+            "show_drop_shadow": true,
+            "show_sample_reviews": true,
+            "star_rating": "all",
+            "stars_and_quote_marks_color": "#108474",
+            "stars_size": "medium",
+            "text_color": "#000000",
+            "text_size": "small",
+            "transition_speed": 5,
+            "verified_badge_style": "icon"
+          },
+          "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8"
+        }
+      },
+      "settings": {},
+      "type": "apps"
+    },
+    "template": {
+      "settings": {
+        "background_image": "shopify://shop_images/6.3.png",
+        "mobile_background_image": "shopify://shop_images/6.3.png",
+        "number_of_products_per_page": 6
+      },
+      "type": "template-collection"
+    }
+  }
+}

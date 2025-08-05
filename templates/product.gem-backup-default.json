@@ -1,0 +1,121 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "template": {
+      "type": "template-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {}
+        },
+        "quantity": {
+          "type": "quantity",
+          "settings": {}
+        },
+        "checkout_buttons": {
+          "type": "checkout_buttons",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_selector",
+        "quantity",
+        "checkout_buttons",
+        "description"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "1708939365d21d87ac": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_iAKQmt": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_iAKQmt"
+      ],
+      "settings": {}
+    },
+    "175339528353ee3661": {
+      "type": "apps",
+      "settings": {}
+    },
+    "17533963802a1cf210": {
+      "type": "apps",
+      "settings": {}
+    },
+    "170895019054dc777d": {
+      "type": "apps",
+      "blocks": {
+        "jotly_size_chart_jotly_size_chart_block_VRg6Mk": {
+          "type": "shopify:\/\/apps\/jotly-size-chart\/blocks\/jotly-size-chart-block\/97eaca86-aad8-492c-9d4d-0dfdc4899889",
+          "settings": {
+            "show_chart_name": true
+          }
+        }
+      },
+      "block_order": [
+        "jotly_size_chart_jotly_size_chart_block_VRg6Mk"
+      ],
+      "settings": {}
+    },
+    "17089218146f36c19b": {
+      "type": "apps",
+      "settings": {}
+    },
+    "1708921871374ebb86": {
+      "type": "apps",
+      "settings": {}
+    },
+    "170893921726ff9430": {
+      "type": "apps",
+      "settings": {}
+    },
+    "17089448873b112c22": {
+      "type": "apps",
+      "settings": {}
+    }
+  },
+  "order": [
+    "template",
+    "1708939365d21d87ac",
+    "175339528353ee3661",
+    "17533963802a1cf210",
+    "170895019054dc777d",
+    "17089218146f36c19b",
+    "1708921871374ebb86",
+    "170893921726ff9430",
+    "17089448873b112c22"
+  ]
+}
