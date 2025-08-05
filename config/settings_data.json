@@ -81,6 +81,11 @@
         "type": "shopify://apps/snap-noti/blocks/notification/81e20000-6e98-4f82-915f-531279817ade",
         "disabled": false,
         "settings": {}
+      },
+      "15202526072292146591": {
+        "type": "shopify://apps/lm-sticky-cart-drawer-upsell/blocks/app-embed/2af1b5f6-34fa-4b15-b391-c6e67976f074",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
