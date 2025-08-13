@@ -82,15 +82,18 @@
         "disabled": false,
         "settings": {}
       },
-      "15706352229161960306": {
-        "type": "shopify://apps/sticky-cart-slide-cart-drawer/blocks/app-embeded/41ace2ee-41e6-45af-a9c4-452e6defecc0",
-        "disabled": false,
-        "settings": {}
-      },
       "11511171625957396224": {
         "type": "shopify://apps/seal-loyalty/blocks/seal-loyalty-widget-embed/747d5fd1-0968-4696-98fa-4e3afa915b09",
         "disabled": false,
         "settings": {}
+      },
+      "5133962947178206058": {
+        "type": "shopify://apps/kraken-cart-drawer/blocks/cart-drawer/395e4ebd-4534-4c0b-b7c2-4ccc91f8fe1e",
+        "disabled": false,
+        "settings": {
+          "custom_style": "",
+          "custom_script": ""
+        }
       }
     }
   },
