@@ -19,7 +19,7 @@
           ".- {margin-top: 50px; /* Moves the section down */}"
         ],
         "settings": {
-          "header_image": "shopify://shop_images/WhatsApp_Image_2025-07-11_at_03.04.37_3d67a910.png",
+          "header_image": "shopify://shop_images/IMG_2331.jpg",
           "facebook_link": "https://www.facebook.com/profile.php?id=100094633816201&mibextid=PtKPJ9",
           "twitter_link": "#",
           "instagram_link": "https://www.instagram.com/egnar.us/",
@@ -86,14 +86,6 @@
         "type": "shopify://apps/seal-loyalty/blocks/seal-loyalty-widget-embed/747d5fd1-0968-4696-98fa-4e3afa915b09",
         "disabled": false,
         "settings": {}
-      },
-      "5133962947178206058": {
-        "type": "shopify://apps/kraken-cart-drawer/blocks/cart-drawer/395e4ebd-4534-4c0b-b7c2-4ccc91f8fe1e",
-        "disabled": false,
-        "settings": {
-          "custom_style": "",
-          "custom_script": ""
-        }
       }
     }
   },
